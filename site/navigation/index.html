@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Navigation, réglementation et sécurité des vols · Le BIA de Saleem</title>
+<meta name="description" content="Coordonnées, caps et déclinaison, triangle des vents, pistes, espaces aériens, règles de l’air, radio, facteurs humains : cours, ateliers interactifs, calcul mental et QCU.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body data-page="navigation">
+<div class="subnav"><nav aria-label="Dans ce domaine">
+<a href="#essentiel">L’essentiel</a><a href="#ateliers">Ateliers</a><a href="#calcul">Calcul mental</a><a href="#qcu">QCU</a><a href="#memo">Mémo</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> savoir où l’on est, où l’on va, et qui d’autre partage le ciel</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Domaine 4 · Navigation, réglementation et sécurité des vols</p>
+<h1>Le ciel a ses <em>routes</em> et ses <em>règles</em>.</h1>
+<p>Calculer un cap avec le vent, choisir la bonne piste, savoir où l’on a le droit de voler et parler à la radio. Et surtout : se connaître soi-même, car la plupart des accidents commencent par une décision.</p>
+</section>
+
+<section id="essentiel">
+<div class="section-heading"><span>01 / L’ESSENTIEL</span><h2>Dix idées pour naviguer en sécurité.</h2></div>
+<p class="lead"><span class="lvl bia">BIA</span> ce qui tombe à l’examen. <span class="lvl ppl">PPL</span> ce que tu verras en formation pilote.</p>
+
+<details class="course" open><summary>1. Se repérer sur la Terre</summary><div>
+<ul>
+<li>La <b>latitude</b> va de 0° (équateur) à 90° Nord ou Sud ; la <b>longitude</b> de 0° (méridien de Greenwich) à 180° Est ou Ouest.</li>
+<li>Le <b>mille nautique</b> (NM) vaut <b>1 852 m</b> : c’est la longueur d’une minute d’arc de latitude. 1° de latitude = 60 NM.</li>
+<li>Un degré de longitude ne vaut 60 NM qu’à l’équateur : les méridiens se rapprochent vers les pôles.</li>
+<li>Le <b>nœud</b> (kt) est une vitesse de 1 NM par heure, soit 1,852 km/h. 1 pied (ft) = 0,3048 m.</li>
+</ul>
+<h4>Les cartes</h4>
+<p>La <b>carte aéronautique au 1/500 000</b> (dite carte OACI) montre le relief, les villes, les aérodromes et les espaces aériens. Les <b>cartes VAC</b> (Visual Approach Charts) décrivent chaque aérodrome : pistes, tour de piste, fréquences, altitudes. Avant chaque vol, on consulte aussi les <b>NOTAM</b>, les avis aux navigants sur les changements temporaires.</p>
+</div></details>
+
+<details class="course"><summary>2. Caps et routes : vrai, magnétique, compas</summary><div>
+<ul>
+<li>La <b>route</b> est le trajet suivi au sol ; le <b>cap</b> est la direction dans laquelle pointe le nez de l’avion. Avec du vent, ils diffèrent.</li>
+<li><b>Vrai</b> : par rapport au nord géographique (les méridiens de la carte).</li>
+<li><b>Magnétique</b> : par rapport au nord magnétique, que montre la boussole. L’écart entre les deux est la <b>déclinaison magnétique</b> (Est ou Ouest). En France elle est faible, de quelques degrés Est au plus.</li>
+<li><b>Compas</b> : ce qu’indique le compas de l’avion, faussé par ses masses métalliques : c’est la <b>déviation</b>.</li>
+</ul>
+<span class="formula">Rm = Rv − déclinaison Est (ou + déclinaison Ouest)</span>
+<p>Exemple d’annale : route vraie 330°, déclinaison 2° Est, donc route magnétique 328°.</p>
+</div></details>
+
+<details class="course"><summary>3. Le vent et le triangle des vitesses</summary><div>
+<p>L’avion avance dans une masse d’air qui se déplace. Sa vitesse par rapport au sol est la somme de sa <b>vitesse propre</b> (Vp, par rapport à l’air) et du <b>vent</b>.</p>
+<ul>
+<li>Vent de face : vitesse sol plus faible. Vent arrière : plus forte.</li>
+<li>Vent de travers : l’avion <b>dérive</b>. Pour suivre sa route, le pilote met le nez légèrement face au vent : c’est la <b>correction de dérive</b>.</li>
+</ul>
+<h4>Les formules du BIA</h4>
+<span class="formula">Facteur de base Fb = 60 / Vp &nbsp;·&nbsp; Dérive max Xmax = Vent × Fb</span>
+<ul>
+<li>Fb, en minutes par NM : à 120 kt, Fb = 0,5 (une demi-minute par nautique).</li>
+<li>Dérive réelle X ≈ Xmax × sin(angle entre le vent et la route).</li>
+<li>Vent effectif ≈ Vent × cos(angle) : il s’ajoute ou se retranche à la vitesse propre.</li>
+</ul>
+<div class="box mem"><b>Calcul mental</b>6 minutes, c’est un dixième d’heure : à 120 kt, on parcourt 12 NM. Temps = distance × Fb.</div>
+</div></details>
+
+<details class="course"><summary>4. Les pistes et le tour de piste</summary><div>
+<p>Une piste est désignée par son orientation magnétique divisée par 10 et arrondie : une piste orientée au 104° s’appelle <b>10</b>. L’autre extrémité vaut ± 18 : la piste 10 est aussi la piste <b>28</b>. Pour des pistes parallèles, on ajoute L (gauche), C (centre) ou R (droite), qui s’inversent à l’autre bout : 23R devient 05L.</p>
+<p>On décolle et on atterrit <b>face au vent</b> : vitesse sol plus faible, distances plus courtes. L’orientation de la piste en service s’appelle le <b>QFU</b>.</p>
+<h4>Le tour de piste</h4>
+<p>Il se fait en général <b>à gauche</b> (main gauche), sauf indication contraire sur la carte VAC, vers 1 000 ft au-dessus du terrain : montée initiale, vent traversier, <b>vent arrière</b> (parallèle à la piste, en sens inverse), étape de base, <b>finale</b>.</p>
+</div></details>
+
+<details class="course"><summary>5. Les espaces aériens</summary><div>
+<p>Le ciel est découpé en classes, de A à G.</p>
+<table class="data"><tr><th>Classe</th><th>Pour un vol VFR</th></tr>
+<tr><td>A</td><td>VFR interdit (vols aux instruments seulement)</td></tr>
+<tr><td>B, C, D</td><td>contact radio et <b>clairance</b> obligatoires avant d’entrer</td></tr>
+<tr><td>E</td><td>contrôlé pour les vols IFR ; le VFR y entre sans clairance</td></tr>
+<tr><td>F, G</td><td>non contrôlé (G est la classe la plus courante près du sol)</td></tr></table>
+<p>La France n’utilise ni la classe B ni la classe F.</p>
+<ul>
+<li><b>CTR</b> (zone de contrôle) : autour d’un aérodrome contrôlé, depuis le sol. <b>TMA</b> (région de contrôle terminale) : au-dessus, pour les arrivées et départs.</li>
+<li>Zones <b>P</b> (interdite), <b>R</b> (réglementée, accès sous conditions), <b>D</b> (dangereuse : tirs, parachutages…).</li>
+<li>Sur un aérodrome <b>AFIS</b>, l’agent donne des informations mais pas d’instructions.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>6. Les règles de l’air</summary><div>
+<h4>Voir et éviter</h4>
+<p>En VFR, chaque pilote doit voir les autres et les éviter. Les règles de priorité :</p>
+<ul>
+<li>Les avions et hélicoptères cèdent le passage aux dirigeables, planeurs et ballons ; les dirigeables aux planeurs et ballons ; les planeurs aux ballons. Un aéronef qui remorque est prioritaire sur les autres aéronefs à moteur.</li>
+<li>Routes convergentes : celui qui voit l’autre <b>à sa droite</b> lui cède le passage.</li>
+<li>Face à face : chacun oblique <b>vers sa droite</b>.</li>
+<li>Dépassement : on dépasse en obliquant vers la droite.</li>
+<li>À l’atterrissage, l’aéronef le plus bas est prioritaire.</li>
+</ul>
+<h4>Les feux de position</h4>
+<p><b>Rouge à gauche</b>, <b>vert à droite</b>, <b>blanc à l’arrière</b>. Teste-toi dans l’atelier 5.</p>
+<h4>Hauteurs minimales</h4>
+<p>Hors décollage et atterrissage : au moins <b>500 ft</b> au-dessus du sol ou de tout obstacle dans un rayon de 150 m ; au-dessus des villes et rassemblements, au moins <b>1 000 ft</b> au-dessus de l’obstacle le plus haut dans un rayon de 600 m (règlement SERA). En France, des hauteurs plus élevées s’ajoutent selon la taille des villes.</p>
+<h4>Niveaux de croisière VFR</h4>
+<p>Au-dessus de 3 000 ft sol, route magnétique de 000 à 179° : milliers <b>impairs + 500 ft</b> (3 500, 5 500 ft, FL75…) ; de 180 à 359° : milliers <b>pairs + 500 ft</b> (4 500 ft, FL65…).</p>
+<h4>Le jour et la nuit</h4>
+<p>En France, la nuit aéronautique commence <b>30 minutes après le coucher du soleil</b> et finit 30 minutes avant son lever. Le vol de nuit demande une qualification.</p>
+</div></details>
+
+<details class="course"><summary>7. La radio et le transpondeur</summary><div>
+<ul>
+<li><b>Alphabet</b> : Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu.</li>
+<li>On <b>collationne</b> (on répète) les éléments importants : piste, calage altimétrique, code transpondeur, fréquence, cap, niveau, clairance.</li>
+<li><b>MAYDAY</b>, répété trois fois : détresse (danger grave et imminent). <b>PAN PAN</b> ×3 : urgence. Fréquence internationale de détresse : <b>121,5 MHz</b>.</li>
+</ul>
+<table class="data"><tr><th>Code transpondeur</th><th>Signification</th></tr>
+<tr><td>7000</td><td>vol VFR sans code attribué</td></tr>
+<tr><td>7500</td><td>intervention illicite</td></tr>
+<tr><td>7600</td><td>panne radio</td></tr>
+<tr><td>7700</td><td>détresse</td></tr></table>
+<div class="box mem"><b>Moyen mnémotechnique</b>75 : « ils sont là » (pirates). 76 : « radio en panne ». 77 : « au secours ».</div>
+</div></details>
+
+<details class="course"><summary>8. Les VMC : peut-on voler à vue ?</summary><div>
+<p>Pour voler selon les règles du vol à vue, il faut des conditions météo minimales (règlement SERA) :</p>
+<ul>
+<li>Au-dessus du FL100 : visibilité 8 km, 1 500 m horizontalement et 300 m verticalement des nuages.</li>
+<li>En dessous : visibilité 5 km, mêmes distances aux nuages.</li>
+<li>Près du sol en espace non contrôlé (sous 3 000 ft au-dessus de la mer ou 1 000 ft sol) : 5 km, hors des nuages et en vue de la surface ; 1 500 m de visibilité acceptés de jour à 140 kt au plus.</li>
+<li>Pour entrer en VFR dans une zone de contrôle d’aérodrome : visibilité au sol d’au moins 5 km et plafond d’au moins 1 500 ft.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>9. Les organismes et les documents</summary><div>
+<ul>
+<li><b>OACI</b> : Organisation de l’aviation civile internationale (Montréal), qui fixe les normes mondiales. <b>EASA</b> (ou AESA) : Agence européenne de la sécurité aérienne (Cologne). <b>DGAC</b> : Direction générale de l’aviation civile. <b>BEA</b> : enquêtes sur les accidents. <b>SIA</b> : information aéronautique (cartes, NOTAM).</li>
+<li>Documents à bord d’un avion : certificat d’immatriculation, certificat de navigabilité et son examen de navigabilité en cours de validité, manuel de vol, carnet de route, assurance, licence de station radio. Et pour le pilote : licence et certificat médical.</li>
+<li><b>Drones</b> : en catégorie ouverte, pas plus de 120 m de hauteur.</li>
+<li><b>Retour d’expérience</b> (REX) : on déclare ses erreurs et incidents pour que tous en tirent les leçons, sans sanction.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>10. Facteurs humains et sécurité</summary><div>
+<ul>
+<li><b>Hypoxie</b> : en altitude, l’oxygène manque. Elle est sournoise : on se sent bien alors qu’on raisonne mal. Pour les pilotes, l’oxygène est obligatoire au-dessus de 13 000 ft, et au-dessus de 10 000 ft au-delà de 30 minutes.</li>
+<li><b>Désorientation spatiale</b> : sans repère visuel (nuage, nuit), l’oreille interne trompe le pilote. Un pilote VFR qui entre dans les nuages risque la perte de contrôle en quelques minutes.</li>
+<li><b>Effet tunnel</b> : obnubilé par un objectif (arriver à tout prix), le pilote ne voit plus les signaux d’alerte. Savoir faire <b>demi-tour</b> est une compétence de pilote.</li>
+<li><b>Se connaître soi-même</b> : fatigue, stress, maladie, médicaments, alcool, faim. Le pilote se pose la question avant chaque vol. Pas d’alcool avant de voler.</li>
+<li><b>Mal des transports</b> : regarder l’horizon, aérer, éviter les mouvements brusques de la tête.</li>
+<li>Après une <b>plongée sous-marine</b>, attendre avant de voler (12 à 24 h selon la plongée), à cause de l’azote dissous dans le sang.</li>
+</ul>
+<div class="box ppl"><b>Pour aller plus loin</b>Le modèle de Reason (« fromage suisse ») : un accident survient quand plusieurs barrières de sécurité ont chacune un trou au même moment. Check-lists, briefing météo, devis de masse et centrage, réserve de carburant sont autant de tranches de fromage.</div>
+</div></details>
+</section>
+
+<section id="ateliers">
+<div class="section-heading"><span>02 / MANIPULER</span><h2>Cinq ateliers pour naviguer.</h2></div>
+<p class="lead">Fais glisser les poignées orange directement sur les dessins, ou utilise les curseurs.</p>
+<div id="lab-triangle"></div>
+<div id="lab-piste"></div>
+<div id="lab-niveaux"></div>
+<div id="lab-espaces"></div>
+<div id="lab-feux"></div>
+</section>
+
+<section id="calcul">
+<div class="section-heading"><span>03 / CALCUL MENTAL</span><h2>Sans calculatrice, comme à l’examen.</h2></div>
+<p class="lead">Distances, temps, conversions, pistes réciproques : une série de calculs à faire de tête.</p>
+<div id="lab-calcul"></div>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>04 / S’ENTRAÎNER</span><h2>Questions à choix unique, corrigées.</h2></div>
+<p class="lead">Une seule bonne réponse sur quatre, comme à l’examen. Les questions ratées reviennent dans « À revoir ».</p>
+<div id="quiz"></div>
+</section>
+
+<section id="memo">
+<div class="section-heading"><span>05 / MÉMO</span><h2>La page à relire la veille de l’examen.</h2></div>
+<div class="card"><ul>
+<li>1 NM = 1 852 m = 1′ de latitude ; 1 kt = 1,852 km/h ; 1 ft = 0,3048 m.</li>
+<li>Rm = Rv − déclinaison Est. Cap ≠ route quand il y a du vent.</li>
+<li>Fb = 60 / Vp ; Xmax = vent × Fb ; 6 min = 1/10 h.</li>
+<li>Piste = orientation magnétique / 10 ; réciproque ± 18 ; L et R s’inversent.</li>
+<li>Classe A : VFR interdit ; B, C, D : clairance ; E : VFR sans clairance ; G : non contrôlé.</li>
+<li>Convergence : priorité à droite. Face à face : chacun à droite. Rouge à gauche, vert à droite, blanc à l’arrière.</li>
+<li>Niveaux VFR au-dessus de 3 000 ft sol : Rm 000-179 impairs + 500, 180-359 pairs + 500.</li>
+<li>Nuit aéronautique : coucher du soleil + 30 min jusqu’au lever − 30 min.</li>
+<li>7000 VFR, 7500 illicite, 7600 radio, 7700 détresse ; 121,5 MHz ; MAYDAY ×3, PAN PAN ×3.</li>
+<li>VMC : 5 km sous le FL100, 8 km au-dessus ; 1 500 m et 300 m des nuages.</li>
+</ul></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Domaine 4 du programme du BIA (BO n° 11 du 12 mars 2015). Règles : règlement européen SERA (minima VMC SERA.5001, transpondeur SERA.13005), Part-NCO. Les ateliers sont des modèles pédagogiques : la référence reste l’AIP France et les cartes officielles du SIA. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="questions.js"></script>
+<script src="labs.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

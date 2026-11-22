@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'mythiques/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'mythiques/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -28,6 +28,14 @@ try:
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
                 check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'navigation/':
+                    check(pg.locator('.lab').count() == 6, f'navigation {label}: {pg.locator(".lab").count()} ateliers')
+                    for lid in ('lab-triangle', 'lab-piste', 'lab-niveaux', 'lab-espaces', 'lab-feux', 'lab-calcul'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                    c = pg.locator('#lab-calcul'); c.locator('input').fill('9999'); c.locator('button[type=submit]').click()
+                    check('Non' in c.locator('.verdict').inner_text(), f'navigation {label}: calcul mental')
+                    n3 = pg.locator('#lab-niveaux'); n3.locator('.seg button', has_text='FL75').click()
+                    check('Correct' in n3.locator('.verdict').inner_text(), f'navigation {label}: FL75 route 093 refusé')
                 if page_name == 'aeronefs/':
                     check(pg.locator('.lab').count() == 6, f'aeronefs {label}: {pg.locator(".lab").count()} ateliers')
                     p = pg.locator('#lab-pitot'); p.scroll_into_view_if_needed(); pg.wait_for_timeout(400)
