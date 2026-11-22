@@ -6,7 +6,7 @@
     [13, 'Le BIA', 'Accessible dès la classe de 3e, sans limite d’âge. Examen en mai, inscriptions de fin janvier à mi-mars (calendrier 2026).'],
     [13, 'Premiers vols en planeur', 'Les clubs de vol à voile forment dès 13 ans environ ; le premier vol solo est possible à 14 ans.'],
     [14, 'Premier solo en planeur', 'Âge minimum européen pour voler seul en planeur (Part-SFCL).'],
-    [15, 'Brevet de pilote ULM', 'Accessible à partir de 15 ans. Aide FFPLUM pour les moins de 25 ans, plus élevée avec le BIA.'],
+    [15, 'Brevet de pilote ULM', 'Accessible à partir de 15 ans. Aide FFPLUM jusqu’à 25 ans, plus élevée avec le BIA.'],
     [15, 'Choisir ses spécialités', 'Mathématiques et physique-chimie ouvrent les classes préparatoires et les écoles de pilotes. Travaille aussi l’anglais.'],
     [16, 'Licence de planeur (SPL)', 'Âge minimum de la licence de pilote de planeur.'],
     [16, 'Premier solo en avion', 'Possible dès 16 ans pendant la formation LAPL ou PPL. Aides FFA jusqu’à 21 ans.'],
@@ -48,14 +48,14 @@
     function draw() {
       var h = '';
       if (st.act === 'ulm') {
-        var ok = st.age < 25;
-        h = '<h3 style="margin-top:0">FFPLUM, aide jeune pilote ULM</h3>' + (ok ? '<p style="font:800 40px Manrope,sans-serif;margin:6px 0;color:var(--green)">' + (st.bia ? '550 €' : '400 €') + '</p><ul><li>400 € pour un pilote de moins de 25 ans à l’obtention du brevet, plafonnés à 70 % de la facture de formation.</li><li>' + (st.bia ? '+ 150 € grâce au BIA.' : 'Avec le BIA, ce serait 150 € de plus.') + '</li><li>Être licencié FFPLUM et se former dans une structure affiliée.</li></ul>' : '<p class="verdict bad">Aide réservée aux moins de 25 ans.</p>') + '<p class="small">Sources : formulaire FFPLUM, CIRAS Nancy-Metz (mai 2025).</p>';
+        var ok = st.age <= 25;
+        h = '<h3 style="margin-top:0">FFPLUM, aide jeune pilote ULM</h3>' + (ok ? '<p style="font:800 40px Manrope,sans-serif;margin:6px 0;color:var(--green)">' + (st.bia ? '550 €' : '400 €') + '</p><ul><li>400 € pour un pilote de 25 ans au plus, à l’obtention du brevet.</li><li>' + (st.bia ? '+ 150 € grâce au BIA.' : 'Avec le BIA, ce serait 150 € de plus.') + '</li><li>Être licencié FFPLUM et se former dans une structure affiliée.</li></ul>' : '<p class="verdict bad">Aide réservée aux pilotes de 25 ans au plus.</p>') + '<p class="small">Sources : formulaire FFPLUM, CIRAS Nancy-Metz (mai 2025).</p>';
       } else if (st.act === 'planeur') {
         var ok2 = st.age <= 25;
         h = '<h3 style="margin-top:0">FFVP, bourses jeunes pilotes de planeur</h3>' + (ok2 ? '<p style="font:800 40px Manrope,sans-serif;margin:6px 0;color:var(--green)">jusqu’à 1 500 €</p><ul><li>Bourses « sur objectif » et aides aux jeunes pilotes méritants, jusqu’à 25 ans.</li><li>' + (st.bia ? 'Certaines aides sont majorées pour les titulaires du BIA.' : 'Le BIA majore certaines de ces aides.') + '</li></ul>' : '<p class="verdict bad">Aides réservées aux jeunes jusqu’à 25 ans.</p>') + '<p class="small">Source : CIRAS Nancy-Metz (mai 2025), détails sur ffvp.fr.</p>';
       } else {
         var ok3 = st.age <= 21;
-        h = '<h3 style="margin-top:0">FFA, aides aux jeunes pilotes d’avion</h3>' + (ok3 ? '<p style="font:800 40px Manrope,sans-serif;margin:6px 0;color:var(--green)">plus de 2 000 €</p><ul><li>Aides versées par étapes de la formation jusqu’au PPL, pour les moins de 21 ans, via l’aéroclub.</li><li>' + (st.bia ? 'Avec le BIA, la première aide est plus élevée (520 € au lieu de 350 € selon la page consultée), et une prime s’ajoute à la réussite de la théorie.' : 'Le BIA augmente la première aide et ajoute une prime à la réussite de la théorie.') + '</li><li>L’année où l’on obtient le BIA, la licence-assurance fédérale peut être offerte.</li></ul>' : '<p class="verdict bad">Aides FFA réservées aux moins de 21 ans.</p>') + '<p class="small">Sources : page FFA consultée en novembre 2026 (non datée) et CIRAS Bordeaux. Montants à confirmer sur ffa-aero.fr.</p>';
+        h = '<h3 style="margin-top:0">FFA, aides aux jeunes pilotes d’avion</h3>' + (ok3 ? '<p style="font:800 40px Manrope,sans-serif;margin:6px 0;color:var(--green)">plus de 2 000 €</p><ul><li>Aides versées par étapes de la formation jusqu’au PPL, jusqu’à 21 ans, via l’aéroclub.</li><li>' + (st.bia ? 'Avec le BIA, la première aide est plus élevée (520 € au lieu de 350 € selon la page consultée), et une prime s’ajoute à la réussite de la théorie.' : 'Le BIA augmente la première aide et ajoute une prime à la réussite de la théorie.') + '</li><li>L’année où l’on obtient le BIA, la licence-assurance fédérale peut être offerte.</li></ul>' : '<p class="verdict bad">Aides FFA réservées aux jeunes jusqu’à 21 ans.</p>') + '<p class="small">Sources : page FFA consultée en novembre 2026 (non datée) et CIRAS Bordeaux. Montants à confirmer sur ffa-aero.fr.</p>';
       }
       L.stage.innerHTML = '<div style="padding:16px">' + h + '</div>';
     }
