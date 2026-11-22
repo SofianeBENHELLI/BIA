@@ -71,7 +71,7 @@
     B.slider(ctl, { label: 'Vitesse', min: 60, max: 300, step: 1, value: st.V, fmt: function (v) { return v + ' km/h'; }, onInput: function (v) { st.V = v; draw(); } });
     B.slider(ctl, { label: 'Altitude', min: 0, max: 4000, step: 100, value: 0, fmt: function (v) { return fmt(v) + ' m'; }, onInput: function (v) { st.h = v; draw(); } });
     B.slider(ctl, { label: 'Masse de l’avion', min: 700, max: 1100, step: 10, value: st.m, fmt: function (v) { return v + ' kg'; }, onInput: function (v) { st.m = v; draw(); } });
-    var flLab = B.h('<div class="small" style="font-weight:600;color:#10203f">Volets</div>'); ctl.appendChild(flLab);
+    var flLab = B.h('<div class="small" style="font-weight:600;color:var(--head)">Volets</div>'); ctl.appendChild(flLab);
     B.seg(ctl, [[0, 'Rentrés'], [1, 'Décollage'], [2, 'Atterrissage']], 0, function (v) { st.fl = v; draw(); });
     var set = B.readout(ctl, [['a', 'Incidence'], ['cz', 'Cz'], ['fz', 'Portance'], ['p', 'Poids'], ['vs', 'Vitesse de décrochage'], ['vp', 'Vitesse de palier à cette incidence']]);
     var verdict = B.h('<div class="verdict"></div>'); ctl.appendChild(verdict);

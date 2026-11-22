@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Météorologie et aérologie · Le BIA de Saleem</title>
+<meta name="description" content="Atmosphère standard, altimétrie, vents, nuages, fronts, brouillards, givrage, orages, METAR et TAF : cours, ateliers interactifs et QCU.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body data-page="meteo">
+<div class="subnav"><nav aria-label="Dans ce domaine">
+<a href="#essentiel">L’essentiel</a><a href="#ateliers">Ateliers</a><a href="#messages">METAR</a><a href="#qcu">QCU</a><a href="#memo">Mémo</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> un bon pilote regarde le ciel avant de regarder l’avion</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Domaine 1 · Météorologie et aérologie</p>
+<h1>Le ciel se lit <em>comme une carte</em>.</h1>
+<p>Température, pression, humidité : avec trois grandeurs, tu expliques les nuages, le vent, le brouillard et les orages. Puis tu apprendras à décoder les messages que lisent les pilotes avant chaque vol.</p>
+</section>
+
+<section id="essentiel">
+<div class="section-heading"><span>01 / L’ESSENTIEL</span><h2>Neuf idées pour lire le ciel.</h2></div>
+<p class="lead"><span class="lvl bia">BIA</span> ce qui tombe à l’examen. <span class="lvl ppl">PPL</span> ce que tu verras en formation pilote.</p>
+
+<details class="course" open><summary>1. L’atmosphère et l’atmosphère standard</summary><div>
+<p>L’air sec contient environ <b>78 % d’azote</b> et <b>21 % d’oxygène</b>, plus de l’argon, du gaz carbonique et une quantité variable de vapeur d’eau.</p>
+<h4>Les couches</h4>
+<ul>
+<li><b>Troposphère</b> : du sol à la tropopause. C’est là que se forment presque tous les nuages et que vole l’aviation légère. La température y baisse avec l’altitude.</li>
+<li><b>Tropopause</b> : environ 11 km en moyenne, plus haute à l’équateur (16 à 18 km), plus basse aux pôles (environ 8 km). Les courants-jets soufflent juste en dessous.</li>
+<li><b>Stratosphère</b> : au-dessus, jusqu’à environ 50 km. Elle contient la couche d’ozone ; la température y est d’abord constante puis augmente.</li>
+</ul>
+<h4>L’atmosphère standard (ISA)</h4>
+<p>C’est une atmosphère de référence, utilisée pour étalonner les altimètres et comparer les performances des avions.</p>
+<table class="data"><tr><th>Au niveau de la mer</th><th>Valeur</th></tr>
+<tr><td>Température</td><td>15 °C</td></tr>
+<tr><td>Pression</td><td>1013,25 hPa</td></tr>
+<tr><td>Masse volumique</td><td>1,225 kg/m³</td></tr>
+<tr><td>Gradient de température</td><td>−6,5 °C par 1000 m, soit environ −2 °C par 1000 ft</td></tr>
+<tr><td>Tropopause</td><td>11 000 m, −56,5 °C</td></tr></table>
+<div class="box mem"><b>Calcul réflexe</b>Température standard à une altitude : 15 − 2 × (altitude en milliers de pieds). Au FL100 : 15 − 20 = −5 °C. À 4000 m : 15 − 6,5 × 4 = −11 °C.</div>
+<div class="box trap"><b>Piège classique</b>Si le thermomètre indique −1 °C à 4000 m, l’atmosphère est <b>plus chaude</b> que la standard (qui donnerait −11 °C). On dit « ISA + 10 ».</div>
+</div></details>
+
+<details class="course"><summary>2. Pression et altimétrie</summary><div>
+<p>La pression atmosphérique est le poids de la colonne d’air au-dessus de nous. Elle diminue avec l’altitude : environ <b>1 hPa tous les 28 ft</b> (8,5 m) près du sol. Vers 5 500 m, elle n’est plus que la moitié de celle du niveau de la mer.</p>
+<p>L’altimètre est un baromètre gradué en pieds. On règle sa référence de pression avec un bouton : c’est le <b>calage</b>.</p>
+<table class="data"><tr><th>Calage</th><th>L’altimètre indique</th><th>Usage</th></tr>
+<tr><td><b>QNH</b></td><td>l’altitude au-dessus du niveau de la mer</td><td>près du sol, en tour de piste, pour éviter le relief</td></tr>
+<tr><td><b>QFE</b></td><td>la hauteur au-dessus de l’aérodrome (0 au sol)</td><td>parfois en tour de piste, en planeur</td></tr>
+<tr><td><b>1013,25 hPa</b> (« standard »)</td><td>le niveau de vol (FL), en centaines de pieds</td><td>en croisière au-dessus de l’altitude de transition</td></tr></table>
+<p>Au FL65, l’altimètre calé sur 1013 indique 6 500 ft.</p>
+<div class="box mem"><b>« Du haut vers le bas, méfiance en bas »</b>Si l’on vole d’une zone de haute pression vers une zone de basse pression (ou du chaud vers le froid) sans changer le calage, l’altimètre indique plus haut que la réalité : l’avion est plus bas qu’on ne le croit.</div>
+<div class="box trap"><b>Piège classique</b>Altimètre calé au QNH la veille, il indique le matin plus que l’altitude du terrain : la pression a <b>baissé</b> pendant la nuit.</div>
+</div></details>
+
+<details class="course"><summary>3. Le vent, les anticyclones et les dépressions</summary><div>
+<p>Le vent va des hautes vers les basses pressions, mais la rotation de la Terre le dévie (force de Coriolis, vers la droite dans l’hémisphère Nord). En altitude, il finit par souffler <b>parallèlement aux isobares</b> (lignes d’égale pression).</p>
+<ul>
+<li><b>Anticyclone</b> (A, hautes pressions) : air qui descend, en général beau temps. Le vent tourne dans le <b>sens des aiguilles d’une montre</b> dans l’hémisphère Nord.</li>
+<li><b>Dépression</b> (D, basses pressions) : air qui monte, nuages et précipitations. Le vent tourne en <b>sens inverse</b>.</li>
+<li><b>Marais barométrique</b> : pressions presque uniformes, vent faible, orages possibles l’été.</li>
+<li>Isobares serrées : vent fort.</li>
+</ul>
+<div class="box mem"><b>Loi de Buys-Ballot (hémisphère Nord)</b>Dos au vent, les basses pressions sont à gauche.</div>
+<p>Près du sol, le frottement ralentit le vent et le dévie d’environ 30° vers les basses pressions. Règle pratique du BIA : au-dessus de 1000 ft, le vent <b>tourne de 30° vers la droite et double</b> par rapport au vent au sol. Un vent au sol de 160°/14 kt devient environ 190°/28 kt.</p>
+<h4>Comment on annonce le vent</h4>
+<p>On donne la direction <b>d’où il vient</b>, en degrés, et sa force en nœuds (kt). « 270/15 » : vent d’ouest de 15 kt. 1 kt = 1,852 km/h.</p>
+<h4>Vents locaux</h4>
+<ul>
+<li><b>Brise de mer</b> le jour (la terre chauffe plus vite, l’air y monte et l’air marin le remplace), <b>brise de terre</b> la nuit.</li>
+<li><b>Brise de vallée</b> montante le jour, <b>brise de montagne</b> descendante la nuit.</li>
+<li><b>Mistral</b> (vallée du Rhône) et <b>tramontane</b> (Languedoc) : vents de nord à nord-ouest, forts, accélérés par le relief.</li>
+<li><b>Foehn</b> : vent chaud et sec qui descend le versant sous le vent d’une montagne.</li>
+<li><b>Courant-jet</b> (jet-stream) : vent très fort, plus de 100 kt, près de la tropopause, d’ouest en est. Un avion de ligne qui vole de New York vers Paris en profite.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>4. L’eau dans l’air : humidité, point de rosée</summary><div>
+<p>L’air contient de la vapeur d’eau invisible. Plus il est chaud, plus il peut en contenir. Quand on le refroidit, il finit par être <b>saturé</b> : la vapeur se condense en gouttelettes, c’est la naissance d’un nuage ou d’un brouillard.</p>
+<ul>
+<li><b>Humidité relative</b> : quantité de vapeur présente rapportée au maximum possible à cette température (100 % = saturé).</li>
+<li><b>Point de rosée</b> (Td) : température à laquelle il faut refroidir l’air pour qu’il soit saturé. Plus l’écart T − Td est faible, plus le brouillard ou les nuages bas sont proches.</li>
+<li><b>Changements d’état</b> : vapeur → liquide, c’est la condensation ; liquide → solide, la solidification ; vapeur → solide directement, la condensation solide (givre). La condensation <b>libère de la chaleur</b>, ce qui nourrit les orages.</li>
+</ul>
+<div class="box mem"><b>Base des cumulus</b>Hauteur de la base ≈ 125 m × (T − Td). Avec 20 °C et 12 °C de point de rosée : 125 × 8 = 1 000 m.</div>
+</div></details>
+
+<details class="course"><summary>5. Stabilité, ascendances et nuages</summary><div>
+<p>Une bulle d’air qui monte se détend et se refroidit d’environ <b>1 °C par 100 m</b> tant qu’elle est sèche, puis d’environ <b>0,5 à 0,6 °C par 100 m</b> une fois saturée, car la condensation libère de la chaleur.</p>
+<ul>
+<li>Si la bulle reste plus chaude que l’air autour, elle continue de monter : l’atmosphère est <b>instable</b>. Nuages à développement vertical, thermiques, averses.</li>
+<li>Si elle devient plus froide, elle redescend : l’atmosphère est <b>stable</b>. Nuages en couches, air calme, brumes.</li>
+<li>Une <b>inversion</b> (température qui augmente avec l’altitude) est une couche très stable qui bloque les ascendances et piège la pollution.</li>
+</ul>
+<h4>Les dix genres de nuages</h4>
+<table class="data"><tr><th>Étage</th><th>Nuages</th></tr>
+<tr><td>Élevé (au-dessus d’environ 5 000 m)</td><td>cirrus (Ci), cirrocumulus (Cc), cirrostratus (Cs), faits de cristaux de glace</td></tr>
+<tr><td>Moyen (environ 2 000 à 7 000 m, préfixe « alto »)</td><td>altocumulus (Ac), altostratus (As)</td></tr>
+<tr><td>Bas (du sol à environ 2 000 m)</td><td>stratus (St), stratocumulus (Sc), nimbostratus (Ns)</td></tr>
+<tr><td>Développement vertical</td><td>cumulus (Cu), cumulonimbus (Cb)</td></tr></table>
+<p>« Cumulus » : en tas, convection. « Stratus » : en couche, air stable. « Nimbus » : qui donne des précipitations. Précipitations typiques : bruine sous le stratus, pluie continue sous le nimbostratus, averses et grêle sous le cumulonimbus.</p>
+<div class="box trap"><b>Le cumulonimbus</b>C’est le nuage le plus dangereux pour un avion : turbulence violente, grêle, foudre, givrage, rafales au sol. Il peut monter jusqu’à la tropopause et s’étale en enclume. Un avion léger ne s’en approche jamais.</div>
+<h4>Le foehn</h4>
+<p>L’air humide qui franchit une montagne monte, se refroidit, se condense et pleut sur le versant au vent. Il redescend sec de l’autre côté et se réchauffe de 1 °C par 100 m : il arrive plus chaud et plus sec qu’au départ.</p>
+</div></details>
+
+<details class="course"><summary>6. Masses d’air et fronts</summary><div>
+<p>Une <b>masse d’air</b> a des caractéristiques homogènes : polaire (froide) ou tropicale (chaude), maritime (humide) ou continentale (sèche). La limite entre deux masses d’air est un <b>front</b>.</p>
+<h4>Front chaud (demi-cercles rouges)</h4>
+<p>L’air chaud monte en pente douce sur l’air froid. Les nuages arrivent dans l’ordre : <b>cirrus, cirrostratus, altostratus, nimbostratus</b>. Pluie continue, plafond qui baisse, visibilité médiocre.</p>
+<h4>Front froid (triangles bleus)</h4>
+<p>L’air froid s’enfonce sous l’air chaud et le soulève brutalement : <b>cumulonimbus</b>, averses, orages, saute de vent, chute de température. Derrière, le <b>ciel de traîne</b> : cumulus, averses, très bonne visibilité.</p>
+<h4>Occlusion (symboles violets alternés)</h4>
+<p>Le front froid, plus rapide, rattrape le front chaud et rejette l’air chaud en altitude : temps mélangé des deux.</p>
+<p>Une <b>perturbation</b> regroupe un front chaud, un secteur chaud et un front froid autour d’une dépression. Elles traversent la France d’ouest en est.</p>
+</div></details>
+
+<details class="course"><summary>7. Brouillard et visibilité</summary><div>
+<p>Le <b>brouillard</b> est un nuage au sol : visibilité <b>inférieure à 1 km</b>. Entre 1 et 5 km, avec de l’air humide, on parle de <b>brume</b>.</p>
+<ul>
+<li><b>Brouillard de rayonnement</b> : nuit claire, vent faible, air humide. Le sol se refroidit par rayonnement et refroidit l’air au contact. Il se forme en fin de nuit et se dissipe en général dans la matinée.</li>
+<li><b>Brouillard d’advection</b> : air chaud et humide qui se déplace au-dessus d’une surface froide (mer froide, sol enneigé). Il peut durer longtemps et persister même avec du vent.</li>
+</ul>
+<div class="box trap"><b>Piège classique</b>Un écart de quelques degrés entre température et point de rosée le soir, un ciel dégagé et un vent faible : le brouillard de rayonnement menace pour le lendemain matin.</div>
+</div></details>
+
+<details class="course"><summary>8. Les phénomènes dangereux</summary><div>
+<h4>Givrage</h4>
+<p>Il survient quand l’avion traverse des <b>gouttelettes surfondues</b> : de l’eau restée liquide en dessous de 0 °C, qui gèle instantanément au contact. Le risque est maximal entre 0 et environ −15 °C.</p>
+<ul><li><b>Verglas</b> (givre transparent) : pluie surfondue, le plus dangereux, lourd et adhérent.</li><li><b>Givre blanc</b> : petites gouttelettes, léger mais déforme le profil.</li><li><b>Gelée blanche</b> : avion stationné par nuit froide, à enlever entièrement avant le vol.</li></ul>
+<p>Le givre détruit la portance et augmente la masse : l’avion décroche plus vite. Le <b>givrage carburateur</b> peut aussi arrêter le moteur, même par temps doux et humide (jusqu’à 25 °C environ) : c’est pourquoi on tire le réchauffage carburateur moteur réduit.</p>
+<h4>Orage</h4>
+<p>Trois stades : cumulus (ascendances), maturité (ascendances et descendances violentes, précipitations, foudre, grêle), dissipation. Sous l’orage, les <b>rafales descendantes</b> (microrafales) peuvent plaquer un avion au sol.</p>
+<h4>Turbulence</h4>
+<ul><li>Thermique (convection), mécanique (vent fort sur le relief ou les obstacles), d’onde (rotors sous le vent des montagnes), de sillage (derrière un gros avion), en air clair (près des courants-jets).</li></ul>
+<h4>Cisaillement de vent</h4>
+<p>Changement brutal de la direction ou de la force du vent sur une faible distance. Dangereux près du sol, au décollage et à l’atterrissage.</p>
+</div></details>
+
+<details class="course" id="info-meteo"><summary>9. L’information météo pour le pilote</summary><div>
+<ul>
+<li><b>METAR</b> : observation sur un aérodrome, toutes les 30 minutes ou toutes les heures.</li>
+<li><b>TAF</b> : prévision pour un aérodrome, sur 9 à 30 heures.</li>
+<li><b>TEMSI</b> : carte du temps significatif (fronts, nuages, isotherme 0 °C, givrage, turbulence).</li>
+<li><b>WINTEM</b> : carte des vents et températures en altitude.</li>
+</ul>
+<p>Toutes les heures sont en <b>UTC</b> (temps universel). En France, l’heure légale vaut <b>UTC + 1 en hiver</b> et <b>UTC + 2 en été</b>.</p>
+<h4>Les codes à connaître</h4>
+<table class="data"><tr><th>Nébulosité</th><th>Sens</th></tr>
+<tr><td>FEW</td><td>peu (1 à 2 octas)</td></tr><tr><td>SCT</td><td>épars (3 à 4 octas)</td></tr><tr><td>BKN</td><td>fragmenté (5 à 7 octas)</td></tr><tr><td>OVC</td><td>couvert (8 octas)</td></tr></table>
+<p>La hauteur des nuages est en centaines de pieds : BKN014 = fragmenté à 1 400 ft. Le <b>plafond</b> est la base de la plus basse couche BKN ou OVC.</p>
+<p>Phénomènes : RA pluie, DZ bruine, SN neige, SH averse, TS orage, GR grêle, FG brouillard, BR brume, HZ brume sèche. « − » faible, « + » fort, VC au voisinage.</p>
+<div class="box mem"><b>CAVOK</b>« Ceiling And Visibility OK » : visibilité d’au moins 10 km, aucun nuage sous 5 000 ft (ou sous l’altitude minimale de secteur si elle est plus haute), ni cumulonimbus ni cumulus bourgeonnant, aucun phénomène significatif. CAVOK ne veut pas dire « ciel clair » : il peut y avoir des nuages au-dessus.</div>
+</div></details>
+</section>
+
+<section id="ateliers">
+<div class="section-heading"><span>02 / MANIPULER</span><h2>Sept ateliers pour sentir l’atmosphère.</h2></div>
+<p class="lead">Fais glisser les poignées orange directement sur les dessins, ou utilise les curseurs.</p>
+<div id="lab-isa"></div>
+<div id="lab-altimetre"></div>
+<div id="lab-vent"></div>
+<div id="lab-foehn"></div>
+<div id="lab-nuages"></div>
+<div id="lab-front"></div>
+<div id="lab-heure"></div>
+</section>
+
+<section id="messages">
+<div class="section-heading"><span>03 / LIRE LES MESSAGES</span><h2>Décoder un METAR comme un pilote.</h2></div>
+<p class="lead">Choisis un message ou tape le tien : chaque groupe est traduit, et l’atelier dit si un pilote VFR peut entrer dans la zone de contrôle de l’aérodrome.</p>
+<div id="lab-metar"></div>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>04 / S’ENTRAÎNER</span><h2>Questions à choix unique, corrigées.</h2></div>
+<p class="lead">Une seule bonne réponse sur quatre, comme à l’examen. Les questions ratées reviennent dans « À revoir ».</p>
+<div id="quiz"></div>
+</section>
+
+<section id="memo">
+<div class="section-heading"><span>05 / MÉMO</span><h2>La page à relire la veille de l’examen.</h2></div>
+<div class="card"><ul>
+<li>ISA : 15 °C, 1013,25 hPa, 1,225 kg/m³ ; −2 °C par 1000 ft ; tropopause 11 km, −56,5 °C.</li>
+<li>1 hPa ≈ 28 ft près du sol. QNH : altitude. QFE : hauteur. 1013 : niveau de vol.</li>
+<li>Haute vers basse pression : méfiance en bas.</li>
+<li>Anticyclone : sens horaire, beau temps. Dépression : sens inverse, mauvais temps. Dos au vent, basses pressions à gauche.</li>
+<li>Vent annoncé d’où il vient, en kt. Au-dessus de 1000 ft : +30° et double.</li>
+<li>Adiabatique sèche 1 °C/100 m ; saturée environ 0,5 à 0,6 °C/100 m. Base des Cu ≈ 125 m × (T − Td).</li>
+<li>Front chaud : Ci, Cs, As, Ns, pluie continue. Front froid : Cb, averses, saute de vent, puis traîne.</li>
+<li>Brouillard : visibilité &lt; 1 km. Rayonnement : nuit claire, vent faible. Advection : air chaud sur surface froide.</li>
+<li>Givrage : gouttelettes surfondues, 0 à −15 °C. Givrage carburateur jusqu’à environ 25 °C par air humide.</li>
+<li>FEW 1-2, SCT 3-4, BKN 5-7, OVC 8 octas. Plafond = plus basse couche BKN ou OVC.</li>
+<li>Heures en UTC. France : UTC+1 en hiver, UTC+2 en été.</li>
+</ul></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Domaine 1 du programme du BIA (BO n° 11 du 12 mars 2015). Valeurs ISA : norme ISO 2533. CAVOK et TAF : Météo-France, « Comprendre le TAF ». Minima VFR en zone de contrôle : règlement SERA.5005. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="questions.js"></script>
+<script src="labs.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

@@ -31,7 +31,7 @@
 
   /* ---------- Pages du site (une seule source pour la navigation et l'accueil) ---------- */
   var PAGES = [
-    { id: 'meteo', ico: '☁️', name: 'Météorologie', desc: 'Atmosphère, nuages, fronts, vents, METAR et TAF.', open: false },
+    { id: 'meteo', ico: '☁️', name: 'Météorologie', desc: 'Atmosphère, altimétrie, vents, nuages, fronts, METAR et TAF.', open: true, q: 'met-', n: 45 },
     { id: 'aerodynamique', ico: '🪽', name: 'Aérodynamique', desc: 'Portance, décrochage, finesse, virage, stabilité et centrage.', open: true, q: 'aer-', n: 38 },
     { id: 'aeronefs', ico: '🛠️', name: 'Aéronefs et espace', desc: 'Structure, moteurs, instruments, hélicoptères, fusées.', open: false },
     { id: 'navigation', ico: '🧭', name: 'Navigation et réglementation', desc: 'Cap, vent, cartes, espaces aériens, sécurité des vols.', open: false },
@@ -52,6 +52,10 @@
       '<a class="brand" href="/"><img src="/icons/icon-192.png" alt=""><span>Le BIA de Saleem<small>BREVET D’INITIATION AÉRONAUTIQUE</small></span></a>' +
       '<nav class="topnav" aria-label="Sections">' + links + '</nav></div></header>');
     document.body.insertBefore(bar, document.body.firstChild);
+    var tb = h('<button type="button" class="btn-theme"></button>');
+    function paintTheme() { var d = document.documentElement.getAttribute('data-theme') === 'dark'; tb.textContent = d ? '☀️' : '🌙'; tb.setAttribute('aria-label', d ? 'Passer en mode clair' : 'Passer en mode sombre'); tb.title = tb.getAttribute('aria-label'); }
+    tb.onclick = function () { var d = document.documentElement.getAttribute('data-theme') !== 'dark'; document.documentElement.setAttribute('data-theme', d ? 'dark' : 'light'); raw('theme', d ? 'dark' : 'light'); paintTheme(); };
+    paintTheme(); bar.querySelector('.topbar-in').appendChild(tb);
     var curA = bar.querySelector('[aria-current]'), nav = bar.querySelector('.topnav');
     if (curA && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = curA.offsetLeft + curA.offsetWidth - nav.clientWidth + 8;
     var skip = h('<a class="skip" href="#main">Aller au contenu</a>');
@@ -225,6 +229,22 @@
     return { el: el, stage: el.querySelector('.stage'), ctrls: el.querySelector('.ctrls') };
   }
 
+
+  /* ---------- Dessin SVG : flèche, texte, effacement ---------- */
+  function arrow(g, x1, y1, x2, y2, color, w) {
+    var dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy);
+    if (L < 2) return;
+    var ux = dx / L, uy = dy / L, hs = Math.min(12, L * 0.4);
+    svg('line', { x1: x1, y1: y1, x2: x2 - ux * hs * 0.6, y2: y2 - uy * hs * 0.6, stroke: color, 'stroke-width': w || 4, 'stroke-linecap': 'round' }, g);
+    svg('path', { d: 'M' + x2 + ',' + y2 + ' L' + (x2 - ux * hs - uy * hs * 0.55) + ',' + (y2 - uy * hs + ux * hs * 0.55) + ' L' + (x2 - ux * hs + uy * hs * 0.55) + ',' + (y2 - uy * hs - ux * hs * 0.55) + 'Z', fill: color }, g);
+  }
+  function text(g, x, y, t, color, anchor, size, weight) {
+    var e = svg('text', { x: x, y: y, fill: color || '#10203f', 'font-size': size || 14, 'font-weight': weight || 700, 'text-anchor': anchor || 'start', 'font-family': 'DM Sans, sans-serif' }, g);
+    e.textContent = t; return e;
+  }
+  function clear(g) { while (g.firstChild) g.removeChild(g.firstChild); }
+  function handle(svgEl, r) { var g = svg('g', {}, svgEl); svg('circle', { r: r || 20, class: 'ring' }, g); svg('circle', { r: 7, fill: '#f5a623' }, g); return g; }
+
   /* ---------- Atmosphère standard (utile à plusieurs ateliers) ---------- */
   function isa(hm) { // altitude en m → {T (K), P (Pa), rho}
     var T, P;
@@ -255,7 +275,7 @@
   }
 
   window.BIA = { load: load, save: save, h: h, esc: esc, fmt: fmt, svg: svg, clamp: clamp, PAGES: PAGES, quiz: quiz, mastery: mastery, stats: stats,
-    slider: slider, seg: seg, readout: readout, drag: drag, loop: loop, lab: lab, isa: isa, exportData: exportData, importData: importData, resetData: resetData };
+    slider: slider, seg: seg, arrow: arrow, text: text, clear: clear, handle: handle, readout: readout, drag: drag, loop: loop, lab: lab, isa: isa, exportData: exportData, importData: importData, resetData: resetData };
 
   document.addEventListener('DOMContentLoaded', function () { topbar(); subnav(); });
 })();

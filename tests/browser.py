@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -27,6 +27,24 @@ try:
                 check(ow <= 2, f'/{page_name} {label}: débordement horizontal {ow}px')
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
+                check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'meteo/':
+                    n = pg.locator('.lab').count(); check(n == 8, f'meteo {label}: {n} ateliers au lieu de 8')
+                    for lid in ('lab-isa', 'lab-altimetre', 'lab-vent', 'lab-foehn', 'lab-nuages', 'lab-front', 'lab-heure', 'lab-metar'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                    lab = pg.locator('#lab-metar'); lab.locator('button', has_text='Brouillard').click()
+                    check('impossible' in lab.locator('.verdict').inner_text(), f'meteo {label}: METAR brouillard accepté en VFR')
+                    lab = pg.locator('#lab-altimetre'); lab.locator('button', has_text='dépression').click()
+                    check('Méfiance' in lab.locator('.verdict').inner_text(), f'meteo {label}: piège altimétrique absent')
+                    # mode sombre persistant
+                    pg.locator('.btn-theme').click(); pg.wait_for_timeout(100)
+                    th = pg.evaluate("document.documentElement.getAttribute('data-theme')")
+                    pg.reload(); pg.wait_for_timeout(500)
+                    check(pg.evaluate("document.documentElement.getAttribute('data-theme')") == th, f'{label}: thème non conservé')
+                    pg.evaluate("document.documentElement.setAttribute('data-theme','dark')")
+                    pg.screenshot(path=f'/tmp/bia-meteo-dark-{label}.png')
+                    pg.locator('#lab-front').scroll_into_view_if_needed(); pg.wait_for_timeout(150)
+                    pg.locator('#lab-front').screenshot(path=f'/tmp/bia-front-dark-{label}.png')
                 if page_name == 'aerodynamique/':
                     n = pg.locator('.lab').count(); check(n == 8, f'{label}: {n} ateliers au lieu de 8')
                     # Soufflerie : on tire le bord de fuite vers le bas pour dépasser l'incidence critique

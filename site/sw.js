@@ -1,5 +1,5 @@
 /* Service worker généré par scripts/build-pwa.mjs : ne pas modifier sw.js à la main. */
-const VERSION = "09692a8a1355";
+const VERSION = "588db3f5a213";
 const CACHE = "bia-saleem-" + VERSION;
 const ASSETS = [
  "/",
@@ -24,7 +24,10 @@ const ASSETS = [
  "/icons/icon-192.png",
  "/icons/icon-512.png",
  "/icons/icon-maskable-512.png",
- "/manifest.webmanifest"
+ "/manifest.webmanifest",
+ "/meteo/",
+ "/meteo/labs.js",
+ "/meteo/questions.js"
 ];
 
 self.addEventListener("install", (e) => {
