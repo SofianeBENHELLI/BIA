@@ -1,4 +1,4 @@
-/* Les 40 avions mythiques : fiches rédigées pour le site.
+/* Les 43 avions mythiques : fiches rédigées pour le site.
    an : année du premier vol ; c : chiffres clés ; h : histoire ; a : anecdote ; ep : époque (filtre).
    Les photos et leurs crédits sont dans photos.js (fichiers Wikimedia Commons, licences vérifiées). */
 window.MYTHIQUES = [
@@ -130,6 +130,14 @@ window.MYTHIQUES = [
     c: [['Moteurs', '2 réacteurs Larzac'], ['Équipage', '2'], ['Construits', 'environ 480'], ['Célèbre pour', 'la Patrouille de France']],
     h: 'L’Alpha Jet a formé les pilotes de chasse français pendant des décennies. Depuis 1981, il est l’avion de la Patrouille de France.',
     a: 'Les fumigènes bleu, blanc, rouge de la Patrouille de France sont produits en injectant un liquide coloré dans les gaz chauds des réacteurs.' },
+  { id: 'sue', n: 'Dassault-Breguet Super Étendard', an: 1974, pays: '🇫🇷 France', par: 'Dassault-Breguet', ty: 'Avion d’attaque embarqué', ep: 'moderne',
+    c: [['Moteur', '1 SNECMA Atar 8K-50, sans postcombustion'], ['Vitesse', 'subsonique'], ['Construits', '85 (71 pour la France, 14 pour l’Argentine)'], ['Arme phare', 'missile antinavire AM39 Exocet']],
+    h: 'Il naît de l’abandon d’une version marine du Jaguar : Dassault propose de moderniser son Étendard IV. Premier vol le 28 octobre 1974 à Istres, entrée en service dans l’Aéronavale en 1978. Catapulté depuis les porte-avions Clemenceau, Foch puis Charles-de-Gaulle, il porte aussi l’arme nucléaire (missile ASMP). Retiré le 12 juillet 2016, après 42 ans de service, remplacé par le Rafale Marine.',
+    a: 'Pendant la guerre des Malouines, en 1982, l’Argentine ne possède que cinq missiles Exocet. Le 4 mai, un Super Étendard en tire un qui touche le destroyer britannique HMS Sheffield : l’incendie provoque la perte du navire. Le monde entier découvre alors ce petit avion et son missile.' },
+  { id: 'mirage2000', n: 'Dassault Mirage 2000', an: 1978, pays: '🇫🇷 France', par: 'Dassault Aviation', ty: 'Avion de combat à aile delta', ep: 'moderne',
+    c: [['Vitesse max', 'environ Mach 2,2'], ['Moteur', '1 SNECMA M53-P2 (95 kN avec postcombustion)'], ['Envergure', '9,13 m'], ['Construits', '601, dont environ la moitié exportés']],
+    h: 'En 1975, la France abandonne un gros avion à géométrie variable et revient à l’aile delta, celle du Mirage III. La différence : des commandes de vol électriques. L’avion est rendu volontairement instable et c’est l’ordinateur qui le stabilise, ce qui gomme les défauts du delta et le rend très manœuvrant. Versions 2000C (défense aérienne), 2000N (nucléaire), 2000D (attaque) et 2000-5, exporté dans huit pays dont l’Inde, la Grèce et Taïwan.',
+    a: 'Le prototype vole le 10 mars 1978 à Istres, seulement 27 mois après le lancement du programme. Dès ce premier vol d’une heure, le pilote d’essai Jean Coureau dépasse le mur du son.' },
   { id: 'f14', n: 'Grumman F-14 Tomcat', an: 1970, pays: '🇺🇸 États-Unis', par: 'Grumman', ty: 'Chasseur embarqué', ep: 'moderne',
     c: [['Aile', 'à géométrie variable'], ['Vitesse max', 'environ Mach 2,3'], ['Équipage', '2'], ['Construits', 'environ 710']],
     h: 'Le Tomcat protège les porte-avions américains de 1974 à 2006. Ses ailes se déploient pour les vols lents et l’appontage, et se replient en flèche pour la vitesse.',
@@ -158,6 +166,10 @@ window.MYTHIQUES = [
     c: [['Envergure', 'environ 80 m'], ['Passagers', 'environ 500 en général, jusqu’à 853 certifiés'], ['Ponts', '2 sur toute la longueur'], ['Construits', '251']],
     h: 'Le 27 avril 2005, le plus gros avion de ligne du monde décolle de Toulouse. Mais les compagnies préfèrent ensuite des biréacteurs plus petits et plus économes, et sa production s’arrête en 2021.',
     a: 'Ses tronçons, fabriqués en France, en Allemagne, en Espagne et au Royaume-Uni, arrivaient à Toulouse par bateau, par barge sur la Garonne, puis par convois routiers exceptionnels de nuit.' },
+  { id: 'neuron', n: 'Dassault nEUROn', an: 2012, pays: '🇪🇺 Europe (6 pays)', par: 'Dassault Aviation, avec Leonardo, Saab, Airbus, HAI et RUAG', ty: 'Démonstrateur de drone de combat furtif', ep: 'moderne',
+    c: [['Pilote', 'aucun : piloté depuis une station au sol'], ['Forme', 'aile volante sans dérive'], ['Envergure', 'environ 12,5 m'], ['Moteur', '1 Rolls-Royce Turbomeca Adour']],
+    h: 'Premier drone de combat furtif conçu en Europe. Il décolle pour la première fois le 1er décembre 2012 à Istres et vole 25 minutes, surveillé par deux pilotes d’essai installés au sol. Pas de dérive, armement dans une soute : tout est fait pour échapper aux radars. Ses essais servent au drone de combat qui accompagnera le Rafale F5 après 2030.',
+    a: 'Il a été conçu sur un « plateau virtuel » : les ingénieurs de six pays travaillaient chacun chez eux sur la même maquette numérique. En 2014, il devient le premier drone de combat au monde à voler en formation avec des avions pilotés, un Rafale et un Falcon 7X.' },
   { id: 'solar', n: 'Solar Impulse 2', an: 2014, pays: '🇨🇭 Suisse', par: 'Bertrand Piccard et André Borschberg', ty: 'Avion solaire', ep: 'moderne',
     c: [['Envergure', '72 m, plus qu’un Boeing 747'], ['Masse', 'environ 2,3 t'], ['Énergie', 'environ 17 000 cellules solaires'], ['Tour du monde', 'mars 2015 à juillet 2016']],
     h: 'Solar Impulse 2 a fait le tour du monde sans une goutte de carburant, uniquement avec l’énergie du soleil, stockée dans des batteries pour voler la nuit. Les deux pilotes se relayaient seuls à bord.',

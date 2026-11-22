@@ -1,5 +1,5 @@
 /* Service worker généré par scripts/build-pwa.mjs : ne pas modifier sw.js à la main. */
-const VERSION = "61171731c23f";
+const VERSION = "2d9ac6b9c810";
 const CACHE = "bia-saleem-" + VERSION;
 const ASSETS = [
  "/",
@@ -84,6 +84,7 @@ const ASSETS = [
  "/mythiques/photos/fokker.webp",
  "/mythiques/photos/late28.webp",
  "/mythiques/photos/me262.webp",
+ "/mythiques/photos/mirage2000.webp",
  "/mythiques/photos/mirage3.webp",
  "/mythiques/photos/p38.webp",
  "/mythiques/photos/p51.webp",

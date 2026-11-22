@@ -1,4 +1,4 @@
-/* Parcours des 40 avions mythiques : frise, galerie filtrable, fiches détaillées, jeux. */
+/* Parcours des 43 avions mythiques : frise, galerie filtrable, fiches détaillées, jeux. */
 (function () {
   'use strict';
   var B = window.BIA, A = window.MYTHIQUES.slice().sort(function (a, b) { return a.an - b.an; }), P = window.MYTH_PHOTOS;
@@ -6,14 +6,18 @@
   var seen = B.load('myth-seen', {}), filter = 'all', cur = -1;
   var dlg = document.getElementById('fiche');
 
-  function img(a, cls) { return '<img src="photos/' + P[a.id].f + '" alt="' + B.esc(a.n) + '" loading="lazy"' + (cls ? ' class="' + cls + '"' : '') + '>'; }
+  function img(a, cls) {
+    if (!P[a.id]) return '<div class="noimg' + (cls ? ' ' + cls : '') + '" role="img" aria-label="' + B.esc(a.n) + ', photo à venir"><span>✈</span></div>';
+    return '<img src="photos/' + P[a.id].f + '" alt="' + B.esc(a.n) + '" loading="lazy"' + (cls ? ' class="' + cls + '"' : '') + '>';
+  }
   function credit(a) {
     var p = P[a.id];
+    if (!p) return 'Photo à venir';
     return (p.note ? B.esc(p.note) + '<br>' : '') + 'Photo : ' + B.esc(p.a) + ' · ' + B.esc(p.l) + (/SA|BY/.test(p.l) ? ', réduite' : '') + ' · <a href="' + p.u + '" target="_blank" rel="noopener">Commons</a>';
   }
   function progress() {
     var n = Object.keys(seen).length;
-    document.getElementById('progress').innerHTML = '<div><b>' + n + '</b><span>découverts</span></div><div><b>' + (40 - n) + '</b><span>à découvrir</span></div>';
+    document.getElementById('progress').innerHTML = '<div><b>' + n + '</b><span>découverts</span></div><div><b>' + (A.length - n) + '</b><span>à découvrir</span></div>';
   }
   function timeline() {
     var t = document.getElementById('timeline'); t.innerHTML = '';
@@ -46,7 +50,7 @@
   function open(i) {
     cur = i; var a = A[i];
     seen[a.id] = 1; B.save('myth-seen', seen);
-    dlg.innerHTML = '<div class="fiche-img"><img src="photos/' + P[a.id].f + '" alt="' + B.esc(a.n) + '"><button type="button" class="close-x" aria-label="Fermer">✕</button><div class="credit">' + credit(a) + '</div></div>' +
+    dlg.innerHTML = '<div class="fiche-img">' + img(a) + '<button type="button" class="close-x" aria-label="Fermer">✕</button><div class="credit">' + credit(a) + '</div></div>' +
       '<div class="fiche-body"><p class="eyebrow" style="color:var(--sky)">' + (i + 1) + ' / ' + A.length + ' · Premier vol en ' + a.an + '</p><h2 id="fiche-title">' + B.esc(a.n) + '</h2>' +
       '<p class="meta">' + a.pays + ' · ' + B.esc(a.par) + ' · ' + B.esc(a.ty) + '</p>' +
       '<div class="tablewrap"><table class="data">' + a.c.map(function (r) { return '<tr><th>' + B.esc(r[0]) + '</th><td>' + B.esc(r[1]) + '</td></tr>'; }).join('') + '</table></div>' +
@@ -83,7 +87,7 @@
         var again = B.h('<button type="button" class="btn primary" style="margin:0 16px 16px">Nouvelle série</button>'); again.onclick = function () { score = 0; n = 0; q(); }; L.stage.appendChild(again);
         set('s', score + ' / 10'); set('b', best + ' / 10'); return;
       }
-      var ans = A[Math.floor(Math.random() * A.length)];
+      var AP = A.filter(function (x) { return P[x.id]; }), ans = AP[Math.floor(Math.random() * AP.length)];
       var opts = shuffle([ans].concat(shuffle(A.filter(function (x) { return x !== ans; })).slice(0, 3)));
       L.stage.innerHTML = '<div class="photoq" style="padding:12px">' + img(ans) + '<div class="choices" style="margin-top:10px"></div></div>';
       var box = L.stage.querySelector('.choices');

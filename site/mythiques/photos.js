@@ -1,4 +1,4 @@
-/* Photos des 40 avions mythiques : fichiers Wikimedia Commons réduits en WebP et hébergés ici. Licences relevées sur Commons le 22/11/2026. */
+/* Photos des 43 avions mythiques : fichiers Wikimedia Commons réduits en WebP et hébergés ici. Licences relevées sur Commons le 22/11/2026. */
 window.MYTH_PHOTOS = {
  "wright": {
   "f": "wright.webp",
@@ -221,6 +221,12 @@ window.MYTH_PHOTOS = {
   "a": "Myroslav Kaplun",
   "l": "CC BY-SA 4.0",
   "u": "https://commons.wikimedia.org/wiki/File:Antonov_Design_Bureau_Antonov_An-225_Mriya_at_Leipzig_Halle_(EDDP-LEJ).jpg"
+ },
+ "mirage2000": {
+  "f": "mirage2000.webp",
+  "a": "Jim van de Burgt",
+  "l": "CC0",
+  "u": "https://commons.wikimedia.org/wiki/File:5-08_Mirage_2000_AF_France_flying_Sanicole_2008_P1060769_(50853128207).jpg"
  },
  "rafale": {
   "f": "rafale.webp",

@@ -36,7 +36,7 @@
     { id: 'aeronefs', ico: '🛠️', name: 'Aéronefs et espace', desc: 'Structure, moteurs, hélice, turbomachines, instruments, fusées et orbites.', open: true, q: 'aef-', n: 40 },
     { id: 'navigation', ico: '🧭', name: 'Navigation et réglementation', desc: 'Caps, vent, pistes, espaces aériens, règles de l’air, radio, facteurs humains.', open: true, q: 'nav-', n: 41 },
     { id: 'histoire', ico: '🏛️', name: 'Histoire et culture', desc: 'Des Montgolfier à Ariane 6 : frise, pionniers et pionnières, jeux.', open: true, q: 'his-', n: 40 },
-    { id: 'mythiques', ico: '🏆', name: 'Avions mythiques', desc: '40 avions qui ont fait l’histoire : photos, chiffres, histoires, anecdotes et jeux.', open: true },
+    { id: 'mythiques', ico: '🏆', name: 'Avions mythiques', desc: '43 avions qui ont fait l’histoire : photos, chiffres, histoires, anecdotes et jeux.', open: true },
     { id: 'anglais', ico: '🇬🇧', name: 'Anglais aéronautique', desc: 'Vocabulaire, alphabet, dialogues avec la tour, épreuve facultative.', open: true, q: 'ang-', n: 30 },
     { id: 'avions', ico: '✈️', name: 'Le DR400', desc: 'Le Robin DR400 en détail : vitesses, cockpit, check-lists, carburant, pièges, avions-écoles.', open: true, q: 'dr4-', n: 18 },
     { id: 'entrainement', ico: '🎯', name: 'BIA blanc', desc: '100 questions tirées des cinq domaines, 2 h 30, note et mention.', open: true },

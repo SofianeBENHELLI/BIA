@@ -90,7 +90,7 @@ try:
                     check(broken == 0, f'avions {label}: images cassées')
                 if page_name == 'mythiques/':
                     pg.wait_for_timeout(500)
-                    check(pg.locator('.mcard').count() == 40, f'mythiques {label}: {pg.locator(".mcard").count()} fiches')
+                    check(pg.locator('.mcard').count() == 43, f'mythiques {label}: {pg.locator(".mcard").count()} fiches')
                     broken = pg.evaluate("[...document.querySelectorAll('.mcard img')].filter(i => i.complete && i.naturalWidth === 0).length")
                     check(broken == 0, f'mythiques {label}: {broken} photos cassées')
                     pg.locator('.mcard').nth(27).click(); pg.wait_for_timeout(300)

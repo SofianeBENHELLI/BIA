@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>40 avions mythiques · Le BIA de Saleem</title>
-<meta name="description" content="Du Wright Flyer à Solar Impulse : 40 avions qui ont fait l’histoire, avec photos, chiffres clés, histoire et anecdotes.">
+<title>43 avions mythiques · Le BIA de Saleem</title>
+<meta name="description" content="Du Wright Flyer à Solar Impulse : 43 avions qui ont fait l’histoire, avec photos, chiffres clés, histoire et anecdotes.">
 <meta name="theme-color" content="#10203f">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/icons/icon-192.png">
@@ -32,6 +32,9 @@
 dialog.fiche { width: min(760px, calc(100vw - 20px)); max-height: calc(100vh - 20px); padding: 0; border-radius: 18px; background: var(--card); color: var(--ink); overflow: auto; }
 dialog.fiche::backdrop { background: rgba(10, 18, 40, .6); }
 .fiche-img { position: relative; }
+.noimg { display: grid; place-items: center; width: 100%; aspect-ratio: 3 / 2; background: linear-gradient(160deg, var(--sky-l), var(--line)); color: var(--sky); font-size: 56px; }
+.order-item .noimg { width: 84px; height: 56px; aspect-ratio: auto; font-size: 24px; border-radius: 8px; }
+.fiche-img .noimg { max-height: 52vh; font-size: 96px; }
 .fiche-img img { width: 100%; display: block; max-height: 52vh; object-fit: cover; }
 .fiche-img .credit { position: absolute; right: 6px; bottom: 6px; font-size: 11px; background: rgba(0, 0, 0, .55); color: #fff; padding: 2px 6px; border-radius: 6px; max-width: 90%; }
 .fiche-img .credit a { color: #cfe0ff; }
@@ -51,13 +54,13 @@ dialog.fiche::backdrop { background: rgba(10, 18, 40, .6); }
 </head>
 <body data-page="mythiques">
 <div class="subnav"><nav aria-label="Dans cette page">
-<a href="#frise">La frise</a><a href="#galerie">Les 40 avions</a><a href="#jeux">Jeux</a>
+<a href="#frise">La frise</a><a href="#galerie">Les 43 avions</a><a href="#jeux">Jeux</a>
 </nav></div>
 <p class="dedication">Pour Saleem <span>✦</span> ceux qui ont ouvert la route</p>
 <main id="main">
 <section class="hero">
 <p class="eyebrow">Parcours découverte · Histoire et culture</p>
-<h1>40 avions <em>mythiques</em>.</h1>
+<h1>43 avions <em>mythiques</em>.</h1>
 <p>Du Wright Flyer de 1903 à Solar Impulse, les avions qui ont changé l’histoire. Chaque fiche a sa photo, ses chiffres, son histoire et une anecdote. Ouvre-les toutes : la frise se remplit de vert au fur et à mesure.</p>
 <div class="countdown" id="progress"></div>
 </section>
@@ -69,7 +72,7 @@ dialog.fiche::backdrop { background: rgba(10, 18, 40, .6); }
 </section>
 
 <section id="galerie">
-<div class="section-heading"><span>02 / LES 40 AVIONS</span><h2>Choisis une époque.</h2></div>
+<div class="section-heading"><span>02 / LES 43 AVIONS</span><h2>Choisis une époque.</h2></div>
 <div class="filters" id="filters"></div>
 <div class="mgrid" id="grid"></div>
 </section>
