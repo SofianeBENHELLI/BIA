@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Devenir pilote · Le BIA de Saleem</title>
+<meta name="description" content="Après le BIA : planeur, ULM, LAPL et PPL, aides fédérales, pilote de ligne (ENAC, Air France Cadets), pilote militaire. Âges, étapes, coûts et calendrier pour un lycéen.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+.steps { display: grid; gap: 10px; }
+.step { display: flex; gap: 12px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; box-shadow: var(--shadow); }
+.step .age { flex: none; width: 64px; text-align: center; font: 800 20px 'Manrope', sans-serif; color: var(--sky); }
+.step.now { outline: 3px solid var(--amber); }
+.step.locked { opacity: .5; }
+.step h4 { margin: 0 0 2px; font-size: 16px; }
+.step p { margin: 0; font-size: 14px; }
+.path { border-top: 4px solid var(--sky); }
+.path.ligne { border-top-color: var(--amber); } .path.mil { border-top-color: var(--green); }
+.path h3 { margin-top: 0; }
+.tag-src { font-size: 12px; color: var(--mute); }
+</style>
+</head>
+<body data-page="pilote">
+<div class="subnav"><nav aria-label="Dans cette page">
+<a href="#frise">Mon parcours</a><a href="#voies">Les trois voies</a><a href="#aides">Aides</a><a href="#medical">Médical</a><a href="#maintenant">Dès maintenant</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> le BIA n’est que le début</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Après le BIA</p>
+<h1>Devenir <em>pilote</em> : le plan.</h1>
+<p>Pilote d’aéroclub, de ligne ou de chasse : les âges, les étapes, les coûts et les aides. Les informations datent de novembre 2026 et changent chaque année : vérifie toujours auprès des organismes officiels avant de t’inscrire.</p>
+</section>
+
+<section id="frise">
+<div class="section-heading"><span>01 / MON PARCOURS</span><h2>Qu’est-ce que je peux faire à mon âge ?</h2></div>
+<div id="lab-age"></div>
+</section>
+
+<section id="voies">
+<div class="section-heading"><span>02 / LES TROIS VOIES</span><h2>Loisir, ligne ou défense.</h2></div>
+<div class="grid">
+<div class="card path"><h3>✈️ Pilote privé (loisir)</h3>
+<ul>
+<li><b>Planeur (SPL)</b> : premier vol solo dès <b>14 ans</b>, licence à <b>16 ans</b>. La voie la moins chère pour commencer à piloter.</li>
+<li><b>ULM</b> : brevet accessible à partir de <b>15 ans</b> ; examen théorique de 60 questions, 75 % de bonnes réponses exigées.</li>
+<li><b>LAPL(A)</b> : licence européenne de pilote d’avion léger, à <b>17 ans</b> ; 30 h de vol minimum. Environ 6 000 à 12 000 €.</li>
+<li><b>PPL(A)</b> : licence de pilote privé avion, solo à <b>16 ans</b>, licence à <b>17 ans</b> ; 45 h minimum dont 25 h en double commande et 10 h en solo, avec une navigation solo d’au moins 270 km. Environ 8 000 à 15 000 €.</li>
+<li>Théorie LAPL et PPL : <b>9 matières, 128 questions</b>, 75 % dans chacune. Les examens avion sont désormais organisés par la FFA.</li>
+</ul>
+<p class="tag-src">Sources : DGAC (examens), Part-SFCL (planeur), comparateur devispermis.fr pour les coûts indicatifs.</p></div>
+<div class="card path ligne"><h3>🛫 Pilote de ligne</h3>
+<ul>
+<li><b>ENAC, cursus EPL/S</b> : l’école publique, à Toulouse. Formation quasi gratuite (1 500 € de droits par an), environ 24 mois. Conditions : avoir entre 16 et 23 ans, <b>60 crédits universitaires scientifiques</b> (une année de classe préparatoire ou de licence), aptitude médicale de classe 1. Très sélectif : <b>14 admis sur 1 537 candidats en 2025</b>.</li>
+<li><b>Air France Cadets</b> : formation financée à 100 % par la compagnie, environ 24 mois, puis copilote sur A220, A320 ou 737. Demandé : bac + 2 scientifique (120 crédits), anglais, classe 1. Candidatures de mi-juin à fin juillet en 2026.</li>
+<li><b>Écoles privées</b> (licence ATPL) : 60 000 à 100 000 €, intégré ou modulaire.</li>
+</ul>
+<p class="tag-src">Sources : notice ENAC EPL/S 2026, Air Journal (juin 2026).</p></div>
+<div class="card path mil"><h3>🎖️ Pilote militaire</h3>
+<ul>
+<li><b>Armée de l’Air et de l’Espace, officier sous contrat (personnel navigant)</b> : moins de <b>27 ans</b>, nationalité française ; tests psychotechniques, anglais, sport, médical, entretien. Formation financée, contre un engagement de plusieurs années.</li>
+<li><b>École de l’air et de l’espace</b> (Salon-de-Provence) : concours après une classe préparatoire scientifique, pour une carrière d’officier.</li>
+<li><b>Marine, aéronautique navale</b> : après le bac (officier sous contrat) ou par l’École navale.</li>
+<li><b>Lycée</b> : l’École des pupilles de l’air et de l’espace (Grenoble) recrute en janvier et février, avec des critères de priorité.</li>
+</ul>
+<p class="tag-src">Sources : École de l’air et de l’espace, Onisep, ministère des Armées. Renseignements : centres de recrutement (CIRFA) et devenir-aviateur.gouv.fr.</p></div>
+</div>
+</section>
+
+<section id="aides">
+<div class="section-heading"><span>03 / LES AIDES</span><h2>Ce que le BIA rapporte vraiment.</h2></div>
+<p class="lead">Le BIA ne dispense d’aucun examen de pilote, mais il augmente certaines aides des fédérations aux jeunes. Montants relevés en 2025 et 2026 : à vérifier sur le site de chaque fédération l’année de ta formation.</p>
+<div id="lab-aides"></div>
+</section>
+
+<section id="medical">
+<div class="section-heading"><span>04 / LE MÉDICAL</span><h2>La visite qui ouvre ou ferme des portes.</h2></div>
+<div class="grid">
+<div class="card"><h3 style="margin-top:0">Classe 2 (pilote privé)</h3><p>Délivrée par un médecin agréé. Valable 5 ans avant 40 ans. Le LAPL accepte un certificat médical plus léger.</p></div>
+<div class="card"><h3 style="margin-top:0">Classe 1 (professionnel)</h3><p>Obligatoire pour la ligne et exigée à l’entrée de l’ENAC. Le premier examen se passe dans un centre agréé (en France, notamment le CEMPN). La vue, l’audition et le cœur sont examinés de près.</p></div>
+<div class="card"><h3 style="margin-top:0">Le conseil</h3><p>Avant d’investir des milliers d’euros ou des années d’études, beaucoup d’instructeurs conseillent de vérifier tôt son aptitude de classe 1, par exemple vers la terminale. Parles-en avec un médecin aéronautique.</p></div>
+</div>
+</section>
+
+<section id="maintenant">
+<div class="section-heading"><span>05 / DÈS MAINTENANT</span><h2>Ta check-list de futur pilote.</h2></div>
+<div class="card"><div id="todo"></div></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Synthèse de sources officielles (DGAC, ENAC, ministère des Armées, fédérations) et de presse spécialisée, consultées en novembre 2026. Les âges, coûts, places et aides changent : la référence reste le site de chaque organisme. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="app.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

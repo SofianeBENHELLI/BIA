@@ -1,5 +1,5 @@
 /* Service worker généré par scripts/build-pwa.mjs : ne pas modifier sw.js à la main. */
-const VERSION = "3edc4b1795ba";
+const VERSION = "064bc57b03fa";
 const CACHE = "bia-saleem-" + VERSION;
 const ASSETS = [
  "/",
@@ -39,6 +39,8 @@ const ASSETS = [
  "/avions/photos/v180r.webp",
  "/avions/questions.js",
  "/credits/",
+ "/entrainement/",
+ "/entrainement/app.js",
  "/histoire/",
  "/histoire/app.js",
  "/histoire/data.js",
@@ -97,7 +99,9 @@ const ASSETS = [
  "/mythiques/photos/x15.webp",
  "/navigation/",
  "/navigation/labs.js",
- "/navigation/questions.js"
+ "/navigation/questions.js",
+ "/pilote/",
+ "/pilote/app.js"
 ];
 
 self.addEventListener("install", (e) => {

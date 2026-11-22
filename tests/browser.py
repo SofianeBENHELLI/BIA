@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'histoire/', 'anglais/', 'mythiques/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'histoire/', 'anglais/', 'pilote/', 'entrainement/', 'mythiques/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -28,6 +28,23 @@ try:
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
                 check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'pilote/':
+                    a = pg.locator('#lab-age'); a.locator('input[type=range]').fill('17')
+                    check(a.locator('.step.locked').count() >= 3, f'pilote {label}: étapes futures')
+                    pg.locator('#lab-aides button', has_text='ULM').click()
+                    check('550' in pg.locator('#lab-aides').inner_text(), f'pilote {label}: aide ULM avec BIA')
+                    for lid in ('lab-age', 'lab-aides', 'voies'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                if page_name == 'entrainement/':
+                    pg.locator('#go-mini').click(); pg.wait_for_timeout(200)
+                    for k in range(25):
+                        pg.locator('#qbox .choice').nth(k % 4).click()
+                        pg.locator('#next').click()
+                    pg.screenshot(path=f'/tmp/bia-exam-confirm-{label}.png')
+                    pg.locator('#ok').click(); pg.wait_for_timeout(300)
+                    check('/ 20' in pg.locator('#app').inner_text(), f'entrainement {label}: pas de note')
+                    pg.screenshot(path=f'/tmp/bia-exam-result-{label}.png', full_page=False)
+                    check(len(pg.evaluate("JSON.parse(localStorage.getItem('bia-saleem:exam-hist'))")) == 1, f'entrainement {label}: historique')
                 if page_name == 'histoire/':
                     check(pg.locator('.ev').count() >= 45, f'histoire {label}: frise incomplète')
                     pg.locator('.ev button').first.click(); check(pg.locator('.ev.open').count() == 1, f'histoire {label}: événement non dépliable')

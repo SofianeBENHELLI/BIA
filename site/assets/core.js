@@ -39,8 +39,8 @@
     { id: 'mythiques', ico: '🏆', name: 'Avions mythiques', desc: '40 avions qui ont fait l’histoire : photos, chiffres, histoires, anecdotes et jeux.', open: true },
     { id: 'anglais', ico: '🇬🇧', name: 'Anglais aéronautique', desc: 'Vocabulaire, alphabet, dialogues avec la tour, épreuve facultative.', open: true, q: 'ang-', n: 30 },
     { id: 'avions', ico: '✈️', name: 'Le DR400', desc: 'Le Robin DR400 en détail : vitesses, cockpit, check-lists, carburant, pièges, avions-écoles.', open: true, q: 'dr4-', n: 18 },
-    { id: 'entrainement', ico: '🎯', name: 'BIA blanc', desc: '100 questions, 2 h 30, sans calculatrice.', open: false },
-    { id: 'pilote', ico: '👨‍✈️', name: 'Devenir pilote', desc: 'ULM, planeur, PPL, ENAC, armée : âges, coûts, aides.', open: false }
+    { id: 'entrainement', ico: '🎯', name: 'BIA blanc', desc: '100 questions tirées des cinq domaines, 2 h 30, note et mention.', open: true },
+    { id: 'pilote', ico: '👨‍✈️', name: 'Devenir pilote', desc: 'Planeur, ULM, PPL, ENAC, Air France, armée : âges, étapes, aides.', open: true }
   ];
 
   function topbar() {
@@ -275,7 +275,7 @@
     mem = {};
   }
 
-  window.BIA = { load: load, save: save, h: h, esc: esc, fmt: fmt, svg: svg, clamp: clamp, PAGES: PAGES, quiz: quiz, mastery: mastery, stats: stats,
+  window.BIA = { record: record, shuffle: shuffle, load: load, save: save, h: h, esc: esc, fmt: fmt, svg: svg, clamp: clamp, PAGES: PAGES, quiz: quiz, mastery: mastery, stats: stats,
     slider: slider, seg: seg, arrow: arrow, text: text, clear: clear, handle: handle, readout: readout, drag: drag, loop: loop, lab: lab, isa: isa, exportData: exportData, importData: importData, resetData: resetData };
 
   document.addEventListener('DOMContentLoaded', function () { topbar(); subnav(); });
