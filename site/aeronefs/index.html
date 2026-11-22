@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aéronefs et engins spatiaux · Le BIA de Saleem</title>
+<meta name="description" content="Classification des aéronefs, structure, moteurs à pistons et turbomachines, hélice, instruments, engins spatiaux et orbites : cours, ateliers interactifs et QCU.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body data-page="aeronefs">
+<div class="subnav"><nav aria-label="Dans ce domaine">
+<a href="#essentiel">L’essentiel</a><a href="#ateliers">Ateliers</a><a href="#qcu">QCU</a><a href="#memo">Mémo</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> connaître sa machine, c’est la piloter mieux</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Domaine 3 · Étude des aéronefs et des engins spatiaux</p>
+<h1>Sous le capot, <em>dans la cellule</em>, jusqu’en orbite.</h1>
+<p>Comment un avion est construit, comment tourne son moteur, ce que mesurent ses instruments et pourquoi ils peuvent mentir. Puis on quitte l’atmosphère : fusées et satellites.</p>
+</section>
+
+<section id="essentiel">
+<div class="section-heading"><span>01 / L’ESSENTIEL</span><h2>Dix idées sur les machines volantes.</h2></div>
+<p class="lead"><span class="lvl bia">BIA</span> ce qui tombe à l’examen. <span class="lvl ppl">PPL</span> ce que tu verras en formation pilote.</p>
+
+<details class="course" open><summary>1. La famille des aéronefs</summary><div>
+<p>Un <b>aéronef</b> est tout appareil capable de s’élever et de circuler dans l’air.</p>
+<ul>
+<li><b>Aérostats</b>, plus légers que l’air : ballons à gaz, montgolfières, dirigeables. Ils flottent grâce à la poussée d’Archimède.</li>
+<li><b>Aérodynes</b>, plus lourds que l’air, qui volent grâce à la portance :
+<ul>
+<li>à <b>voilure fixe</b> : avions, planeurs, deltaplanes, parapentes ;</li>
+<li>à <b>voilure tournante</b> : hélicoptère (rotor entraîné par le moteur) et <b>autogire</b> (rotor libre, qui tourne sous l’effet du vent relatif, et hélice qui le pousse).</li>
+</ul></li>
+</ul>
+<p>Les <b>ULM</b> (ultralégers motorisés) forment en France six classes : paramoteur, pendulaire, multiaxe, autogire, aérostat ultraléger et hélicoptère ultraléger.</p>
+</div></details>
+
+<details class="course"><summary>2. La structure de l’avion</summary><div>
+<h4>Le fuselage</h4>
+<ul><li><b>Treillis</b> de tubes (soudés ou en bois) recouvert de toile : avions anciens et légers.</li><li><b>Monocoque</b> : le revêtement seul supporte les efforts.</li><li><b>Semi-monocoque</b> : cadres et lisses (raidisseurs longitudinaux) avec un revêtement travaillant : la plupart des avions modernes.</li></ul>
+<h4>L’aile</h4>
+<ul><li>Le <b>longeron</b> est la poutre principale, d’un bout à l’autre de l’aile.</li><li>Les <b>nervures</b> donnent la forme du profil.</li><li>Le <b>revêtement</b> (toile, contreplaqué, aluminium, composite) ferme le tout. Le bout de l’aile s’appelle le <b>saumon</b>.</li></ul>
+<div class="box mem"><b>Le longeron en vol</b>En vol normal, la portance plie l’aile vers le haut : le dessus du longeron (côté extrados) est <b>comprimé</b>, le dessous (côté intrados) est <b>tendu</b>. Teste-le dans l’atelier 3.</div>
+<h4>Les configurations</h4>
+<ul>
+<li>Aile <b>haute</b>, <b>médiane</b> ou <b>basse</b> ; aile <b>cantilever</b> (sans hauban) ou <b>haubanée</b>.</li>
+<li>Aile droite, en <b>flèche</b> (avions rapides), <b>delta</b> (Mirage, Concorde).</li>
+<li>Empennage <b>classique</b>, <b>en T</b> (stabilisateur en haut de la dérive), <b>en V</b> ; formule <b>canard</b> (petit plan à l’avant, comme sur le Rafale).</li>
+<li>Train <b>classique</b> (roulette de queue) ou <b>tricycle</b> (roulette de nez) ; <b>fixe</b> ou <b>rentrant</b>.</li>
+</ul>
+<h4>Les matériaux</h4>
+<p>Bois et toile (DR400, CAP 10), alliages d’aluminium (la majorité), composites carbone ou verre (planeurs, A350, Boeing 787), titane pour les parties très chaudes ou très sollicitées.</p>
+</div></details>
+
+<details class="course"><summary>3. Le moteur à pistons</summary><div>
+<p>La plupart des avions légers ont un moteur à pistons à 4 temps, souvent avec des cylindres à plat et refroidi par air (Lycoming, Continental, Rotax).</p>
+<table class="data"><tr><th>Temps</th><th>Piston</th><th>Soupapes</th><th>Ce qui se passe</th></tr>
+<tr><td>1. Admission</td><td>descend</td><td>admission ouverte</td><td>le mélange air-essence entre</td></tr>
+<tr><td>2. Compression</td><td>monte</td><td>fermées</td><td>le mélange est comprimé</td></tr>
+<tr><td>3. Combustion-détente</td><td>descend</td><td>fermées</td><td>l’étincelle enflamme le mélange : seul temps moteur</td></tr>
+<tr><td>4. Échappement</td><td>monte</td><td>échappement ouverte</td><td>les gaz brûlés sont chassés</td></tr></table>
+<p>Un cycle complet demande <b>deux tours</b> de vilebrequin. Le piston transmet son mouvement au vilebrequin par la <b>bielle</b>.</p>
+<h4>Spécificités aéronautiques</h4>
+<ul>
+<li><b>Double allumage</b> : deux bougies par cylindre, alimentées par deux <b>magnétos</b> indépendantes de la batterie. Un moteur 4 cylindres a donc 8 bougies. Si une magnéto lâche, le moteur continue de tourner.</li>
+<li><b>Carburateur</b> ou <b>injection</b> ; la <b>richesse</b> règle le mélange, à appauvrir en altitude où l’air est moins dense.</li>
+<li><b>Réchauffage carburateur</b> contre le givrage (voir la météo).</li>
+<li>Carburant : essence aviation <b>100LL</b> (bleue), ou carburant automobile sans plomb pour certains moteurs, ou kérosène pour les moteurs diesel aéronautiques.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>4. L’hélice</summary><div>
+<p>L’hélice est une aile qui tourne : chaque pale crée une force vers l’avant, la <b>traction</b>.</p>
+<ul>
+<li>Le <b>calage</b> (pas) est l’angle de la pale. Il diminue de l’emplanture vers le bout : la pale est <b>vrillée</b>, car le bout tourne beaucoup plus vite.</li>
+<li><b>Pas fixe</b> : simple, optimisé pour un régime de vol (DR400 classique). <b>Pas variable</b> ou <b>à vitesse constante</b> : le pilote règle le régime avec une manette d’hélice, séparée de la manette des gaz (DR400/200R, avions plus puissants).</li>
+<li>Au décollage, le souffle hélicoïdal et le couple moteur font partir l’avion de côté : on corrige au palonnier.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>5. Les turbomachines</summary><div>
+<p>Toutes reposent sur le même cœur : <b>compresseur</b>, <b>chambre de combustion</b>, <b>turbine</b> (qui entraîne le compresseur).</p>
+<ul>
+<li><b>Turboréacteur simple flux</b> : tous les gaz sortent par la tuyère à grande vitesse. Avions militaires anciens, Concorde.</li>
+<li><b>Turboréacteur double flux</b> (turbofan) : une grosse soufflante envoie un flux d’air froid autour du moteur. Le <b>taux de dilution</b> est le rapport débit secondaire (froid) / débit primaire (chaud) : plus de 10 sur les moteurs récents d’avions de ligne. Plus il est grand, plus le moteur est sobre et silencieux.</li>
+<li><b>Turbopropulseur</b> : la turbine entraîne une hélice par un réducteur (ATR 72, C-130, TBM).</li>
+<li><b>Turbomoteur</b> : la turbine entraîne un rotor d’hélicoptère.</li>
+<li><b>Statoréacteur</b> : sans pièce tournante, il ne fonctionne qu’à grande vitesse.</li>
+</ul>
+<p>Un <b>moteur-fusée</b> est différent : il emporte son comburant (oxygène) et fonctionne donc dans le vide.</p>
+</div></details>
+
+<details class="course"><summary>6. Les instruments de vol</summary><div>
+<h4>La chaîne anémo-barométrique</h4>
+<ul>
+<li>L’<b>antenne Pitot</b> capte la <b>pression totale</b> (statique + dynamique) ; elle n’alimente que l’<b>anémomètre</b>.</li>
+<li>Les <b>prises statiques</b>, sur les flancs du fuselage, captent la <b>pression statique</b> ; elles alimentent l’<b>anémomètre</b>, l’<b>altimètre</b> et le <b>variomètre</b>.</li>
+<li>L’anémomètre mesure la différence des deux, la pression dynamique, qui dépend de la vitesse.</li>
+</ul>
+<div class="box trap"><b>Les pannes à connaître</b>Pitot bouché, drain ouvert : l’anémomètre tombe à zéro. Pitot et drain bouchés : l’anémomètre se comporte comme un altimètre, il augmente en montée. Prise statique bouchée : altimètre et variomètre figés. Remède : la prise statique de secours en cabine. Essaie-les dans l’atelier 2.</div>
+<h4>Les instruments gyroscopiques</h4>
+<p>Un gyroscope qui tourne vite garde son orientation dans l’espace (<b>fixité</b>) : c’est le principe de l’<b>horizon artificiel</b> et du <b>conservateur de cap</b>, à recaler sur le compas toutes les 10 à 15 minutes. L’<b>indicateur de virage</b> mesure le taux de virage ; la <b>bille</b> montre la symétrie du vol.</p>
+<h4>Le compas magnétique</h4>
+<p>Il indique le cap magnétique, sans électricité. Mais il se trompe : en virage (« <b>Nord retard, Sud avance</b> » dans l’hémisphère Nord) et lors des accélérations. On le lit en vol rectiligne stabilisé. La <b>déviation</b> due aux masses métalliques de l’avion est notée sur une petite carte près du compas.</p>
+</div></details>
+
+<details class="course"><summary>7. Les systèmes de bord</summary><div>
+<ul>
+<li><b>Électricité</b> : batterie et alternateur (12 ou 24 V), interrupteur général, disjoncteurs. Les magnétos ne dépendent pas de la batterie : une panne électrique n’arrête pas le moteur.</li>
+<li><b>Carburant</b> : réservoirs, robinet sélecteur, pompe mécanique et pompe électrique de secours, purges.</li>
+<li><b>Commandes de vol</b> : câbles et bielles sur les avions légers, assistance hydraulique sur les gros avions, <b>commandes de vol électriques</b> (calculateurs et câbles électriques) sur l’A320, le Rafale et les avions modernes.</li>
+<li><b>Hypersustentateurs</b>, <b>aérofreins</b> (surtout sur les planeurs), <b>freins</b> sur les roues.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>8. L’hélicoptère et l’autogire</summary><div>
+<p>Rappel du domaine Aérodynamique : pas <b>collectif</b> pour monter ou descendre, pas <b>cyclique</b> pour se déplacer, <b>rotor anticouple</b> pour contrôler le lacet. Le moteur est souvent une turbine (turbomoteur).</p>
+<p>L’<b>autogire</b> est différent : son rotor n’est pas entraîné par le moteur, il tourne librement grâce au vent relatif (autorotation permanente). Une hélice classique le fait avancer. Il ne peut pas faire de vol stationnaire.</p>
+</div></details>
+
+<details class="course"><summary>9. Fusées, satellites et orbites</summary><div>
+<ul>
+<li>Un <b>lanceur</b> a plusieurs <b>étages</b>, largués quand leurs réservoirs sont vides : on s’allège en montant. Ses moteurs brûlent des <b>propergols</b> solides (poudre) ou liquides (par exemple oxygène et hydrogène liquides pour Ariane 6).</li>
+<li><b>Ariane 6</b> a fait son premier vol le 9 juillet 2024 depuis le <b>Centre spatial guyanais</b>, à Kourou. Près de l’équateur, la rotation de la Terre donne un élan gratuit vers l’est.</li>
+<li>Vitesse de mise en orbite basse : environ <b>7,8 km/s</b> (28 000 km/h). Vitesse de libération : environ <b>11,2 km/s</b>.</li>
+<li>Orbites : <b>basse</b> (Station spatiale internationale vers 400 km, un tour en 1 h 30 environ), <b>polaire</b> (elle survole les pôles), <b>géostationnaire</b> (environ 36 000 km au-dessus de l’équateur, période de 24 h, le satellite paraît immobile).</li>
+<li><b>Lois de Kepler</b> : les orbites sont des ellipses ; plus un satellite est loin, plus il est lent et plus son tour est long.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>10. Vers une aviation plus propre</summary><div>
+<ul>
+<li><b>Carburants d’aviation durables</b> (SAF, en anglais) : fabriqués à partir de déchets, d’huiles usagées ou par synthèse, ils réduisent les émissions de CO₂ sur l’ensemble de leur cycle de vie.</li>
+<li><b>Avion électrique</b> : en 2020, le Pipistrel Velis Electro est devenu le premier avion électrique certifié par l’EASA. Sa faible autonomie le réserve à l’école et aux vols courts.</li>
+<li><b>Hydrogène</b>, <b>hybride</b> : des projets en cours pour les avions de demain.</li>
+<li>Moteurs plus sobres (grand taux de dilution), matériaux composites plus légers, ailes plus fines et plus allongées.</li>
+</ul>
+</div></details>
+</section>
+
+<section id="ateliers">
+<div class="section-heading"><span>02 / MANIPULER</span><h2>Six ateliers pour démonter l’avion.</h2></div>
+<p class="lead">Fais glisser les poignées orange directement sur les dessins, ou utilise les curseurs et les boutons.</p>
+<div id="lab-moteur"></div>
+<div id="lab-pitot"></div>
+<div id="lab-longeron"></div>
+<div id="lab-turbo"></div>
+<div id="lab-orbite"></div>
+<div id="lab-config"></div>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>03 / S’ENTRAÎNER</span><h2>Questions à choix unique, corrigées.</h2></div>
+<p class="lead">Une seule bonne réponse sur quatre, comme à l’examen. Les questions ratées reviennent dans « À revoir ».</p>
+<div id="quiz"></div>
+</section>
+
+<section id="memo">
+<div class="section-heading"><span>04 / MÉMO</span><h2>La page à relire la veille de l’examen.</h2></div>
+<div class="card"><ul>
+<li>Aérostats (plus légers que l’air) et aérodynes (plus lourds). Autogire : rotor libre, hélice propulsive.</li>
+<li>Longeron, nervures, revêtement, saumon. Semi-monocoque : cadres, lisses, revêtement travaillant.</li>
+<li>Longeron en vol : extrados en compression, intrados en traction.</li>
+<li>4 temps : admission, compression, combustion-détente (seul temps moteur), échappement ; 2 tours par cycle.</li>
+<li>Double allumage : 2 bougies par cylindre, 2 magnétos indépendantes de la batterie.</li>
+<li>Taux de dilution = débit secondaire / débit primaire.</li>
+<li>Pitot : pression totale, anémomètre seul. Statique : anémomètre, altimètre, variomètre.</li>
+<li>Pitot et drain bouchés : l’anémomètre devient altimètre. Statique bouchée : altimètre et variomètre figés.</li>
+<li>Compas : « Nord retard, Sud avance » en virage ; à lire en vol stabilisé.</li>
+<li>Orbite basse 7,8 km/s ; libération 11,2 km/s ; géostationnaire 36 000 km, 24 h.</li>
+</ul></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Domaine 3 du programme du BIA (BO n° 11 du 12 mars 2015). Orbites : CNES. Les ateliers sont des modèles pédagogiques simplifiés. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="questions.js"></script>
+<script src="labs.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

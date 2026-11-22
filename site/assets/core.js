@@ -33,7 +33,7 @@
   var PAGES = [
     { id: 'meteo', ico: '☁️', name: 'Météorologie', desc: 'Atmosphère, altimétrie, vents, nuages, fronts, METAR et TAF.', open: true, q: 'met-', n: 45 },
     { id: 'aerodynamique', ico: '🪽', name: 'Aérodynamique', desc: 'Portance, décrochage, finesse, virage, stabilité et centrage.', open: true, q: 'aer-', n: 38 },
-    { id: 'aeronefs', ico: '🛠️', name: 'Aéronefs et espace', desc: 'Structure, moteurs, instruments, hélicoptères, fusées.', open: false },
+    { id: 'aeronefs', ico: '🛠️', name: 'Aéronefs et espace', desc: 'Structure, moteurs, hélice, turbomachines, instruments, fusées et orbites.', open: true, q: 'aef-', n: 40 },
     { id: 'navigation', ico: '🧭', name: 'Navigation et réglementation', desc: 'Cap, vent, cartes, espaces aériens, sécurité des vols.', open: false },
     { id: 'histoire', ico: '🏛️', name: 'Histoire et culture', desc: 'Des Montgolfier à Ariane 6, pionniers et pionnières.', open: false },
     { id: 'mythiques', ico: '🏆', name: 'Avions mythiques', desc: '40 avions qui ont fait l’histoire : photos, chiffres, histoires, anecdotes et jeux.', open: true },

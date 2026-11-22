@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'mythiques/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'mythiques/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -28,6 +28,16 @@ try:
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
                 check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'aeronefs/':
+                    check(pg.locator('.lab').count() == 6, f'aeronefs {label}: {pg.locator(".lab").count()} ateliers')
+                    p = pg.locator('#lab-pitot'); p.scroll_into_view_if_needed(); pg.wait_for_timeout(400)
+                    p.locator('button', has_text='Boucher le Pitot').click(); p.locator('button', has_text='Boucher le drain').click()
+                    p.locator('input[type=range]').first.fill('7000'); pg.wait_for_timeout(2500)
+                    check('altimètre' in p.locator('.verdict').inner_text(), f'aeronefs {label}: panne Pitot+drain')
+                    for lid in ('lab-moteur', 'lab-pitot', 'lab-longeron', 'lab-turbo', 'lab-orbite', 'lab-config'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(300); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                    m = pg.locator('#lab-moteur'); m.locator('button', has_text='Temps suivant').click(); m.locator('button', has_text='Temps suivant').click()
+                    check('Combustion' in m.locator('.verdict').inner_text() or 'étincelle' in m.locator('.verdict').inner_text(), f'aeronefs {label}: moteur 3e temps')
                 if page_name == 'avions/':
                     check(pg.locator('.lab').count() == 4, f'avions {label}: {pg.locator(".lab").count()} ateliers')
                     for lid in ('lab-anemo', 'lab-tableau', 'lab-check', 'lab-fuel', 'compare', 'traps'):

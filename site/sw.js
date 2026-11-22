@@ -1,11 +1,14 @@
 /* Service worker généré par scripts/build-pwa.mjs : ne pas modifier sw.js à la main. */
-const VERSION = "b1c0a284c7df";
+const VERSION = "ff58973b2bd7";
 const CACHE = "bia-saleem-" + VERSION;
 const ASSETS = [
  "/",
  "/aerodynamique/",
  "/aerodynamique/labs.js",
  "/aerodynamique/questions.js",
+ "/aeronefs/",
+ "/aeronefs/labs.js",
+ "/aeronefs/questions.js",
  "/assets/app.css",
  "/assets/core.js",
  "/assets/fonts.css",
