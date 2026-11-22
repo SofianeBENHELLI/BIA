@@ -38,7 +38,7 @@
     { id: 'histoire', ico: '🏛️', name: 'Histoire et culture', desc: 'Des Montgolfier à Ariane 6, pionniers et pionnières.', open: false },
     { id: 'mythiques', ico: '🏆', name: 'Avions mythiques', desc: '40 avions qui ont fait l’histoire : photos, chiffres, histoires, anecdotes et jeux.', open: true },
     { id: 'anglais', ico: '🇬🇧', name: 'Anglais aéronautique', desc: 'Vocabulaire et phraséologie de l’épreuve facultative.', open: false },
-    { id: 'avions', ico: '✈️', name: 'Avions et DR400', desc: 'Le Robin DR400 en détail, avions-écoles, check-lists.', open: false },
+    { id: 'avions', ico: '✈️', name: 'Le DR400', desc: 'Le Robin DR400 en détail : vitesses, cockpit, check-lists, carburant, pièges, avions-écoles.', open: true, q: 'dr4-', n: 18 },
     { id: 'entrainement', ico: '🎯', name: 'BIA blanc', desc: '100 questions, 2 h 30, sans calculatrice.', open: false },
     { id: 'pilote', ico: '👨‍✈️', name: 'Devenir pilote', desc: 'ULM, planeur, PPL, ENAC, armée : âges, coûts, aides.', open: false }
   ];

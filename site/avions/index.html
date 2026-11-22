@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Robin DR400 et les avions-écoles · Le BIA de Saleem</title>
+<meta name="description" content="Tout sur le Robin DR400 pour un élève pilote : histoire, versions, vitesses, cockpit, check-lists, carburant, pièges, et comparateur des avions-écoles.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+.photo { border-radius: 14px; overflow: hidden; background: var(--line); margin: 0; position: relative; }
+.photo img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.photo figcaption { padding: 6px 10px; font-size: 12px; color: var(--mute); background: var(--card); }
+.photo figcaption a { color: inherit; }
+.vgrid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.hero-photo { margin: 18px 0 0; border-radius: 20px; overflow: hidden; position: relative; }
+.hero-photo img { width: 100%; display: block; max-height: 460px; object-fit: cover; }
+.hero-photo .over { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 20px 18px; background: linear-gradient(transparent, rgba(8, 16, 36, .85)); color: #fff; }
+.hero-photo h1 { color: #fff; margin: 4px 0; font-size: clamp(28px, 6vw, 46px); }
+.hero-photo p { margin: 0; color: #dbe5fb; max-width: 680px; }
+.hero-photo .credit { position: absolute; top: 8px; right: 8px; font-size: 11px; background: rgba(0, 0, 0, .5); color: #fff; padding: 2px 6px; border-radius: 6px; }
+.hero-photo .credit a { color: #cfe0ff; }
+.checklist { display: grid; gap: 6px; }
+.checklist label { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border-radius: 10px; background: var(--bg); cursor: pointer; font-size: 15px; }
+.checklist input { width: 22px; height: 22px; flex: none; accent-color: var(--green); margin-top: 1px; }
+.checklist label.done { opacity: .55; text-decoration: line-through; }
+.traps { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.trap h3 { margin: 0 0 4px; font-size: 17px; }
+.trap p { margin: 0; font-size: 15px; }
+.trap .src { font-size: 12px; color: var(--mute); margin-top: 6px; }
+th.sort { cursor: pointer; white-space: nowrap; }
+th.sort::after { content: ' ⇅'; color: var(--mute); font-size: 11px; }
+</style>
+</head>
+<body data-page="avions">
+<div class="subnav"><nav aria-label="Dans cette page">
+<a href="#identite">Le DR400</a><a href="#versions">Versions</a><a href="#vitesses">Vitesses</a><a href="#cockpit">Cockpit</a><a href="#checklists">Check-lists</a><a href="#carburant">Carburant</a><a href="#pieges">Pièges</a><a href="#comparateur">Comparateur</a><a href="#qcu">QCU</a>
+</nav></div>
+<main id="main">
+<div class="hero-photo">
+<img src="photos/hero.webp" alt="Robin DR400 F-GTMP en vol au-dessus de la côte">
+<span class="credit">Photo : Dylan Agbagni · CC0 · <a href="https://commons.wikimedia.org/wiki/File:Robin_DR400_F-GTMP.jpg" target="_blank" rel="noopener">Commons</a></span>
+<div class="over"><p class="eyebrow">L’avion des aéroclubs français</p><h1>Le Robin DR400</h1><p>Bois, toile, verrière coulissante et ailes à bouts relevés : c’est sur lui que des générations de pilotes français ont fait leur premier vol seul. Voici tout ce qu’un élève pilote doit savoir.</p></div>
+</div>
+
+<section id="identite">
+<div class="section-heading"><span>01 / CARTE D’IDENTITÉ</span><h2>Un héritier des Jodel, construit en Bourgogne.</h2></div>
+<div class="grid">
+<div class="card">
+<h3 style="margin-top:0">L’histoire</h3>
+<p>En 1957, <b>Pierre Robin</b> et l’ingénieur <b>Jean Délémontez</b>, co-créateur des avions Jodel, fondent Centre Est Aéronautique à <b>Darois</b>, près de Dijon. « DR » réunit leurs initiales. Le DR400 vole pour la première fois au début de 1972 : c’est une évolution du DR300, avec une cabine plus large aux épaules, une <b>verrière coulissante vers l’avant</b> à la place des portes, et une aile retravaillée pour un décrochage plus doux.</p>
+<p>L’entreprise a changé plusieurs fois de nom et de propriétaire. Depuis 2014, le <b>DR401</b>, modernisé (écrans, volets électriques, versions diesel), a pris la suite. Aujourd’hui, le certificat de type appartient à CEAPR, toujours à Darois.</p>
+</div>
+<div class="card">
+<h3 style="margin-top:0">Sa construction</h3>
+<ul>
+<li>Monomoteur à <b>aile basse</b>, quatre places (ou « 2+2 » pour les petites versions), <b>structure en bois</b> entoilée.</li>
+<li>Aile de type Jodel : le <b>dièdre est concentré en bout d’aile</b>, d’où ses bouts relevés.</li>
+<li><b>Train tricycle fixe</b>, roulette de nez orientable.</li>
+<li>Volets métalliques <b>manuels</b>, trois positions : 0°, 15° (décollage), 60° (atterrissage).</li>
+<li>Empennage horizontal <b>monobloc</b> (tout l’empennage pivote) avec un tab anti-tab.</li>
+</ul>
+<div class="box mem"><b>Le chiffre</b>En 2019, les aéroclubs français exploitaient 864 DR300 et DR400 sur 2 394 avions : plus d’un tiers de leur flotte.</div>
+</div>
+</div>
+</section>
+
+<section id="versions">
+<div class="section-heading"><span>02 / LES VERSIONS</span><h2>Même cellule, moteurs de 108 à 200 ch.</h2></div>
+<p class="lead">Les noms commerciaux ont changé plusieurs fois (« Major » ou « Dauphin » ont désigné des versions différentes selon les années). Le plus sûr est la désignation officielle, gravée sur la plaque de l’avion et dans son manuel.</p>
+<div class="vgrid" id="vgrid"></div>
+<div class="tablewrap card" style="margin-top:12px">
+<table class="data">
+<tr><th>Désignation</th><th>Nom courant</th><th>Moteur Lycoming</th><th>Puissance</th><th>Masse max</th><th>Réservoirs</th></tr>
+<tr><td>DR400/120</td><td>Petit Prince, Dauphin, Dauphin 2+2</td><td>O-235</td><td>108 à 112 ch</td><td>900 kg</td><td>110 L</td></tr>
+<tr><td>DR400/140B</td><td>Major, Major 80, Dauphin 4</td><td>O-320-D2A</td><td>160 ch</td><td>1 000 kg</td><td>110 L</td></tr>
+<tr><td>DR400/160</td><td>Chevalier, Major</td><td>O-320-D2A</td><td>160 ch</td><td>selon manuel</td><td>110 + 2 × 40 L</td></tr>
+<tr><td>DR400/180</td><td>Régent</td><td>O-360</td><td>180 ch</td><td>1 100 kg</td><td>110 + 2 × 40 L</td></tr>
+<tr><td>DR400/180R</td><td>Remorqueur, Remo</td><td>O-360</td><td>180 ch</td><td>1 000 kg</td><td>110 L</td></tr>
+<tr><td>DR400/200R</td><td>Remo 200</td><td>IO-360 (injection), hélice à pas variable</td><td>200 ch</td><td>1 100 kg</td><td>selon manuel</td></tr>
+<tr><td>DR400/500</td><td>Président (DR500)</td><td>IO-360, hélice à pas variable</td><td>200 ch</td><td>1 150 kg</td><td>105 + 2 × 40 L</td></tr>
+</table>
+<p class="small">Source : certificat de type EASA A.367 (édition 05, 2023). Un réservoir supplémentaire de 50 L existe en option. Masses en catégorie normale.</p>
+</div>
+</section>
+
+<section id="vitesses">
+<div class="section-heading"><span>03 / LES VITESSES</span><h2>L’anémomètre du DR400, arc par arc.</h2></div>
+<p class="lead">Les vitesses limites sont les mêmes pour tous les DR400 (certificat de type). Les vitesses d’utilisation viennent du manuel de vol du DR400/180 : sur un 120 ou un 140B, plus léger, elles sont plus basses. <b>En vol, seul le manuel de l’avion du club fait foi.</b></p>
+<div id="lab-anemo"></div>
+<div class="grid" style="margin-top:12px">
+<div class="card"><h3 style="margin-top:0">Décrochage du DR400/180 à 1 100 kg</h3>
+<table class="data"><tr><th>Inclinaison</th><th>0°</th><th>30°</th><th>60°</th></tr>
+<tr><td>Volets rentrés</td><td>105</td><td>113</td><td>148</td></tr>
+<tr><td>Volets 15°</td><td>99</td><td>106</td><td>140</td></tr>
+<tr><td>Volets 60°</td><td>95</td><td>102</td><td>134</td></tr></table>
+<p class="small">Vitesses indiquées en km/h, manuel de vol DR400/180. L’avertisseur sonne 10 à 15 km/h avant le décrochage.</p></div>
+<div class="card"><h3 style="margin-top:0">Limites de structure</h3>
+<ul><li>Catégorie normale : <b>+3,8 g / −1,9 g</b>.</li><li>Catégorie utilitaire (masse réduite) : <b>+4,4 g / −2,2 g</b>.</li><li>Volets sortis : <b>+2 g / 0 g</b>.</li><li>Vent de travers démontré (180) : <b>22 kt</b>.</li><li>Finesse (180) : environ <b>9,5</b> à 150 km/h : depuis 1 000 m, environ 9,5 km de plané sans vent.</li></ul></div>
+</div>
+</section>
+
+<section id="cockpit">
+<div class="section-heading"><span>04 / LE COCKPIT</span><h2>Touche un élément pour savoir à quoi il sert.</h2></div>
+<div id="lab-tableau"></div>
+<div class="vgrid" style="margin-top:12px">
+<figure class="photo"><img src="photos/cockpit.webp" alt="Cockpit d’un DR400 au sol" loading="lazy"><figcaption>Cockpit d’un DR400 · Giles Laurent · CC BY-SA 4.0, réduite · <a href="https://commons.wikimedia.org/wiki/File:Cockpit_of_a_Robin_DR400_aircraft_Photo_by_Giles_Laurent.jpg" target="_blank" rel="noopener">Commons</a></figcaption></figure>
+<figure class="photo"><img src="photos/cockpitvol.webp" alt="Cockpit d’un DR400 en vol au-dessus des Alpes" loading="lazy"><figcaption>En vol au-dessus de Château-d’Œx · Giles Laurent · CC BY-SA 4.0, réduite · <a href="https://commons.wikimedia.org/wiki/File:Cockpit_of_a_Robin_DR400_aircraft_in_flight_Photo_by_Giles_Laurent.jpg" target="_blank" rel="noopener">Commons</a></figcaption></figure>
+<figure class="photo"><img src="photos/moteur.webp" alt="Moteur Lycoming O-320 d’un DR400-140B, capots ouverts" loading="lazy"><figcaption>Lycoming O-320-D2A d’un DR400-140B · Cjp24 · CC BY-SA 4.0, réduite · <a href="https://commons.wikimedia.org/wiki/File:Robin_DR400-140B_Dauphin_-_engine1.jpg" target="_blank" rel="noopener">Commons</a></figcaption></figure>
+</div>
+</section>
+
+<section id="checklists">
+<div class="section-heading"><span>05 / LES CHECK-LISTS</span><h2>Du hangar au parking, dans l’ordre.</h2></div>
+<p class="lead">D’après les procédures normales du manuel de vol DR400/180. Chaque aéroclub a sa propre check-list : c’est elle qui s’applique à bord. Coche les étapes pour t’entraîner à les réciter.</p>
+<div id="lab-check"></div>
+</section>
+
+<section id="carburant">
+<div class="section-heading"><span>06 / CARBURANT ET AUTONOMIE</span><h2>Combien de temps peux-tu voler ?</h2></div>
+<div id="lab-fuel"></div>
+</section>
+
+<section id="pieges">
+<div class="section-heading"><span>07 / LES PIÈGES</span><h2>Six erreurs classiques d’élève sur DR400.</h2></div>
+<div class="traps" id="traps"></div>
+</section>
+
+<section id="comparateur">
+<div class="section-heading"><span>08 / LES AVIONS-ÉCOLES</span><h2>Le DR400 face aux autres avions de formation.</h2></div>
+<p class="lead">Touche un titre de colonne pour trier. Chiffres de fiche technique, pour comparer, pas pour voler.</p>
+<div class="card tablewrap" id="compare"></div>
+<figure class="photo" style="max-width:640px;margin-top:12px"><img src="photos/dr401.webp" alt="Robin DR401 155CDI en vol" loading="lazy"><figcaption>Le successeur : DR401 155CDI, moteur diesel · Steven Bailey · CC BY-SA 4.0, réduite · <a href="https://commons.wikimedia.org/wiki/File:Robin_DR401_155CDI.jpg" target="_blank" rel="noopener">Commons</a></figcaption></figure>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>09 / S’ENTRAÎNER</span><h2>Connais-tu ton DR400 ?</h2></div>
+<div id="quiz"></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Sources : certificat de type EASA A.367 (2023), manuel de vol DR400/180 (Avions Pierre Robin), fiche performances DR401 (Robin Aircraft, 2019), BEA (Cahiers du RSA n° 266), Wikipédia pour l’histoire et les avions de comparaison. Ce contenu ne remplace ni l’instructeur ni le manuel de vol de l’avion. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

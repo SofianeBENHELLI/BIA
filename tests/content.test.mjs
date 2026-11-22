@@ -5,7 +5,8 @@ import vm from "node:vm";
 const ctx = { window: {} };
 vm.runInNewContext(readFileSync(new URL("../site/aerodynamique/questions.js", import.meta.url), "utf8"), ctx);
 vm.runInNewContext(readFileSync(new URL("../site/meteo/questions.js", import.meta.url), "utf8"), ctx);
-const Q = [...ctx.window.QAERO, ...ctx.window.QMETEO];
+vm.runInNewContext(readFileSync(new URL("../site/avions/questions.js", import.meta.url), "utf8"), ctx);
+const Q = [...ctx.window.QAERO, ...ctx.window.QMETEO, ...ctx.window.QDR400];
 let fails = 0;
 const ok = (c, m) => { if (!c) { fails++; console.log("ECHEC", m); } };
 const ids = new Set();
@@ -18,7 +19,7 @@ for (const q of Q) {
   ok(!/—/.test(q.q + q.c.join("") + q.e), q.id + " : tiret cadratin");
 }
 const core = readFileSync(new URL("../site/assets/core.js", import.meta.url), "utf8");
-for (const [pre, bank] of [["aer-", ctx.window.QAERO], ["met-", ctx.window.QMETEO]]) {
+for (const [pre, bank] of [["aer-", ctx.window.QAERO], ["met-", ctx.window.QMETEO], ["dr4-", ctx.window.QDR400]]) {
   const n = +core.match(new RegExp("q: '" + pre + "', n: (\\d+)"))[1];
   ok(n === bank.length, `core.js déclare ${n} questions ${pre}, la banque en a ${bank.length}`);
 }

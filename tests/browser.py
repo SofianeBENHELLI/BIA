@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'mythiques/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'mythiques/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -28,6 +28,18 @@ try:
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
                 check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'avions/':
+                    check(pg.locator('.lab').count() == 4, f'avions {label}: {pg.locator(".lab").count()} ateliers')
+                    for lid in ('lab-anemo', 'lab-tableau', 'lab-check', 'lab-fuel', 'compare', 'traps'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                    a = pg.locator('#lab-anemo'); a.locator('button', has_text='VNE').click()
+                    check('VNE' in a.locator('.verdict').inner_text(), f'avions {label}: anémomètre VNE')
+                    t = pg.locator('#lab-tableau'); t.locator('[aria-label="Altimètre"]').click()
+                    check('QNH' in t.locator('.verdict').inner_text(), f'avions {label}: tableau de bord')
+                    f = pg.locator('#lab-fuel'); f.locator('input[type=range]').first.fill('20')
+                    check('Pas assez' in f.locator('.verdict').inner_text(), f'avions {label}: carburant insuffisant non signalé')
+                    broken = pg.evaluate("[...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.loading !== 'lazy').length")
+                    check(broken == 0, f'avions {label}: images cassées')
                 if page_name == 'mythiques/':
                     pg.wait_for_timeout(500)
                     check(pg.locator('.mcard').count() == 40, f'mythiques {label}: {pg.locator(".mcard").count()} fiches')
