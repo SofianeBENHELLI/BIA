@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le BIA de Saleem · Brevet d’initiation aéronautique</title>
+<meta name="description" content="Préparer le brevet d’initiation aéronautique et aller plus loin vers le brevet de pilote : cours, ateliers interactifs, QCU corrigés, avions et DR400.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body data-page="home">
+<p class="dedication">Pour Saleem <span>✦</span> le ciel commence ici</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Brevet d’initiation aéronautique · Session 2027</p>
+<h1>Le BIA de Saleem,<br><em>premier pas vers le cockpit.</em></h1>
+<p>Cinq domaines, cent questions, et tout ce qu’il faut pour comprendre ce qui fait voler un avion. On vise la mention, puis le brevet de pilote.</p>
+<div class="countdown" id="countdown" aria-live="polite"></div>
+<p class="small" style="color:#c9d6f2;margin-top:8px" id="countdown-note"></p>
+</section>
+
+<section id="domaines">
+<div class="section-heading"><span>01 / LES DOMAINES</span><h2>Choisis ta piste.</h2></div>
+<p class="lead">La barre verte indique la part des questions réussies à la dernière tentative.</p>
+<div class="grid" id="tiles"></div>
+</section>
+
+<section id="examen">
+<div class="section-heading"><span>02 / L’EXAMEN</span><h2>Ce qui t’attend le jour J.</h2></div>
+<div class="grid">
+<div class="card">
+<h3 style="margin-top:0">L’épreuve obligatoire</h3>
+<ul>
+<li><b>100 questions</b> à choix unique : 5 parties de 20 questions, 4 propositions, une seule bonne.</li>
+<li><b>2 h 30</b>, coefficient 5, 1 point par bonne réponse, pas de point négatif.</li>
+<li>Deux cases cochées pour une question : 0 point.</li>
+<li>Calculatrice autorisée sauf mention contraire sur le sujet. Elle était interdite en 2025 : entraîne-toi sans.</li>
+</ul>
+<p class="small">Les parties : 1. Météorologie et aérologie · 2. Aérodynamique, aérostatique et principes du vol · 3. Étude des aéronefs et des engins spatiaux · 4. Navigation, réglementation et sécurité des vols · 5. Histoire et culture de l’aéronautique et du spatial.</p>
+</div>
+<div class="card">
+<h3 style="margin-top:0">L’anglais facultatif</h3>
+<ul>
+<li><b>20 questions</b> en 30 minutes, vocabulaire technique des domaines météo, aéronefs et navigation.</li>
+<li>Seuls les points <b>au-dessus de 10 sur 20</b> comptent : aucun risque à le passer.</li>
+<li>Admis à partir de <b>10 sur 20</b>. Mentions : assez bien 12, bien 14, très bien 16.</li>
+</ul>
+</div>
+</div>
+<div class="lab" id="lab-note"></div>
+</section>
+
+<section id="progression">
+<div class="section-heading"><span>03 / MA PROGRESSION</span><h2>Tes données restent sur ton appareil.</h2></div>
+<div class="card">
+<p style="margin-top:0">La progression est enregistrée dans ce navigateur, sans compte. Pour changer d’appareil ou la mettre à l’abri, exporte-la, puis importe le fichier sur l’autre appareil.</p>
+<div class="seg">
+<button type="button" class="btn primary" id="btn-export">⤓ Exporter ma progression</button>
+<label class="btn" for="file-import" style="display:inline-flex;align-items:center">⤒ Importer un fichier</label>
+<input type="file" id="file-import" accept="application/json,.json" hidden>
+<button type="button" class="btn" id="btn-reset">Tout remettre à zéro</button>
+</div>
+<p class="small" id="data-msg" role="status"></p>
+<div data-install style="margin-top:6px"></div>
+</div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Programme du BIA : arrêté du 19 février 2015, BO n° 11 du 12 mars 2015. Ce site est un outil d’entraînement familial ; en vol, seul le manuel de vol de l’avion fait foi. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script>
+(function () {
+  var B = window.BIA;
+  // Date estimée : la note de service de la session 2027 paraît en général au BO de décembre. À mettre à jour dès sa parution.
+  var EXAM = new Date('2027-05-19T14:00:00+02:00'), CONFIRMED = false;
+  function tick() {
+    var el = document.getElementById('countdown'), ms = EXAM - new Date();
+    if (ms < 0) { el.innerHTML = '<div><b>✈</b><span>bonne chance !</span></div>'; return; }
+    var d = Math.floor(ms / 864e5), w = Math.floor(d / 7);
+    el.innerHTML = '<div><b>' + d + '</b><span>jours</span></div><div><b>' + w + '</b><span>semaines</span></div><div><b>' + Math.ceil(100 / Math.max(1, w)) + '</b><span>questions / semaine pour tout voir</span></div>';
+    document.getElementById('countdown-note').textContent = CONFIRMED ? 'Épreuve le ' + EXAM.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) + '.' : 'Date estimée à la mi-mai 2027 : la date officielle paraît au Bulletin officiel vers décembre 2026. En 2026, l’épreuve avait lieu le mercredi 20 mai.';
+  }
+  function tiles() {
+    var g = document.getElementById('tiles'); g.innerHTML = '';
+    B.PAGES.forEach(function (p) {
+      var m = 0, s = B.stats();
+      if (p.q) m = Object.keys(s).filter(function (k) { return k.indexOf(p.q) === 0 && s[k].last === 1; }).length / p.n;
+      var a = B.h('<a class="card tile' + (p.open ? '' : ' soon') + '" href="' + (p.open ? '/' + p.id + '/' : '#') + '"' + (p.open ? '' : ' aria-disabled="true" tabindex="-1"') + '>' +
+        '<span class="ico" aria-hidden="true">' + p.ico + '</span><span class="tag">' + (p.open ? 'Ouvert' : 'Bientôt') + '</span><h3>' + B.esc(p.name) + '</h3><p>' + B.esc(p.desc) + '</p>' +
+        '<div class="meter" aria-label="Maîtrise ' + Math.round(m * 100) + ' %"><i style="width:' + Math.round(Math.min(1, m) * 100) + '%"></i></div></a>');
+      g.appendChild(a);
+    });
+  }
+  function noteLab() {
+    var L = B.lab('lab-note', { num: '★', title: 'Simulateur de note', hint: 'Combien de bonnes réponses faut-il pour être admis, ou pour décrocher une mention ? Joue avec les curseurs.', takeaway: 'Note finale = (points sur 100 + points d’anglais au-dessus de 10) / 5. Exemple : 47 sur 100 et 14 sur 20 en anglais donnent (47 + 4) / 5 = 10,2 : admis.' });
+    L.stage.innerHTML = '<div style="padding:18px"><div style="font:800 56px Manrope,sans-serif;color:#10203f" id="nf">–</div><div id="nm" class="verdict"></div><div class="scorebar" style="height:14px;margin-top:14px"><i id="nb"></i></div><div class="small" style="display:flex;justify-content:space-between"><span>0</span><span>10 admis</span><span>12</span><span>14</span><span>16</span><span>20</span></div></div>';
+    var pts = 60, ang = 0;
+    function draw() {
+      var n = (pts + Math.max(0, ang - 10)) / 5;
+      document.getElementById('nf').textContent = B.fmt(n, 1).replace(/,0$/, '') + ' / 20';
+      document.getElementById('nb').style.width = n / 20 * 100 + '%';
+      var m = document.getElementById('nm');
+      if (n < 10) { m.className = 'verdict bad'; m.textContent = 'Non admis : il manque ' + Math.ceil(50 - pts - Math.max(0, ang - 10)) + ' point(s).'; }
+      else { m.className = 'verdict good'; m.textContent = 'Admis' + (n >= 16 ? ', mention très bien' : n >= 14 ? ', mention bien' : n >= 12 ? ', mention assez bien' : '') + '.'; }
+    }
+    B.slider(L.ctrls, { label: 'Bonnes réponses à l’épreuve obligatoire', min: 0, max: 100, value: pts, fmt: function (v) { return v + ' / 100'; }, onInput: function (v) { pts = v; draw(); } });
+    B.slider(L.ctrls, { label: 'Note d’anglais (facultatif)', min: 0, max: 20, value: ang, fmt: function (v) { return v ? v + ' / 20' : 'non passé'; }, onInput: function (v) { ang = v; draw(); } });
+    draw();
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    tick(); setInterval(tick, 60000); tiles(); noteLab();
+    var msg = document.getElementById('data-msg');
+    document.getElementById('btn-export').onclick = function () { B.exportData(); msg.textContent = 'Fichier « bia-saleem-progression.json » téléchargé.'; };
+    document.getElementById('file-import').onchange = function (e) { var f = e.target.files[0]; if (!f) return; B.importData(f, function (ok) { msg.textContent = ok ? 'Progression importée.' : 'Ce fichier ne vient pas du BIA de Saleem.'; tiles(); }); };
+    document.getElementById('btn-reset').onclick = function () { if (confirm('Effacer toute la progression enregistrée sur cet appareil ?')) { B.resetData(); tiles(); msg.textContent = 'Progression effacée.'; } };
+  });
+})();
+</script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

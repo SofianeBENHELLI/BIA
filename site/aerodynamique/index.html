@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aérodynamique et principes du vol · Le BIA de Saleem</title>
+<meta name="description" content="Portance, décrochage, finesse, virage, gouvernes, stabilité, centrage, aérostatique, hélicoptère et vol spatial : cours, ateliers interactifs et QCU.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body data-page="aerodynamique">
+<div class="subnav"><nav aria-label="Dans ce domaine">
+<a href="#essentiel">L’essentiel</a><a href="#ateliers">Ateliers</a><a href="#stabilite">Stabilité</a><a href="#qcu">QCU</a><a href="#memo">Mémo</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> comprendre pourquoi ça vole, avant de le faire voler</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Domaine 2 · Aérodynamique, aérostatique et principes du vol</p>
+<h1>Un avion vole parce qu’il <em>pousse l’air vers le bas</em>.</h1>
+<p>Tout le domaine tient en quelques lois. Tu vas les manipuler dans les ateliers : incliner l’aile jusqu’au décrochage, chercher la meilleure finesse, serrer un virage, déplacer le centre de gravité jusqu’à rendre l’avion instable.</p>
+</section>
+
+<section id="essentiel">
+<div class="section-heading"><span>01 / L’ESSENTIEL</span><h2>Onze idées, dans l’ordre où elles s’enchaînent.</h2></div>
+<p class="lead"><span class="lvl bia">BIA</span> ce qui tombe à l’examen. <span class="lvl ppl">PPL</span> ce que tu verras en formation pilote, pour aller plus loin.</p>
+
+<details class="course" open><summary>1. Les quatre forces du vol</summary><div>
+<p>En vol, quatre forces s’appliquent à l’avion :</p>
+<ul>
+<li><b>Le poids</b> (P = m·g), vertical, vers le bas, appliqué au centre de gravité.</li>
+<li><b>La portance</b> (Fz), perpendiculaire au vent relatif, créée par l’aile.</li>
+<li><b>La traînée</b> (Fx), parallèle au vent relatif et opposée au déplacement : c’est la résistance de l’air.</li>
+<li><b>La traction</b> (ou poussée), fournie par l’hélice ou le réacteur.</li>
+</ul>
+<p>En <b>vol rectiligne en palier à vitesse constante</b>, les forces s’équilibrent : portance = poids et traction = traînée. Si la traction dépasse la traînée, l’avion accélère ; si la portance dépasse le poids, la trajectoire s’incurve vers le haut.</p>
+<p>La <b>résultante aérodynamique</b> est la somme de la portance et de la traînée. Elle s’applique au <b>centre de poussée</b>.</p>
+<div class="box trap"><b>Piège classique</b>La portance n’est pas « verticale » : elle est perpendiculaire au <b>vent relatif</b>. En virage, elle s’incline avec l’avion. En montée, elle est légèrement inclinée vers l’arrière.</div>
+</div></details>
+
+<details class="course"><summary>2. Le profil, l’incidence et la portance</summary><div>
+<p>Un <b>profil</b> est la coupe de l’aile. On y repère le bord d’attaque, le bord de fuite, l’<b>extrados</b> (dessus), l’<b>intrados</b> (dessous) et la <b>corde</b> (segment du bord d’attaque au bord de fuite). La <b>cambrure</b> est la courbure du profil.</p>
+<h4>Trois angles à ne pas confondre</h4>
+<ul>
+<li><b>Incidence</b> (α) : angle entre la corde et le <b>vent relatif</b>. C’est l’angle qui commande la portance et le décrochage.</li>
+<li><b>Assiette</b> : angle entre l’axe longitudinal de l’avion et l’<b>horizontale</b> (ce que montre l’horizon artificiel).</li>
+<li><b>Pente</b> : angle entre la <b>trajectoire</b> et l’horizontale.</li>
+</ul>
+<p>Retiens : <b>assiette ≈ pente + incidence</b>. Un avion peut avoir le nez haut (assiette positive) et descendre (pente négative), avec une forte incidence : c’est la situation qui précède un décrochage.</p>
+<h4>D’où vient la portance ?</h4>
+<p>L’aile dévie l’air vers le bas. L’écoulement accélère sur l’extrados, où la pression baisse (dépression), et ralentit sous l’intrados, où la pression monte légèrement (surpression). La différence de pression pousse l’aile vers le haut. Sur un profil classique, l’<b>extrados fournit environ les deux tiers</b> de la portance.</p>
+<span class="formula">Fz = ½ · ρ · S · V² · Cz</span>
+<ul>
+<li><b>ρ</b> : masse volumique de l’air (1,225 kg/m³ au niveau de la mer en atmosphère standard). Elle diminue avec l’altitude et la chaleur.</li>
+<li><b>S</b> : surface alaire (13,6 m² pour un DR400).</li>
+<li><b>V</b> : vitesse par rapport à l’air. Elle compte <b>au carré</b> : deux fois plus vite, quatre fois plus de portance.</li>
+<li><b>Cz</b> : coefficient de portance, qui dépend de la forme du profil et surtout de l’<b>incidence</b>. Il croît à peu près proportionnellement à l’incidence, jusqu’à l’incidence critique.</li>
+</ul>
+<div class="box trap"><b>Mythe à éviter</b>L’air du dessus n’a pas besoin de « rejoindre » l’air du dessous au bord de fuite : cette explication des « temps de parcours égaux » est fausse. En réalité, l’air de l’extrados arrive même avant.</div>
+<div class="box ppl"><b>Pour aller plus loin</b>La traînée suit la même forme, Fx = ½·ρ·S·V²·Cx. Le pilote ne choisit pas Cz directement : il choisit l’incidence avec le manche, et la vitesse avec le moteur et l’assiette. À masse donnée, en palier, chaque vitesse correspond à une incidence : <b>voler lentement, c’est voler à grande incidence</b>.</div>
+</div></details>
+
+<details class="course"><summary>3. Le décrochage</summary><div>
+<p>Au-delà d’une certaine incidence, l’<b>incidence critique</b> (de l’ordre de 15° pour un profil d’avion léger), les filets d’air ne suivent plus l’extrados : ils décollent et deviennent tourbillonnaires. La portance chute brutalement et la traînée augmente : c’est le <b>décrochage</b>.</p>
+<div class="box mem"><b>À retenir absolument</b>Le décrochage dépend de l’<b>incidence</b>, pas de la vitesse. Un avion peut décrocher à n’importe quelle vitesse et dans n’importe quelle assiette, par exemple en ressource brutale ou en virage serré. La « vitesse de décrochage » n’est valable qu’en vol rectiligne, à une masse et une configuration données.</div>
+<h4>Les signes</h4>
+<ul><li>avertisseur de décrochage (sonore ou lumineux) ;</li><li>commandes « molles », vibrations (buffeting) de la cellule ;</li><li>enfoncement, puis abattée : le nez tombe.</li></ul>
+<h4>La sortie</h4>
+<p>On <b>diminue l’incidence</b> (manche en avant), on remet la puissance, on garde les ailes horizontales <b>au palonnier</b> plutôt qu’aux ailerons, puis on reprend une trajectoire normale sans redécrocher.</p>
+<h4>Faire voler plus lentement : les hypersustentateurs</h4>
+<ul>
+<li><b>Volets de bord de fuite</b> : ils augmentent la cambrure, donc le Cz maximal. La vitesse de décrochage baisse, la traînée augmente. Utiles au décollage (braquage faible) et à l’atterrissage (braquage fort).</li>
+<li><b>Becs de bord d’attaque</b> : ils retardent le décollement des filets et augmentent l’incidence critique.</li>
+</ul>
+<p>Sur le DR400/180, le manuel de vol donne une vitesse de décrochage de 105 km/h volets rentrés, 99 km/h au premier cran et 95 km/h volets atterrissage, à la masse maximale.</p>
+<div class="box ppl"><b>Pour aller plus loin : la vrille</b>Si l’avion décroche en dérapage, une aile décroche plus que l’autre : l’avion part en autorotation, c’est la <b>vrille</b>. Elle se sort en réduisant le moteur, en mettant le palonnier en butée du côté opposé à la rotation, puis le manche en avant. La procédure exacte est celle du manuel de vol de l’avion.</div>
+</div></details>
+
+<details class="course"><summary>4. Traînée, polaire et finesse</summary><div>
+<h4>Les traînées</h4>
+<ul>
+<li><b>Traînée de frottement</b> : l’air « colle » à la surface. Elle dépend de l’état de surface.</li>
+<li><b>Traînée de forme</b> (ou de pression) : elle dépend du profilage. Un carénage de roue la réduit.</li>
+<li><b>Traînée induite</b> : c’est le prix de la portance. La surpression de l’intrados s’échappe vers la dépression de l’extrados en bout d’aile et forme des <b>tourbillons marginaux</b>. Elle est forte <b>à basse vitesse et à grande incidence</b>, et diminue avec l’<b>allongement</b> (λ = envergure² / surface). Les planeurs ont des ailes très allongées ; les winglets la réduisent aussi.</li>
+</ul>
+<p>Les deux premières (traînée parasite) augmentent avec la vitesse ; la traînée induite diminue avec la vitesse. Leur somme passe par un minimum : c’est la vitesse de <b>finesse maximale</b>.</p>
+<h4>La polaire et la finesse</h4>
+<p>La <b>polaire</b> trace Cz en fonction de Cx pour toutes les incidences. La <b>finesse</b> est le rapport portance / traînée :</p>
+<span class="formula">f = Fz / Fx = Cz / Cx</span>
+<p>Sur la polaire, la finesse maximale se lit au point de contact de la <b>tangente issue de l’origine</b>. En plané sans vent, la finesse est aussi le rapport <b>distance parcourue / hauteur perdue</b> : avec une finesse de 10, on parcourt 10 km en perdant 1 000 m.</p>
+<table class="data"><tr><th>Aéronef</th><th>Finesse max</th></tr>
+<tr><td>Robin DR400/180 (manuel de vol, à 150 km/h)</td><td>9,5</td></tr>
+<tr><td>Planeur biplace ASK 21</td><td>34</td></tr>
+<tr><td>Avion de ligne (ordre de grandeur)</td><td>15 à 20</td></tr></table>
+<div class="box trap"><b>Piège classique</b>La finesse ne dépend pas de la masse (seule la vitesse de meilleure finesse change). Le vent, lui, modifie la distance parcourue par rapport au sol : vent de face, on va moins loin.</div>
+</div></details>
+
+<details class="course"><summary>5. Virage et facteur de charge</summary><div>
+<p>Pour virer, le pilote incline l’avion : la portance s’incline et sa composante horizontale courbe la trajectoire. Sa composante verticale doit toujours compenser le poids : il faut donc <b>plus de portance</b> qu’en ligne droite. On tire sur le manche, l’incidence augmente.</p>
+<p>Le <b>facteur de charge</b> n est le rapport portance / poids. Le pilote le ressent comme un poids apparent multiplié par n.</p>
+<span class="formula">n = 1 / cos φ &nbsp;(virage en palier, φ = inclinaison)</span>
+<table class="data"><tr><th>Inclinaison</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>75°</th></tr>
+<tr><th>n</th><td>1</td><td>1,15</td><td>1,41</td><td>2</td><td>3,86</td></tr></table>
+<p>La vitesse de décrochage augmente comme la racine de n :</p>
+<span class="formula">Vs(virage) = Vs × √n</span>
+<p>Exemple DR400/180 : 105 km/h en ligne droite, environ 148 km/h à 60° d’inclinaison (manuel de vol).</p>
+<div class="box mem"><b>À retenir</b>À 60° d’inclinaison en palier, n = 2 : tu pèses deux fois ton poids, et l’avion décroche à une vitesse 1,41 fois plus élevée.</div>
+<div class="box ppl"><b>Pour aller plus loin</b>Le rayon du virage vaut R = V² / (g · tan φ) : à inclinaison égale, deux fois plus vite donne un virage quatre fois plus large. En ressource (sortie de piqué), n = 1 + V² / (r·g). Les limites structurales du DR400 sont de +3,8 g et −1,9 g en catégorie normale. En formation, le « virage au taux standard » fait 3° par seconde, soit un tour complet en 2 minutes.</div>
+</div></details>
+
+<details class="course"><summary>6. Les gouvernes et les trois axes</summary><div>
+<table class="data"><tr><th>Commande</th><th>Gouverne</th><th>Mouvement</th><th>Axe</th></tr>
+<tr><td>Manche à gauche ou à droite</td><td>Ailerons (braquage opposé)</td><td>Roulis</td><td>Longitudinal</td></tr>
+<tr><td>Manche en avant ou en arrière</td><td>Gouverne de profondeur</td><td>Tangage</td><td>Transversal</td></tr>
+<tr><td>Palonnier (pieds)</td><td>Gouverne de direction</td><td>Lacet</td><td>Vertical (de lacet)</td></tr></table>
+<p>Manche à gauche : l’aileron <b>gauche se lève</b>, le droit s’abaisse, l’avion s’incline à gauche. Manche en arrière : la gouverne de profondeur se lève, la queue s’abaisse, le nez monte. Pied à gauche : la gouverne de direction part à gauche, le nez part à gauche.</p>
+<p>Le <b>compensateur</b> (trim) est un petit volet qui annule l’effort à tenir sur le manche, pour un vol stabilisé.</p>
+<div class="box ppl"><b>Pour aller plus loin : les effets secondaires</b><b>Lacet inverse</b> : l’aileron abaissé crée plus de traînée que l’aileron levé ; en mettant du manche à gauche, le nez part d’abord à droite. On le compense au palonnier : c’est la <b>conjugaison</b>, contrôlée par la bille. Inversement, une action au palonnier fait aussi incliner l’avion (<b>roulis induit</b>).</div>
+</div></details>
+
+<details class="course" id="stab-cours"><summary>7. Équilibre, centrage et stabilité en tangage</summary><div>
+<p>Un avion est <b>stable</b> s’il revient de lui-même à sa position d’équilibre après une perturbation (rafale). Il est <b>maniable</b> s’il répond vite et avec peu d’effort aux commandes. Les deux s’opposent : plus un avion est stable, moins il est maniable.</p>
+<h4>Les points clés</h4>
+<ul>
+<li><b>Centre de gravité (CG)</b> : point d’application du poids. Il se calcule comme une moyenne des positions pondérée par les masses : x<sub>CG</sub> = Σ(m·x) / Σm. Il bouge avec le chargement et le carburant consommé.</li>
+<li><b>Centre de poussée</b> : point d’application de la résultante aérodynamique. Il <b>se déplace avec l’incidence</b>, ce qui le rend peu pratique.</li>
+<li><b>Foyer</b> (centre aérodynamique) : point où le moment de tangage ne change pas avec l’incidence, vers le quart avant de la corde. C’est là que s’appliquent les <b>variations</b> de portance, celles d’une rafale par exemple. Pour l’avion entier, on parle de <b>point neutre</b>.</li>
+</ul>
+<div class="box mem"><b>La règle d’or</b>Un avion est stable en tangage si son <b>centre de gravité est en avant du foyer</b>. La distance entre les deux est la <b>marge statique</b>. Une rafale qui fait cabrer l’avion augmente la portance au foyer, en arrière du CG : cela fait piquer l’avion et le ramène. Si le CG passe derrière le foyer, la même rafale fait cabrer encore plus : l’avion diverge.</div>
+<h4>Pourquoi l’empennage pousse vers le bas</h4>
+<p>Le CG étant devant le centre de poussée de l’aile, la portance de l’aile fait piquer l’avion. Pour l’équilibrer, l’empennage horizontal produit en général une petite force <b>vers le bas</b> (déportance). C’est le rôle de la gouverne de profondeur et du compensateur.</p>
+<h4>Centrage avant, centrage arrière</h4>
+<table class="data"><tr><th></th><th>Centrage avant</th><th>Centrage arrière</th></tr>
+<tr><td>Stabilité</td><td>forte</td><td>faible, voire nulle</td></tr>
+<tr><td>Efforts au manche</td><td>importants</td><td>faibles, avion « pointu »</td></tr>
+<tr><td>Risque</td><td>arrondi difficile à l’atterrissage, autorité de la profondeur insuffisante</td><td>perte de contrôle, sortie de décrochage ou de vrille difficile</td></tr></table>
+<p>Le manuel de vol fixe une <b>plage de centrage</b> : avant chaque vol, le pilote vérifie que la masse et le centrage sont dans les limites. Sortir de la plage, même un peu en arrière, est dangereux.</p>
+<div class="box trap"><b>Piège classique</b>Le centrage dépend du carburant : il évolue pendant le vol. Un avion bien centré au décollage peut sortir des limites si le réservoir est loin du CG.</div>
+<div class="box ppl"><b>Pour aller plus loin : stable ou maniable ?</b>Les avions de chasse modernes sont conçus avec une stabilité réduite, voire négative, pour être plus agiles. Ils ne volent que grâce aux <b>commandes de vol électriques</b> : un calculateur corrige l’assiette des dizaines de fois par seconde. L’A320 a été le premier avion de ligne à commandes de vol électriques. Un avion-école comme le DR400 est au contraire volontairement stable.</div>
+</div></details>
+
+<details class="course" id="stab-lat"><summary>8. Stabilité en roulis et en lacet : dièdre, ailes hautes et basses</summary><div>
+<h4>Le dièdre</h4>
+<p>Le <b>dièdre</b> est l’angle des ailes vers le haut, vu de face. Quand l’avion s’incline sous l’effet d’une rafale, il se met à glisser vers l’aile basse. Cette aile reçoit le vent un peu de face et sous un angle plus favorable : elle porte davantage et l’avion se redresse. C’est l’<b>effet dièdre</b>.</p>
+<h4>Aile haute ou aile basse</h4>
+<ul>
+<li><b>Aile haute</b> (Cessna 172) : le fuselage est sous l’aile. L’effet de l’ensemble aile et fuselage équivaut à environ 5° de dièdre supplémentaire. Ces avions ont donc peu de dièdre géométrique. Avantages : bonne vue vers le sol, ombre sous l’aile.</li>
+<li><b>Aile basse</b> (DR400, PA-28) : moins stable naturellement en roulis, donc davantage de dièdre géométrique. Le DR400 concentre le sien en bout d’aile, signature des avions Jodel. Avantages : bonne vue en virage, effet de sol plus marqué à l’atterrissage.</li>
+</ul>
+<h4>La flèche</h4>
+<p>Des ailes en flèche (inclinées vers l’arrière, vues de dessus) produisent aussi un effet dièdre, d’environ 1° pour 10° de flèche. C’est pourquoi beaucoup d’avions de ligne à aile haute et en flèche ont un dièdre nul ou négatif (anhédral).</p>
+<h4>Stabilité de route</h4>
+<p>La <b>dérive</b> agit comme l’empennage d’une flèche : elle remet l’avion dans le lit du vent (effet girouette).</p>
+<div class="box ppl"><b>Pour aller plus loin : trop ou pas assez</b>Trop d’effet dièdre par rapport à la dérive provoque le <b>roulis hollandais</b> : une oscillation couplée de roulis et de lacet. Pas assez d’effet dièdre et une grande dérive donnent une <b>instabilité spirale</b> : l’inclinaison augmente lentement d’elle-même. Les avions de ligne ont un amortisseur de lacet automatique.</div>
+</div></details>
+
+<details class="course"><summary>9. L’aérostatique : ballons et montgolfières</summary><div>
+<p>Un aérostat vole grâce à la <b>poussée d’Archimède</b> : tout corps plongé dans l’air reçoit une force verticale vers le haut égale au poids du volume d’air déplacé.</p>
+<span class="formula">Force ascensionnelle = (ρ<sub>air</sub> − ρ<sub>gaz</sub>) × V × g − poids de l’aérostat</span>
+<ul>
+<li><b>Montgolfière</b> : enveloppe remplie d’air chauffé par un brûleur. L’air chaud est moins dense. Pour monter, on chauffe ; pour descendre, on laisse refroidir ou on ouvre la soupape.</li>
+<li><b>Ballon à gaz</b> : hélium (ininflammable) ou hydrogène, beaucoup plus légers que l’air. On monte en larguant du lest, on descend en lâchant du gaz.</li>
+<li>Le <b>dirigeable</b> est un aérostat motorisé et dirigeable.</li>
+</ul>
+<p>Plus on monte, plus l’air est léger : la poussée diminue. Un aérostat atteint une altitude d’équilibre.</p>
+<div class="box mem"><b>Repères</b>1783 : premier vol humain en montgolfière (Pilâtre de Rozier et le marquis d’Arlandes, 21 novembre), puis premier vol en ballon à hydrogène (Charles et Robert, 1er décembre).</div>
+</div></details>
+
+<details class="course"><summary>10. L’hélicoptère</summary><div>
+<p>Les pales du <b>rotor principal</b> sont des ailes tournantes : leur portance soulève l’appareil.</p>
+<ul>
+<li><b>Pas collectif</b> : il change l’incidence de toutes les pales en même temps. L’hélicoptère monte ou descend.</li>
+<li><b>Pas cyclique</b> : il fait varier l’incidence de chaque pale au cours du tour, via le plateau cyclique. Le disque rotor s’incline et l’hélicoptère se déplace dans la direction voulue.</li>
+<li><b>Rotor anticouple</b> : le rotor principal entraîné par le moteur fait tourner le fuselage en sens inverse (réaction). Le rotor de queue s’y oppose ; le palonnier règle son pas pour contrôler le lacet. Le fenestron est un rotor de queue caréné, inventé en France.</li>
+</ul>
+<p>En cas de panne moteur, le pilote passe en <b>autorotation</b> : le rotor, entraîné par l’air qui le traverse de bas en haut, continue de tourner et permet un atterrissage.</p>
+</div></details>
+
+<details class="course"><summary>11. Le vol spatial</summary><div>
+<p>Un satellite ne « flotte » pas : il <b>tombe en permanence</b> autour de la Terre, mais avance assez vite pour que la surface se dérobe sous lui. C’est cette chute libre permanente qui crée l’impesanteur à bord.</p>
+<ul>
+<li>Vitesse orbitale à 300 km d’altitude : environ <b>7,8 km/s</b>, soit 28 000 km/h. La Station spatiale internationale orbite vers 400 km et fait le tour de la Terre en environ 1 h 30.</li>
+<li><b>Orbite géostationnaire</b> : environ 36 000 km d’altitude au-dessus de l’équateur (35 786 km), période de 24 h. Le satellite reste au-dessus du même point : télécommunications, météo.</li>
+<li>Pour quitter l’attraction terrestre, il faut atteindre la <b>vitesse de libération</b>, environ 11,2 km/s.</li>
+<li>Un lanceur emporte son comburant (oxygène) : un moteur-fusée fonctionne dans le vide, contrairement à un réacteur.</li>
+</ul>
+</div></details>
+</section>
+
+<section id="ateliers">
+<div class="section-heading"><span>02 / MANIPULER</span><h2>Huit ateliers pour voir les lois en action.</h2></div>
+<p class="lead">Fais glisser les poignées orange directement sur les dessins, ou utilise les curseurs.</p>
+<div id="lab-soufflerie"></div>
+<div id="lab-polaire"></div>
+<div id="lab-virage"></div>
+<div id="lab-gouvernes"></div>
+</section>
+
+<section id="stabilite">
+<div class="section-heading"><span>03 / STABILITÉ</span><h2>Stable, instable ou maniable : à toi de régler l’avion.</h2></div>
+<p class="lead">Le module phare, bien au-delà du programme du BIA. Commence par le centrage, puis déplace le centre de gravité jusqu’à rendre l’avion instable.</p>
+<div id="lab-centrage"></div>
+<div id="lab-tangage"></div>
+<div id="lab-diedre"></div>
+<div id="lab-montgolfiere"></div>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>04 / S’ENTRAÎNER</span><h2>Questions à choix unique, corrigées.</h2></div>
+<p class="lead">Une seule bonne réponse sur quatre, comme à l’examen. Les questions ratées reviennent dans « À revoir ».</p>
+<div id="quiz"></div>
+</section>
+
+<section id="memo">
+<div class="section-heading"><span>05 / MÉMO</span><h2>La page à relire la veille de l’examen.</h2></div>
+<div class="card">
+<ul>
+<li>Fz = ½ρSV²Cz ; Fx = ½ρSV²Cx ; finesse = Cz/Cx = distance/hauteur.</li>
+<li>Incidence = corde / vent relatif. Assiette = axe avion / horizontale. Pente = trajectoire / horizontale.</li>
+<li>Le décrochage dépend de l’incidence (vers 15°), pas de la vitesse.</li>
+<li>Volets : Cz max plus grand, vitesse de décrochage plus faible, traînée plus forte.</li>
+<li>Traînée induite : forte à basse vitesse, réduite par un grand allongement.</li>
+<li>Virage en palier : n = 1/cos φ ; 60° donne n = 2 ; Vs × √n.</li>
+<li>Ailerons : roulis, axe longitudinal. Profondeur : tangage, axe transversal. Direction : lacet, axe vertical.</li>
+<li>Stable si le CG est en avant du foyer. Centrage arrière : instable et dangereux.</li>
+<li>Dièdre : stabilité en roulis. Aile haute : effet stabilisant, peu de dièdre. Dérive : stabilité de route.</li>
+<li>Archimède : poussée = poids de l’air déplacé. Air chaud ou hélium plus légers que l’air.</li>
+<li>Hélicoptère : collectif (monter), cyclique (se déplacer), rotor anticouple (lacet), autorotation (panne).</li>
+<li>Orbite basse : 7,8 km/s. Géostationnaire : 36 000 km, 24 h.</li>
+</ul>
+</div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Domaine 2 du programme du BIA (BO n° 11 du 12 mars 2015). Les chiffres du DR400 viennent du certificat de type EASA A.367 et du manuel de vol DR400/180. Les ateliers sont des modèles pédagogiques : en vol, seul le manuel de vol de ton avion fait foi. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="questions.js"></script>
+<script src="labs.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

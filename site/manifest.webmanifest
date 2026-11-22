@@ -1,0 +1,22 @@
+{
+  "name": "Le BIA de Saleem",
+  "short_name": "BIA Saleem",
+  "description": "Brevet d’initiation aéronautique : cours, ateliers interactifs, QCU corrigés, avions et DR400, parcours pour devenir pilote.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#10203f",
+  "background_color": "#f4f7fb",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Aérodynamique", "url": "/aerodynamique/", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Stabilité et centrage", "url": "/aerodynamique/#stabilite", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "QCU d’aérodynamique", "url": "/aerodynamique/#qcu", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

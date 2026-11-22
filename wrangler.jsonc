@@ -1,0 +1,12 @@
+{
+  // Worker Cloudflare qui sert le site statique du BIA de Saleem
+  "name": "bia",
+  "account_id": "29c23e9ef1f1f235ffec98705e4069e7",
+  "compatibility_date": "2026-11-22",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": { "directory": "./site" },
+  "routes": [
+    { "pattern": "bia.benhelli.org", "custom_domain": true }
+  ]
+}
