@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Histoire et culture de l’aéronautique et du spatial · Le BIA de Saleem</title>
+<meta name="description" content="Des Montgolfier à Ariane 6 : frise interactive, pionniers et pionnières, guerres, raids, conquête spatiale, jeux et QCU.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+.tl { position: relative; padding-left: 26px; }
+.tl::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 3px; background: var(--line); border-radius: 2px; }
+.ev { position: relative; margin: 0 0 10px; }
+.ev::before { content: ''; position: absolute; left: -22px; top: 14px; width: 13px; height: 13px; border-radius: 50%; background: var(--card); border: 3px solid var(--sky); }
+.ev.f-femmes::before { border-color: #c2185b; } .ev.f-espace::before { border-color: #6a1b9a; } .ev.f-guerres::before { border-color: var(--red); } .ev.f-raids::before { border-color: var(--amber); } .ev.f-ballons::before { border-color: var(--green); }
+.ev button { width: 100%; text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; color: inherit; font: inherit; box-shadow: var(--shadow); }
+.ev b.yr { font: 800 18px 'Manrope', sans-serif; color: var(--sky); margin-right: 8px; }
+.ev .det { display: none; margin-top: 6px; font-size: 15px; color: var(--ink); }
+.ev.open .det { display: block; }
+.ev .dt { font-size: 12px; color: var(--mute); display: block; }
+.order-item { display: flex; align-items: center; gap: 10px; background: var(--bg); border-radius: 12px; padding: 8px; }
+.order-item span { flex: 1; font-weight: 600; }
+.order-item.ok { outline: 2px solid var(--green); } .order-item.ko { outline: 2px solid var(--red); }
+.order-item .btn { min-height: 40px; min-width: 40px; padding: 4px 8px; }
+</style>
+</head>
+<body data-page="histoire">
+<div class="subnav"><nav aria-label="Dans ce domaine">
+<a href="#essentiel">Les grandes époques</a><a href="#frise">La frise</a><a href="#jeux">Jeux</a><a href="#qcu">QCU</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> ceux qui ont rêvé de voler avant toi</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Domaine 5 · Histoire et culture de l’aéronautique et du spatial</p>
+<h1>Deux siècles pour <em>quitter le sol</em>, puis la Terre.</h1>
+<p>Des ballons de 1783 aux astronautes d’aujourd’hui. À l’examen, ce domaine se gagne avec des repères solides : les dates, les noms, et surtout les grandes premières françaises.</p>
+</section>
+
+<section id="essentiel">
+<div class="section-heading"><span>01 / LES GRANDES ÉPOQUES</span><h2>Six chapitres d’histoire.</h2></div>
+
+<details class="course" open><summary>1. Les rêveurs et les ballons (avant 1890)</summary><div>
+<p>Le rêve est ancien : le mythe d’<b>Icare</b>, les cerfs-volants chinois, les machines volantes dessinées par <b>Léonard de Vinci</b> (ornithoptère, vis aérienne, parachute en forme de pyramide). L’Anglais <b>George Cayley</b> comprend vers 1800 qu’il faut séparer la portance (l’aile fixe) de la propulsion.</p>
+<p>La France ouvre la conquête de l’air en <b>1783</b> : les frères <b>Montgolfier</b> font voler un ballon à air chaud ; le 21 novembre, <b>Pilâtre de Rozier</b> et le marquis d’<b>Arlandes</b> réussissent le premier vol humain ; le 1er décembre, <b>Charles</b> et <b>Robert</b> volent en ballon à hydrogène. En 1797, <b>Garnerin</b> saute en parachute depuis un ballon ; en 1852, <b>Giffard</b> fait voler le premier dirigeable.</p>
+</div></details>
+
+<details class="course"><summary>2. Les pionniers (1890 à 1914)</summary><div>
+<ul>
+<li><b>Otto Lilienthal</b> réalise près de 2 000 vols planés avant de se tuer en 1896.</li>
+<li><b>Clément Ader</b> décolle sur l’<b>Éole</b> en 1890 et invente le mot « avion ».</li>
+<li>Les frères <b>Wright</b> réussissent le premier vol motorisé et contrôlé le <b>17 décembre 1903</b>.</li>
+<li><b>Santos-Dumont</b> établit en 1906 à Bagatelle le premier record homologué en Europe.</li>
+<li><b>Blériot</b> traverse la Manche le <b>25 juillet 1909</b>.</li>
+<li>1910 : <b>Henri Fabre</b> fait voler le premier hydravion ; <b>Raymonde de Laroche</b> est la première femme brevetée.</li>
+<li>1913 : <b>Roland Garros</b> traverse la Méditerranée ; <b>Adolphe Pégoud</b> rend célèbre le looping.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>3. La Grande Guerre (1914 à 1918)</summary><div>
+<p>L’avion d’observation devient vite un avion de combat. Le 5 octobre 1914, <b>Frantz et Quénault</b> remportent la première victoire aérienne. Pour tirer à travers l’hélice, Garros pose des déflecteurs, puis Fokker invente la <b>synchronisation</b> du tir. Les vitesses doublent en quatre ans.</p>
+<ul>
+<li>As français : <b>René Fonck</b> (75 victoires, l’as des as allié), <b>Georges Guynemer</b> (53, disparu en 1917), <b>Charles Nungesser</b> (43).</li>
+<li>As allemands : <b>Manfred von Richthofen</b>, le « Baron rouge » (80), <b>Max Immelmann</b>, qui a donné son nom à une figure de voltige.</li>
+<li>Avions célèbres : SPAD XIII, Nieuport, Fokker Dr.I. Marcel Bloch, futur Marcel Dassault, conçoit l’hélice <b>Éclair</b>.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>4. Les raids et l’Aéropostale (1918 à 1939)</summary><div>
+<p>Après la guerre, les pilotes ouvrent des routes. Le 25 décembre 1918, <b>Pierre-Georges Latécoère</b> lance sa ligne vers l’Espagne, qui deviendra l’<b>Aéropostale</b> : Toulouse, l’Afrique, puis l’Amérique du Sud. Ses pilotes sont des légendes : <b>Jean Mermoz</b>, <b>Henri Guillaumet</b>, <b>Antoine de Saint-Exupéry</b> (« Courrier sud », « Vol de nuit », « Terre des hommes »).</p>
+<ul>
+<li>1919 : <b>Alcock et Brown</b> traversent l’Atlantique Nord sans escale.</li>
+<li>1921 : <b>Adrienne Bolland</b> franchit les Andes.</li>
+<li>1927 : <b>Lindbergh</b> relie New York à Paris seul ; <b>Nungesser et Coli</b> disparaissent sur l’« Oiseau blanc ».</li>
+<li>1930 : <b>Mermoz</b> traverse l’Atlantique Sud avec le courrier ; <b>Costes et Bellonte</b> relient Paris à New York.</li>
+<li>1932 : <b>Amelia Earhart</b> traverse l’Atlantique seule. 1933 : création d’<b>Air France</b>.</li>
+<li>Les aviatrices françaises : <b>Hélène Boucher</b>, <b>Maryse Bastié</b>, records de distance et de vitesse.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>5. La Seconde Guerre mondiale et l’âge du jet (1939 à 1970)</summary><div>
+<ul>
+<li>1939 : premier avion à réaction, le <b>Heinkel He 178</b>. 1940 : bataille d’Angleterre (Spitfire, Hurricane contre Messerschmitt).</li>
+<li>Les pilotes français de <b>Normandie-Niemen</b> combattent en URSS. Saint-Exupéry disparaît en 1944.</li>
+<li>1947 : <b>Chuck Yeager</b> franchit le mur du son. 1953 : <b>Jacqueline Auriol</b>, première Européenne à le faire.</li>
+<li>Les avions de ligne à réaction : Comet (1949), <b>Caravelle</b> (1955), Boeing 707, 747 (1969).</li>
+<li>2 mars 1969 : premier vol de <b>Concorde</b>.</li>
+</ul>
+</div></details>
+
+<details class="course"><summary>6. L’Europe de l’air et l’espace (depuis 1957)</summary><div>
+<ul>
+<li>1957 : <b>Spoutnik 1</b>, premier satellite. 1961 : <b>Gagarine</b>, premier homme dans l’espace. 1963 : <b>Terechkova</b>, première femme. 1965 : <b>Leonov</b> sort dans l’espace.</li>
+<li>1965 : <b>Astérix</b>, premier satellite français : la France est la troisième puissance spatiale.</li>
+<li>21 juillet 1969 (heure UTC) : <b>Armstrong</b> et <b>Aldrin</b> marchent sur la Lune ; la fusée Saturn V est l’œuvre de <b>Wernher von Braun</b>.</li>
+<li>1972 : <b>Airbus A300</b>. 1979 : <b>Ariane 1</b>. 1987 : <b>A320</b>. 2005 : <b>A380</b>.</li>
+<li>Les Français dans l’espace : <b>Jean-Loup Chrétien</b> (1982), <b>Patrick Baudry</b> (1985), <b>Claudie Haigneré</b> (1996), <b>Thomas Pesquet</b> (2016 et 2021).</li>
+<li>2014 : <b>Philae</b> se pose sur une comète. 2016 : <b>Solar Impulse</b> boucle son tour du monde. 2024 : <b>Ariane 6</b>.</li>
+</ul>
+</div></details>
+</section>
+
+<section id="frise">
+<div class="section-heading"><span>02 / LA FRISE</span><h2>Cinquante dates, touche pour lire.</h2></div>
+<div class="filters seg" id="fil" style="margin-bottom:12px"></div>
+<div class="tl" id="tl"></div>
+</section>
+
+<section id="jeux">
+<div class="section-heading"><span>03 / JEUX</span><h2>Remets l’histoire dans l’ordre.</h2></div>
+<div id="game-order"></div>
+<div id="game-who"></div>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>04 / S’ENTRAÎNER</span><h2>Questions à choix unique, corrigées.</h2></div>
+<p class="lead">Une seule bonne réponse sur quatre, comme à l’examen. Les questions ratées reviennent dans « À revoir ». Va voir aussi le parcours des <a href="/mythiques/">40 avions mythiques</a>.</p>
+<div id="quiz"></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Domaine 5 du programme du BIA (BO n° 11 du 12 mars 2015). Chronologie recoupée à partir du cours d’histoire du CIRAS Orléans-Tours et de sources usuelles. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="data.js"></script>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

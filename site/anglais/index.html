@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anglais aéronautique · Le BIA de Saleem</title>
+<meta name="description" content="Vocabulaire, alphabet OACI, chiffres et phraséologie VFR en anglais : cartes à retourner, prononciation, dialogues avec la tour et QCU de l’épreuve facultative.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+.flash { perspective: 900px; }
+.flash .in { position: relative; min-height: 190px; transition: transform .45s; transform-style: preserve-3d; cursor: pointer; }
+.flash.flip .in { transform: rotateY(180deg); }
+.flash .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; text-align: center; }
+.flash .front { background: var(--navy); color: #fff; }
+.flash .back { background: var(--amber-l); color: var(--head); transform: rotateY(180deg); }
+.flash .w { font: 800 30px 'Manrope', sans-serif; }
+.flash .s { font-size: 13px; opacity: .8; margin-top: 8px; }
+.spell { font: 700 18px/1.6 'Manrope', sans-serif; color: var(--head); }
+</style>
+</head>
+<body data-page="anglais">
+<div class="subnav"><nav aria-label="Dans ce domaine">
+<a href="#epreuve">L’épreuve</a><a href="#vocab">Vocabulaire</a><a href="#alpha">Alphabet</a><a href="#radio">Radio</a><a href="#qcu">QCU</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> la langue du ciel, c’est l’anglais</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Épreuve facultative · Anglais aéronautique</p>
+<h1>Parle à la tour <em>en anglais</em>.</h1>
+<p>Vingt questions en trente minutes, et seuls les points au-dessus de 10 sur 20 comptent : aucun risque, que des bonus. Et pour devenir pilote de ligne, l’anglais est indispensable.</p>
+</section>
+
+<section id="epreuve">
+<div class="section-heading"><span>01 / L’ÉPREUVE</span><h2>Ce qu’on te demande.</h2></div>
+<div class="grid">
+<div class="card"><h3 style="margin-top:0">Le format</h3><ul><li>20 questions à choix unique, 30 minutes.</li><li>Vocabulaire technique des domaines météo, aéronefs et navigation.</li><li>Phraséologie radio de base : collationnement, alphabet, chiffres.</li><li>Points au-dessus de 10/20 ajoutés au total de l’épreuve obligatoire avant division par 5.</li></ul></div>
+<div class="card"><h3 style="margin-top:0">Les pièges classiques</h3><ul><li><b>Heading</b> = cap ; <b>track</b> = route.</li><li><b>Elevator</b> = profondeur, pas ascenseur… sauf dans un immeuble.</li><li><b>Roger</b> = reçu ; <b>wilco</b> = reçu et j’exécute.</li><li><b>Downwind</b> = branche vent arrière ; <b>tailwind</b> = vent arrière.</li><li>3, 5 et 9 se prononcent <b>tree</b>, <b>fife</b> et <b>niner</b>.</li></ul></div>
+</div>
+</section>
+
+<section id="vocab">
+<div class="section-heading"><span>02 / VOCABULAIRE</span><h2>Cartes à retourner, avec la prononciation.</h2></div>
+<div id="lab-flash"></div>
+</section>
+
+<section id="alpha">
+<div class="section-heading"><span>03 / ALPHABET ET CHIFFRES</span><h2>Épelle une immatriculation comme à la radio.</h2></div>
+<div id="lab-alpha"></div>
+</section>
+
+<section id="radio">
+<div class="section-heading"><span>04 / À LA RADIO</span><h2>Un vol complet avec la tour : collationne !</h2></div>
+<div id="lab-dialog"></div>
+</section>
+
+<section id="qcu">
+<div class="section-heading"><span>05 / S’ENTRAÎNER</span><h2>Questions de l’épreuve d’anglais.</h2></div>
+<div id="quiz"></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Épreuve facultative d’anglais du BIA. Phraséologie inspirée des usages OACI ; la référence officielle en France est le manuel de phraséologie du SIA. La prononciation utilise la synthèse vocale de ton appareil. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="data.js"></script>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* Service worker généré par scripts/build-pwa.mjs : ne pas modifier sw.js à la main. */
-const VERSION = "80687b8f6eb6";
+const VERSION = "3edc4b1795ba";
 const CACHE = "bia-saleem-" + VERSION;
 const ASSETS = [
  "/",
@@ -9,6 +9,10 @@ const ASSETS = [
  "/aeronefs/",
  "/aeronefs/labs.js",
  "/aeronefs/questions.js",
+ "/anglais/",
+ "/anglais/app.js",
+ "/anglais/data.js",
+ "/anglais/questions.js",
  "/assets/app.css",
  "/assets/core.js",
  "/assets/fonts.css",
@@ -35,6 +39,10 @@ const ASSETS = [
  "/avions/photos/v180r.webp",
  "/avions/questions.js",
  "/credits/",
+ "/histoire/",
+ "/histoire/app.js",
+ "/histoire/data.js",
+ "/histoire/questions.js",
  "/icons/apple-touch-icon.png",
  "/icons/icon-192.png",
  "/icons/icon-512.png",

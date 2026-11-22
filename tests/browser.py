@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'mythiques/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'histoire/', 'anglais/', 'mythiques/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -28,6 +28,19 @@ try:
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
                 check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'histoire/':
+                    check(pg.locator('.ev').count() >= 45, f'histoire {label}: frise incomplète')
+                    pg.locator('.ev button').first.click(); check(pg.locator('.ev.open').count() == 1, f'histoire {label}: événement non dépliable')
+                    o = pg.locator('#game-order'); o.scroll_into_view_if_needed(); o.locator('button', has_text='Vérifier').click()
+                    for lid in ('tl', 'game-order', 'game-who'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                if page_name == 'anglais/':
+                    f = pg.locator('#lab-flash'); f.scroll_into_view_if_needed(); f.locator('.flash .in').click(); pg.wait_for_timeout(500)
+                    check(f.locator('.flash.flip').count() == 1, f'anglais {label}: carte non retournée')
+                    a = pg.locator('#lab-alpha'); check('Foxtrot Golf Tango Mike Papa' in a.locator('#al-out').inner_text(), f'anglais {label}: épellation')
+                    d = pg.locator('#lab-dialog'); d.locator('.choice').first.click(); check(d.locator('.choice.right').count() == 1, f'anglais {label}: dialogue')
+                    for lid in ('lab-flash', 'lab-alpha', 'lab-dialog'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
                 if page_name == 'navigation/':
                     check(pg.locator('.lab').count() == 6, f'navigation {label}: {pg.locator(".lab").count()} ateliers')
                     for lid in ('lab-triangle', 'lab-piste', 'lab-niveaux', 'lab-espaces', 'lab-feux', 'lab-calcul'):
