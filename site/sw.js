@@ -1,5 +1,5 @@
 /* Service worker généré par scripts/build-pwa.mjs : ne pas modifier sw.js à la main. */
-const VERSION = "588db3f5a213";
+const VERSION = "ffa62c757b69";
 const CACHE = "bia-saleem-" + VERSION;
 const ASSETS = [
  "/",
@@ -27,7 +27,51 @@ const ASSETS = [
  "/manifest.webmanifest",
  "/meteo/",
  "/meteo/labs.js",
- "/meteo/questions.js"
+ "/meteo/questions.js",
+ "/mythiques/",
+ "/mythiques/app.js",
+ "/mythiques/data.js",
+ "/mythiques/photos.js",
+ "/mythiques/photos/a300.webp",
+ "/mythiques/photos/a320.webp",
+ "/mythiques/photos/a380.webp",
+ "/mythiques/photos/alouette.webp",
+ "/mythiques/photos/alphajet.webp",
+ "/mythiques/photos/an225.webp",
+ "/mythiques/photos/b17.webp",
+ "/mythiques/photos/b707.webp",
+ "/mythiques/photos/b737.webp",
+ "/mythiques/photos/b747.webp",
+ "/mythiques/photos/bf109.webp",
+ "/mythiques/photos/bleriot.webp",
+ "/mythiques/photos/c130.webp",
+ "/mythiques/photos/c172.webp",
+ "/mythiques/photos/cap10.webp",
+ "/mythiques/photos/caravelle.webp",
+ "/mythiques/photos/comet.webp",
+ "/mythiques/photos/concorde.webp",
+ "/mythiques/photos/constellation.webp",
+ "/mythiques/photos/cub.webp",
+ "/mythiques/photos/dc3.webp",
+ "/mythiques/photos/dr400.webp",
+ "/mythiques/photos/f117.webp",
+ "/mythiques/photos/f14.webp",
+ "/mythiques/photos/fokker.webp",
+ "/mythiques/photos/late28.webp",
+ "/mythiques/photos/me262.webp",
+ "/mythiques/photos/mirage3.webp",
+ "/mythiques/photos/p38.webp",
+ "/mythiques/photos/p51.webp",
+ "/mythiques/photos/rafale.webp",
+ "/mythiques/photos/shuttle.webp",
+ "/mythiques/photos/solar.webp",
+ "/mythiques/photos/spad.webp",
+ "/mythiques/photos/spitfire.webp",
+ "/mythiques/photos/sr71.webp",
+ "/mythiques/photos/stlouis.webp",
+ "/mythiques/photos/wright.webp",
+ "/mythiques/photos/x1.webp",
+ "/mythiques/photos/x15.webp"
 ];
 
 self.addEventListener("install", (e) => {

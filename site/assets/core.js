@@ -36,6 +36,7 @@
     { id: 'aeronefs', ico: '🛠️', name: 'Aéronefs et espace', desc: 'Structure, moteurs, instruments, hélicoptères, fusées.', open: false },
     { id: 'navigation', ico: '🧭', name: 'Navigation et réglementation', desc: 'Cap, vent, cartes, espaces aériens, sécurité des vols.', open: false },
     { id: 'histoire', ico: '🏛️', name: 'Histoire et culture', desc: 'Des Montgolfier à Ariane 6, pionniers et pionnières.', open: false },
+    { id: 'mythiques', ico: '🏆', name: 'Avions mythiques', desc: '40 avions qui ont fait l’histoire : photos, chiffres, histoires, anecdotes et jeux.', open: true },
     { id: 'anglais', ico: '🇬🇧', name: 'Anglais aéronautique', desc: 'Vocabulaire et phraséologie de l’épreuve facultative.', open: false },
     { id: 'avions', ico: '✈️', name: 'Avions et DR400', desc: 'Le Robin DR400 en détail, avions-écoles, check-lists.', open: false },
     { id: 'entrainement', ico: '🎯', name: 'BIA blanc', desc: '100 questions, 2 h 30, sans calculatrice.', open: false },

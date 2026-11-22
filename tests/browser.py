@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'mythiques/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -28,6 +28,23 @@ try:
                 name = page_name.strip('/') or 'accueil'
                 pg.screenshot(path=f'/tmp/bia-{name}-{label}.png', full_page=False)
                 check(pg.locator('.btn-install').count() >= 1, f'/{page_name} {label}: pas de bouton Installer')
+                if page_name == 'mythiques/':
+                    pg.wait_for_timeout(500)
+                    check(pg.locator('.mcard').count() == 40, f'mythiques {label}: {pg.locator(".mcard").count()} fiches')
+                    broken = pg.evaluate("[...document.querySelectorAll('.mcard img')].filter(i => i.complete && i.naturalWidth === 0).length")
+                    check(broken == 0, f'mythiques {label}: {broken} photos cassées')
+                    pg.locator('.mcard').nth(27).click(); pg.wait_for_timeout(300)
+                    check(pg.locator('dialog.fiche[open]').count() == 1, f'mythiques {label}: fiche non ouverte')
+                    pg.screenshot(path=f'/tmp/bia-fiche-{label}.png')
+                    pg.locator('dialog.fiche [data-go="1"]').click(); pg.wait_for_timeout(200)
+                    pg.locator('.close-x').click()
+                    check(pg.evaluate("Object.keys(JSON.parse(localStorage.getItem('bia-saleem:myth-seen')||'{}')).length") == 2, f'mythiques {label}: fiches vues non enregistrées')
+                    g = pg.locator('#game-photo'); g.scroll_into_view_if_needed(); g.locator('.choice').first.click()
+                    check(g.locator('.choice.right').count() == 1, f'mythiques {label}: jeu photo sans correction')
+                    g.screenshot(path=f'/tmp/bia-gamephoto-{label}.png')
+                    o = pg.locator('#game-order'); o.scroll_into_view_if_needed(); o.locator('button', has_text='Vérifier').click()
+                    o.screenshot(path=f'/tmp/bia-gameorder-{label}.png')
+                    pg.locator('#galerie').scroll_into_view_if_needed(); pg.wait_for_timeout(300); pg.screenshot(path=f'/tmp/bia-galerie-{label}.png')
                 if page_name == 'meteo/':
                     n = pg.locator('.lab').count(); check(n == 8, f'meteo {label}: {n} ateliers au lieu de 8')
                     for lid in ('lab-isa', 'lab-altimetre', 'lab-vent', 'lab-foehn', 'lab-nuages', 'lab-front', 'lab-heure', 'lab-metar'):

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>40 avions mythiques · Le BIA de Saleem</title>
+<meta name="description" content="Du Wright Flyer à Solar Impulse : 40 avions qui ont fait l’histoire, avec photos, chiffres clés, histoire et anecdotes.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+.timeline { display: flex; gap: 0; overflow-x: auto; padding: 18px 6px 8px; scrollbar-width: thin; position: relative; }
+.timeline button { flex: none; width: 62px; border: 0; background: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--mute); font: 600 11px 'DM Sans', sans-serif; position: relative; }
+.timeline button::before { content: ''; position: absolute; top: 9px; left: 0; right: 0; height: 2px; background: var(--line); z-index: 0; }
+.timeline button i { width: 18px; height: 18px; border-radius: 50%; background: var(--card); border: 3px solid var(--sky); z-index: 1; }
+.timeline button.seen i { background: var(--green); border-color: var(--green); }
+.timeline button:hover i, .timeline button:focus-visible i { transform: scale(1.25); }
+.timeline button b { color: var(--head); font-size: 12px; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+.mgrid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.mcard { padding: 0; overflow: hidden; cursor: pointer; text-align: left; border: 1px solid var(--line); background: var(--card); color: inherit; border-radius: var(--r); box-shadow: var(--shadow); display: flex; flex-direction: column; font: inherit; }
+.mcard img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; background: var(--line); }
+.mcard div { padding: 10px 12px 12px; }
+.mcard h3 { margin: 0; font-size: 17px; }
+.mcard p { margin: 2px 0 0; font-size: 13px; color: var(--mute); }
+.mcard .yr { float: right; font: 800 15px 'Manrope', sans-serif; color: var(--sky); }
+.mcard.seen h3::after { content: ' ✓'; color: var(--green); }
+dialog.fiche { width: min(760px, calc(100vw - 20px)); max-height: calc(100vh - 20px); padding: 0; border-radius: 18px; background: var(--card); color: var(--ink); overflow: auto; }
+dialog.fiche::backdrop { background: rgba(10, 18, 40, .6); }
+.fiche-img { position: relative; }
+.fiche-img img { width: 100%; display: block; max-height: 52vh; object-fit: cover; }
+.fiche-img .credit { position: absolute; right: 6px; bottom: 6px; font-size: 11px; background: rgba(0, 0, 0, .55); color: #fff; padding: 2px 6px; border-radius: 6px; max-width: 90%; }
+.fiche-img .credit a { color: #cfe0ff; }
+.fiche-body { padding: 16px 18px 18px; }
+.fiche-body h2 { margin: 0; font-size: 26px; }
+.fiche-body .meta { color: var(--mute); font-size: 14px; margin: 4px 0 10px; }
+.fiche-nav { display: flex; gap: 8px; justify-content: space-between; flex-wrap: wrap; margin-top: 14px; }
+.close-x { position: absolute; top: 8px; left: 8px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .55); color: #fff; font-size: 20px; cursor: pointer; }
+.photoq img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; display: block; }
+.order-list { display: grid; gap: 8px; }
+.order-item { display: flex; align-items: center; gap: 10px; background: var(--bg); border-radius: 12px; padding: 6px; }
+.order-item img { width: 84px; height: 56px; object-fit: cover; border-radius: 8px; }
+.order-item span { flex: 1; font-weight: 600; }
+.order-item .btn { min-height: 40px; min-width: 40px; padding: 4px 8px; }
+.order-item.ok { outline: 2px solid var(--green); } .order-item.ko { outline: 2px solid var(--red); }
+</style>
+</head>
+<body data-page="mythiques">
+<div class="subnav"><nav aria-label="Dans cette page">
+<a href="#frise">La frise</a><a href="#galerie">Les 40 avions</a><a href="#jeux">Jeux</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> ceux qui ont ouvert la route</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Parcours découverte · Histoire et culture</p>
+<h1>40 avions <em>mythiques</em>.</h1>
+<p>Du Wright Flyer de 1903 à Solar Impulse, les avions qui ont changé l’histoire. Chaque fiche a sa photo, ses chiffres, son histoire et une anecdote. Ouvre-les toutes : la frise se remplit de vert au fur et à mesure.</p>
+<div class="countdown" id="progress"></div>
+</section>
+
+<section id="frise">
+<div class="section-heading"><span>01 / LA FRISE</span><h2>Plus de cent ans d’aviation.</h2></div>
+<p class="lead">Fais défiler la frise et touche un point pour ouvrir la fiche.</p>
+<div class="card" style="padding:6px"><div class="timeline" id="timeline" aria-label="Frise chronologique"></div></div>
+</section>
+
+<section id="galerie">
+<div class="section-heading"><span>02 / LES 40 AVIONS</span><h2>Choisis une époque.</h2></div>
+<div class="filters" id="filters"></div>
+<div class="mgrid" id="grid"></div>
+</section>
+
+<section id="jeux">
+<div class="section-heading"><span>03 / JEUX</span><h2>Reconnais-les, puis remets-les dans l’ordre.</h2></div>
+<div id="game-photo"></div>
+<div id="game-order"></div>
+</section>
+
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Photos : Wikimedia Commons, réduites pour le site ; auteur et licence sous chaque photo. Textes rédigés pour le site. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<dialog class="fiche" id="fiche" aria-labelledby="fiche-title"></dialog>
+<script src="/assets/core.js"></script>
+<script src="data.js"></script>
+<script src="photos.js"></script>
+<script src="app.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>
