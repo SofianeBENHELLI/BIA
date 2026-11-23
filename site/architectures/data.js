@@ -13,7 +13,7 @@ window.ARCHI = [
       m: ['fokker'], x: ['Sopwith Triplane'] }
   ]},
   { k: 'pos', t: 'Position de l’aile', o: [
-    { v: 'haute', l: 'Aile haute', p: 'L’aile est fixée au-dessus du fuselage. Le fuselage pend sous l’aile comme sous un parapluie : l’avion revient naturellement à plat, c’est un effet dièdre gratuit.',
+    { v: 'haute', l: 'Aile haute', p: 'L’aile est fixée au-dessus du fuselage. Quand l’avion glisse sur le côté, l’air qui contourne le fuselage augmente l’incidence de l’aile du côté de la glissade : l’avion se remet à plat. C’est un effet dièdre gratuit.',
       plus: ['Très stable en roulis : idéale pour l’école et le vol tranquille', 'Vue dégagée vers le sol, parfaite pour l’observation et la photo', 'Aile loin du sol : pistes en herbe, flotteurs, obstacles', 'Pour un cargo : soute au ras du sol, chargement facile'],
       moins: ['L’aile cache le ciel du côté du virage', 'Souvent des haubans, qui ajoutent de la traînée', 'Train d’atterrissage plus long, ou logé dans le fuselage'],
       m: ['c172', 'c152', 'cub', 'pa18', 'c42', 'beaver', 'caravan', 'twinotter', 'atr72', 'c130', 'a400m', 'c160', 'an225', 'pc6'], x: [] },
@@ -108,7 +108,7 @@ window.ARCHI = [
       m: ['rafale', 'mirage2000', 'f16', 'f22', 'typhoon', 'f15', 'mig29', 'fouga'], x: [] },
     { v: 'dessus', l: 'Moteurs au-dessus', p: 'Moteurs perchés sur l’arrière du fuselage ou dans la dérive.',
       plus: ['Protégés des débris des pistes sommaires (A-10)', 'Masqués aux radars et aux missiles à infrarouges vus du sol (B-2)'], moins: ['Accès difficile, centre de gravité haut'],
-      m: ['a10', 'b2', 'dc10'], x: ['Chengdu « J-36 » (troisième entrée d’air sur le dos)'] },
+      m: ['a10', 'b2'], x: ['Chengdu « J-36 » (troisième entrée d’air sur le dos)', 'Moteur central dans la dérive : DC-10, Boeing 727'] },
     { v: 'aucun', l: 'Sans moteur (planeur)', p: 'Un planeur vole en descendant doucement dans l’air, et gagne de l’altitude dans les ascendances : thermiques, vent sur les reliefs, ondes.',
       plus: ['Silence, économie, finesse exceptionnelle', 'Le meilleur apprentissage de l’aérologie'], moins: ['Il faut un treuil ou un avion remorqueur pour décoller', 'Dépend de la météo pour rester en l’air'],
       m: ['ask21'], x: ['Motoplaneurs, avec un petit moteur escamotable'] }
@@ -120,7 +120,7 @@ window.ARCHI = [
     { v: '2', l: 'Bimoteur', p: 'Deux moteurs. Aujourd’hui même les long-courriers traversent les océans avec deux réacteurs, grâce aux règles ETOPS.',
       plus: ['On peut continuer avec un moteur', 'Bon compromis entre sécurité et coût'], moins: ['Panne d’un moteur sur l’aile : dissymétrie à contrer', 'Qualification spéciale pour le pilote (bimoteur)'],
       m: ['a320', 'b787', 'atr72', 'kingair', 'rafale', 'f15'], x: [] },
-    { v: '3', l: 'Trimoteur', p: 'Trois moteurs, souvent un dans la dérive ou à l’arrière. Une formule des années 1970 pour traverser les océans avant que les biréacteurs y soient autorisés.',
+    { v: '3', l: 'Trimoteur', p: 'Trois moteurs, souvent un dans la dérive ou à l’arrière. Formule répandue surtout des années 1960 aux années 1980 : sur les long-courriers (DC-10, TriStar), elle permettait de traverser les océans avant les règles ETOPS.',
       plus: ['Redondance sur les longues traversées'], moins: ['Moteur central difficile à installer et à entretenir'],
       m: ['dc10', 'falcon7x'], x: ['Boeing 727', 'Lockheed L-1011 TriStar', 'Junkers Ju 52'] },
     { v: '4', l: 'Quadrimoteur et plus', p: 'Quatre moteurs ou davantage, pour les très gros avions ou quand la sécurité impose de pouvoir en perdre plusieurs.',
@@ -134,7 +134,7 @@ window.ARCHI = [
     { v: 'classique', l: 'Train classique', p: 'Deux roues principales devant le centre de gravité et une roulette (ou une béquille) sous la queue. On dit aussi « train à roulette de queue ».',
       plus: ['Léger et robuste, idéal sur l’herbe', 'Hélice loin du sol', 'L’avion est déjà cabré : décollage court'], moins: ['Instable au roulage : si l’avion part de travers, le centre de gravité, situé derrière, amplifie l’écart (le « cheval de bois »)', 'Le nez cache la vue : on zigzague pour voir devant', 'Freiner fort peut faire basculer l’avion sur le nez'],
       m: ['cub', 'pa18', 'pitts', 'extra', 'cap10', 'spitfire', 'dc3', 'stampe', 'beaver', 'bf109', 'p51', 'an2'], x: [] },
-    { v: 'tandem', l: 'Tandem', p: 'Roues principales l’une derrière l’autre sous le fuselage, avec de petites roues d’équilibre (balancines) sous les ailes.',
+    { v: 'tandem', l: 'Tandem', p: 'Roues l’une derrière l’autre sous le fuselage. Sur les gros avions, de petites roues d’équilibre (balancines) sous les ailes ; sur un planeur, de simples patins en bout d’aile.',
       plus: ['Laisse l’aile libre et mince', 'Décolle et se pose à plat (B-52)'], moins: ['Équilibre délicat au sol, roulage plus difficile'],
       m: ['harrier', 'u2', 'b52'], x: [] },
     { v: 'flotteurs', l: 'Flotteurs ou coque', p: 'Pour se poser sur l’eau : deux flotteurs sous un avion terrestre, ou un fuselage en forme de coque de bateau (hydravion à coque).',
