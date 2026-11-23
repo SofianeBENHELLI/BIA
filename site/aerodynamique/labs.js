@@ -497,12 +497,19 @@
     var L = B.lab('lab-diedre', { num: '7', title: 'Le dièdre : aile haute, aile basse et flèche',
       hint: 'Lève ou baisse le bout d’aile (poignée orange) pour régler le dièdre, choisis aile haute ou basse, ajoute de la flèche, puis envoie une rafale de côté.',
       takeaway: 'Modèle qualitatif : dièdre effectif ≈ dièdre géométrique + environ 5° pour une aile haute + environ 1° par 10° de flèche. Trop peu : l’inclinaison s’aggrave (instabilité spirale). Beaucoup trop : oscillations (roulis hollandais).' });
-    var W = 600, H = 320, cx0 = 300, cy0 = 150;
-    var svg = S('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Avion vu de face, dièdre réglable' }, L.stage);
+    var W = 600, H = 530, cx0 = 300, cy0 = 150;
+    var svg = S('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Avion vu de face (dièdre) et vu de dessus (flèche)' }, L.stage);
+    label(svg, 12, 22, 'VUE DE FACE : le dièdre', '#5b6880', 'start', 12);
+    // vue de dessus, pour voir la flèche
+    var top = S('g', { transform: 'translate(20,238)' }, svg);
+    S('rect', { x: 0, y: 0, width: 560, height: 205, rx: 8, fill: '#f6f9ff', stroke: '#dde4ef' }, top);
+    label(top, 8, 16, 'VUE DE DESSUS : la flèche', '#5b6880', 'start', 12);
+    var topPlane = S('g', { transform: 'translate(280,22)' }, top);
+    var topLbl = label(top, 8, 34, '', '#5b6880', 'start', 11);
     S('line', { x1: 0, y1: cy0, x2: W, y2: cy0, stroke: '#2f6fde33', 'stroke-dasharray': '8 8' }, svg);
     var plane = S('g', {}, svg);
     var hnd = S('g', {}, svg); S('circle', { r: 20, class: 'ring' }, hnd); S('circle', { r: 7, fill: '#f5a623' }, hnd);
-    var tr = S('g', { transform: 'translate(20,245)' }, svg);
+    var tr = S('g', { transform: 'translate(20,456)' }, svg);
     S('rect', { x: 0, y: 0, width: 560, height: 66, rx: 8, fill: '#fff', stroke: '#dde4ef' }, tr);
     S('line', { x1: 0, y1: 33, x2: 560, y2: 33, stroke: '#dde4ef' }, tr);
     label(tr, 8, 14, 'inclinaison dans le temps', '#5b6880', 'start', 11);
@@ -543,6 +550,7 @@
       S('rect', { x: -4, y: 24, width: 8, height: 20, fill: '#5b6880' }, plane);
       S('circle', { cx: 0, cy: 50, r: 7, fill: '#10203f' }, plane);
       hnd.setAttribute('transform', 'translate(' + (cx0 + span) + ',' + (cy0 + wy - tip + th / 2) + ')');
+      drawTop();
       var e = eff();
       set('g', fmt(gam) + '°');
       set('e', fmt(e, 1) + '°', e <= 0 ? 'warn' : e > 12 ? 'warn' : 'good');
@@ -550,6 +558,21 @@
       else if (e > 12) { verdict.className = 'verdict warn'; verdict.textContent = 'Effet dièdre excessif : l’avion se redresse en oscillant, roulis hollandais possible. D’où l’anhédral des avions de ligne à aile haute en flèche.'; }
       else { verdict.className = 'verdict good'; verdict.textContent = 'Effet dièdre suffisant : l’avion se redresse seul après une rafale.'; }
       paint();
+    }
+    function drawTop() {
+      clear(topPlane);
+      var g = topPlane, sp = 170, root = 30, chordR = 34, chordT = 18, dx = sp * Math.tan(sweep * RAD), x0 = 10;
+      [-1, 1].forEach(function (sg) {
+        // bord d'attaque à x0 (depuis le nez), saumon reculé de dx
+        S('path', { d: 'M' + (sg * 8) + ',' + (x0 + 26) + ' L' + (sg * sp) + ',' + (x0 + 26 + dx) + ' L' + (sg * sp) + ',' + (x0 + 26 + dx + chordT) + ' L' + (sg * 8) + ',' + (x0 + 26 + chordR) + 'Z', fill: '#2a4a85' }, g);
+        S('path', { d: 'M' + (sg * 6) + ',' + (x0 + 88) + ' L' + (sg * 52) + ',' + (x0 + 88 + dx * 0.25) + ' L' + (sg * 52) + ',' + (x0 + 98 + dx * 0.25) + ' L' + (sg * 6) + ',' + (x0 + 102) + 'Z', fill: '#2a4a85' }, g);
+      });
+      S('path', { d: 'M0,' + x0 + ' Q10,' + (x0 + 12) + ' 9,' + (x0 + 30) + ' L6,' + (x0 + 108) + ' L-6,' + (x0 + 108) + ' L-9,' + (x0 + 30) + ' Q-10,' + (x0 + 12) + ' 0,' + x0 + 'Z', fill: '#10203f' }, g);
+      // repère : ligne perpendiculaire au fuselage et angle de flèche
+      S('line', { x1: 8, y1: x0 + 26, x2: sp + 20, y2: x0 + 26, stroke: '#f5a623', 'stroke-dasharray': '5 4', 'stroke-width': 1.5 }, g);
+      S('line', { x1: 8, y1: x0 + 26, x2: sp + 6, y2: x0 + 26 + (sp - 2) * Math.tan(sweep * RAD), stroke: '#f5a623', 'stroke-width': 2 }, g);
+      label(g, sp + 26, x0 + 30 + dx / 2, 'flèche ' + sweep + '°', '#b9770e', 'start', 13);
+      topLbl.textContent = sweep === 0 ? 'aile droite (DR400, Cessna)' : sweep < 20 ? 'flèche légère' : 'aile en flèche (avion de ligne, chasseur)';
     }
     gust.onclick = function () { p = 40; hist = []; anim.start(); };
     B.drag(svg, hnd, function (pt) { var span = 230, wy = high ? -24 : 16; gam = Math.round(clamp(Math.atan2((cy0 + wy) - pt.y, span) / RAD, -10, 15)); draw(); });

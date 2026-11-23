@@ -16,7 +16,7 @@ try:
     with sync_playwright() as p:
         b = p.chromium.launch()
         for label, vp in (('desktop', {'width': 1280, 'height': 900}), ('mobile', {'width': 390, 'height': 844})):
-            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'histoire/', 'anglais/', 'pilote/', 'entrainement/', 'mythiques/', 'credits/'):
+            for page_name in ('', 'aerodynamique/', 'meteo/', 'avions/', 'aeronefs/', 'navigation/', 'histoire/', 'anglais/', 'pilote/', 'entrainement/', 'mythiques/', 'architectures/', 'identification/', 'credits/'):
                 ctx = b.new_context(viewport=vp, has_touch=(label == 'mobile')); pg = ctx.new_page()
                 errs = []
                 pg.on('console', lambda m: errs.append(m.text) if m.type == 'error' else None)
@@ -90,7 +90,7 @@ try:
                     check(broken == 0, f'avions {label}: images cassées')
                 if page_name == 'mythiques/':
                     pg.wait_for_timeout(500)
-                    check(pg.locator('.mcard').count() == 43, f'mythiques {label}: {pg.locator(".mcard").count()} fiches')
+                    check(pg.locator('.mcard').count() == 64, f'mythiques {label}: {pg.locator(".mcard").count()} fiches')
                     broken = pg.evaluate("[...document.querySelectorAll('.mcard img')].filter(i => i.complete && i.naturalWidth === 0).length")
                     check(broken == 0, f'mythiques {label}: {broken} photos cassées')
                     pg.locator('.mcard').nth(27).click(); pg.wait_for_timeout(300)
@@ -105,6 +105,24 @@ try:
                     o = pg.locator('#game-order'); o.scroll_into_view_if_needed(); o.locator('button', has_text='Vérifier').click()
                     o.screenshot(path=f'/tmp/bia-gameorder-{label}.png')
                     pg.locator('#galerie').scroll_into_view_if_needed(); pg.wait_for_timeout(300); pg.screenshot(path=f'/tmp/bia-galerie-{label}.png')
+                if page_name == 'architectures/':
+                    pg.select_option('#preset', '15'); pg.wait_for_timeout(150)
+                    check('Delta' in pg.locator('#lab-config').inner_text() or 'delta' in pg.locator('#lab-config').inner_text(), f'archi {label}: préréglage')
+                    pg.locator('#lab-config button[data-v="v"]').click(); pg.wait_for_timeout(100)
+                    check('papillon' in pg.locator('#archi-info').inner_text(), f'archi {label}: fiche empennage V')
+                    check(pg.locator('.fam-opt').count() >= 40, f'archi {label}: familles')
+                    q = pg.locator('#lab-quiz'); q.scroll_into_view_if_needed(); q.locator('.choice').first.click()
+                    check(q.locator('.choice.ok').count() == 1, f'archi {label}: quiz sans correction')
+                    for lid in ('lab-config', 'archi-info', 'lab-quiz'):
+                        l = pg.locator('#' + lid); l.scroll_into_view_if_needed(); pg.wait_for_timeout(150); l.screenshot(path=f'/tmp/bia-{lid}-{label}.png')
+                if page_name == 'identification/':
+                    pg.wait_for_timeout(300)
+                    n = pg.locator('.gcard').count(); check(n >= 100, f'ident {label}: {n} avions')
+                    broken = pg.evaluate("[...document.querySelectorAll('.gcard img')].filter(i => i.complete && i.naturalWidth === 0).length")
+                    check(broken == 0, f'ident {label}: {broken} photos cassées')
+                    q = pg.locator('#lab-ident'); q.locator('.choice').first.click()
+                    check(q.locator('.choice.ok').count() == 1, f'ident {label}: pas de correction')
+                    q.screenshot(path=f'/tmp/bia-ident-{label}.png')
                 if page_name == 'meteo/':
                     n = pg.locator('.lab').count(); check(n == 8, f'meteo {label}: {n} ateliers au lieu de 8')
                     for lid in ('lab-isa', 'lab-altimetre', 'lab-vent', 'lab-foehn', 'lab-nuages', 'lab-front', 'lab-heure', 'lab-metar'):

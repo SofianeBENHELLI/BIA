@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Architectures d’avions · Le BIA de Saleem</title>
+<meta name="description" content="Monoplan, biplan, aile haute ou basse, delta, flèche, empennage en T, en V ou canard, moteurs, train classique ou tricycle : construis un avion en trois vues et comprends chaque choix.">
+<meta name="theme-color" content="#10203f">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("bia-saleem:theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+.select { width: 100%; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: 600 15px 'DM Sans', sans-serif; padding: 0 10px; }
+#lab-config .ctrls .seg { flex-wrap: wrap; }
+#lab-config .ctrls .seg button { min-height: 36px; padding: 4px 10px; font-size: 13px; }
+#lab-config .ctrl { margin-bottom: 8px; }
+@media (max-width: 819px) { #lab-config .stage { position: sticky; top: calc(108px + env(safe-area-inset-top, 0px)); z-index: 5; box-shadow: 0 6px 16px rgba(16, 32, 63, .18); } }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin: 8px 0; }
+.thumb { padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); overflow: hidden; cursor: pointer; text-align: left; }
+.thumb img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+.thumb span { display: block; font-size: 12px; font-weight: 600; padding: 4px 6px; line-height: 1.25; }
+.thumb.wide { width: 100%; margin-bottom: 8px; }
+.pm { display: grid; gap: 10px; grid-template-columns: 1fr; margin: 6px 0 10px; }
+@media (min-width: 620px) { .pm { grid-template-columns: 1fr 1fr; } }
+.pm > div { background: var(--bg); border-radius: 10px; padding: 8px 12px; }
+.pm b { font-size: 14px; }
+.pm ul { margin: 4px 0 0; padding-left: 18px; font-size: 15px; }
+.pm > div:first-child b { color: var(--green); } .pm > div:last-child b { color: var(--red); }
+#archi-info { margin-top: 12px; }
+.fam { margin-bottom: 12px; }
+.fam-opt { border-top: 1px solid var(--line); }
+.fam-opt summary { cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 2px; list-style: none; }
+.fam-opt summary::-webkit-details-marker { display: none; }
+.fam-opt summary b::before { content: '▸ '; color: var(--sky); }
+.fam-opt[open] summary b::before { content: '▾ '; }
+.fam-opt summary span { display: flex; gap: 4px; }
+.fam-opt summary img { width: 52px; height: 35px; object-fit: cover; border-radius: 6px; }
+.fam-body { padding: 0 2px 12px; }
+.fam-body .eyebrow { display: none; }
+.qphoto { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; display: block; }
+dialog.fiche { width: min(760px, calc(100vw - 20px)); max-height: calc(100vh - 20px); padding: 0; border-radius: 18px; background: var(--card); color: var(--ink); overflow: auto; border: 0; }
+dialog.fiche::backdrop { background: rgba(10, 18, 40, .6); }
+.fiche-img { position: relative; }
+.fiche-img img { width: 100%; display: block; max-height: 70vh; object-fit: contain; background: #000; }
+.fiche-img .credit { position: absolute; right: 6px; bottom: 6px; font-size: 11px; background: rgba(0, 0, 0, .55); color: #fff; padding: 2px 6px; border-radius: 6px; max-width: 90%; }
+.fiche-img .credit a { color: #cfe0ff; }
+.fiche-body { padding: 12px 18px 16px; } .fiche-body h2 { margin: 0; font-size: 22px; }
+.close-x { position: absolute; top: 8px; left: 8px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, .55); color: #fff; font-size: 20px; cursor: pointer; }
+</style>
+</head>
+<body data-page="architectures">
+<div class="subnav"><nav aria-label="Dans cette page">
+<a href="#configurateur">Assemble ton avion</a><a href="#toutes">Toutes les architectures</a><a href="#quiz">Quiz photo</a>
+</nav></div>
+<p class="dedication">Pour Saleem <span>✦</span> chaque forme a une raison</p>
+<main id="main">
+<section class="hero">
+<p class="eyebrow">Aéronefs · Connaissance des avions</p>
+<h1>Les architectures <em>d’avions</em>.</h1>
+<p>Pourquoi le Cessna a l’aile en haut et le DR400 en bas ? Pourquoi le Piper Cub a une roulette de queue, le Fouga une queue en V et le Rafale des plans canard ? Chaque forme répond à un besoin et se paie ailleurs. Construis un avion, compare, puis entraîne-toi à reconnaître les architectures sur de vraies photos.</p>
+</section>
+
+<section id="configurateur">
+<div class="section-heading"><span>01 / ASSEMBLE TON AVION</span><h2>Trois vues, huit choix.</h2></div>
+<p class="lead">Le dièdre se voit de face, la flèche se voit de dessus, la position de l’aile et le train se voient de profil. Les trois vues changent ensemble.</p>
+<div id="lab-config"></div>
+<div class="card" id="archi-info" aria-live="polite"></div>
+</section>
+
+<section id="toutes">
+<div class="section-heading"><span>02 / TOUTES LES ARCHITECTURES</span><h2>Principes et modèles emblématiques.</h2></div>
+<p class="lead">Ouvre une ligne pour lire le principe, les avantages, les inconvénients et voir des avions qui l’utilisent. Touche une photo pour l’agrandir.</p>
+<div id="familles"></div>
+<div class="box mem"><b>À retenir pour le BIA</b>Aile haute : stable, bonne vue vers le bas. Aile basse : il faut du dièdre. Flèche : pour voler près de Mach 1. Delta : supersonique, sans empennage horizontal. Empennage en T : hors du souffle de l’hélice, mais attention au super décrochage. Train classique : roulette de queue, instable au roulage. Train tricycle : stable au sol.</div>
+</section>
+
+<section id="quiz">
+<div class="section-heading"><span>03 / QUIZ PHOTO</span><h2>Reconnais l’architecture.</h2></div>
+<p class="lead">Pour reconnaître les avions eux-mêmes, passe au <a href="/identification/">quiz « Reconnais l’avion »</a>, avec plus de cent photos.</p>
+<div id="lab-quiz"></div>
+</section>
+
+<dialog class="fiche" id="photo" aria-label="Photo"></dialog>
+<footer><b>Fait pour Saleem, futur pilote.</b><p>Photos sous licences libres (Wikimedia Commons et Flickr), auteurs et licences indiqués sur chaque photo. <a href="/credits/">Sources et crédits</a></p></footer>
+</main>
+<script src="/assets/core.js"></script>
+<script src="/mythiques/data.js"></script>
+<script src="/mythiques/flotte.js"></script>
+<script src="/mythiques/photos.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="/assets/pwa.js"></script>
+</body>
+</html>
